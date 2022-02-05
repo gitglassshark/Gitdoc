@@ -1,0 +1,37 @@
+位于分支 vi
+未跟踪的文件:
+  （使用 "git add <文件>..." 以包含要提交的内容）
+	.fuse_hidden0000077700000001
+	branch.info
+
+提交为空，但是存在尚未跟踪的文件（使用 "git add" 建立跟踪）
+.gitignore
+b1.null
+dmesg.info
+readme
+readme.null
+readme2
+readme3
+vimrc.1
+vimrc.2
+vimrc.3
+vimrc.all
+vimrc.end
+位于分支 vi
+未跟踪的文件:
+  （使用 "git add <文件>..." 以包含要提交的内容）
+	.fuse_hidden000007d300000002
+
+提交为空，但是存在尚未跟踪的文件（使用 "git add" 建立跟踪）
+.gitignore
+branch.info
+dmesg.info
+readme
+readme.null
+readme2
+readme3
+vimrc.1
+vimrc.2
+vimrc.3
+vimrc.all
+vimrc.end
