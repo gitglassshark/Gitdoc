@@ -1,10 +1,11 @@
 CC= g++
 
 CXXSTD=c++17
-DEBUGFLAGS = -g -Wnoall
+DEBUGFLAGS = -g -w -dumpdir out
 OPTIMIZATION = -O3
 INCLUDEDIRECTORY = -Iinclude
-CXXFLAGS = $(OPTIMIZATION) $(DEBUGFLAGS) -std=$(CXXSTD) $(INCLUDEDIRECTORY)
+OUTDIRECTORY = out/
+CXXFLAGS = $(OPTIMIZATION) $(DEBUGFLAGS) -std=$(CXXSTD) $(INCLUDEDIRECTORY) 
 
 all: rebuild debug
 
@@ -23,10 +24,10 @@ obj: *.cpp
 
 asm:
 	@echo "Build the Asm file ......"
-	${CC} ${CXXFLAGS} -S *.cpp
+	${CC} ${CXXFLAGS} -S *.cpp 
 
 clean:
 	clear
 	@echo "Clean the useless file ......"
-	rm *.o *.s *.out main -f
+	rm *.s *.o  main -f
 
