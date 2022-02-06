@@ -1,0 +1,4 @@
+#!/bin/bash
+vi main.cpp fun.cpp include/fun.hpp -O
+./run
+make clean
