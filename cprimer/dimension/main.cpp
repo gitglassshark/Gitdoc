@@ -14,7 +14,8 @@ int main (int argc, char *argv[])
 		x = atoi (argv[1]);
 	}
 	else
-	{ cout << "Lost input number...exit." << endl;
+	{
+		cout << "Lost input number...exit." << endl;
 		return 0;
 	}
 	inital (x);

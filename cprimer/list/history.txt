@@ -1,0 +1,2753 @@
+   80  lsusb
+   81  lsns
+   82  lspci
+   83  lspcmcia
+   84  free -lh
+   85  netstat
+   86  top
+   87  du
+   88  df
+   89  df /
+   90  df -lh
+   91  free -ilh
+   92  free -l
+   93  free -lh
+   94  ll
+   95  ls
+   96  netstat -i
+   97  arp
+   98  ping www.sina.com.cn
+   99  vi bincom.txt 
+  100  date
+  101  uptime
+  102  exit
+  103  w
+  104  who
+  105  whoami
+  106  i
+  107  stty
+  108  tty
+  109  ps
+  110  ps -aux
+  111  ps -al
+  112  pid
+  113  id
+  114  nano
+  115  namei
+  116  man namei
+  117  ll
+  118  ls
+  119  la
+  120  ps
+  121  date
+  122  uptime
+  123  ll
+  124  ls
+  125  la
+  126  ll
+  127  ls
+  128  la
+  129  ls -l
+  130  less lsmod.txt
+  131  less mod.txt 
+  132  uptime
+  133  uptime
+  134  man reboot
+  135  reboot -p
+  136  set
+  137  env
+  138  ll
+  139  env >env.txt
+  140  env
+  141  ll
+  142  ls
+  143  la
+  144  man free
+  145  free -lh
+  146  ps
+  147  ps -aux
+  148  ps -a
+  149  ps -al
+  150  man ps
+  151  ps -aux
+  152  ps -al
+  153  uid
+  154  uname
+  155  users
+  156  uudi
+  157  uuid
+  158  su root
+  159  ll
+  160  pwd
+  161  ll
+  162  exit
+  163  ll
+  164  free -lh
+  165  netstat -i
+  166  route
+  167  routel
+  168  ll
+  169  ls
+  170  lc
+  171  ll
+  172  ls
+  173  uname
+  174  free -l
+  175  free -lh
+  176  lsmem
+  177  tree
+  178  ll
+  179  time
+  180  cal
+  181  ll
+  182  ls
+  183  ls /bin
+  184  ll
+  185  la
+  186  dir
+  187  man netstat
+  188  netstat -n
+  189  netstat -i
+  190  netstat -r
+  191  netstat -i -w
+  192  netstat -g
+  193  man netstate
+  194  man netstat
+  195  netstat -e
+  196  man netstat
+  197  netstat -ec
+  198  netstat -ew
+  199  netstat -ewg
+  200  netstat -ewgo
+  201  netstat -ewgor
+  202  ping 192.168.1.0
+  203  ping 127.0.0.0
+  204  ping 127.0.0.1
+  205  dns
+  206  ns
+  207  ll
+  208  ls
+  209  la
+  210  man free
+  211  cache
+  212  free cache
+  213  man free
+  214  free total used cache
+  215  gcc
+  216  ls
+  217  mkdir pg
+  218  cd pg
+  219  vi arr.c
+  220  ls
+  221  gcc arr.c
+  222  ll
+  223  a
+  224  ./a.out 
+  225  vi arr.c
+  226  gcc arr.c
+  227  vi arr.c
+  228  gcc arr.c 
+  229  a
+  230  a.out
+  231  ./a.out
+  232  vi arr.c
+  233  gcc arr.c 
+  234  ./a.out
+  235  vi arr.c
+  236  gcc arr.c
+  237  ./a.out
+  238  vi arr.c 
+  239  gcc arr.c
+  240  ./a.out
+  241  vi arr.c 
+  242  gcc arr.c
+  243  ./a.out
+  244  vi arr.c 
+  245  gcc arr.c
+  246  ./a.out
+  247  vi arr.c 
+  248  gcc arr.c
+  249  ./a.out
+  250  vi arr.c 
+  251  gcc arr.c
+  252  ./a.out
+  253  vi arr.c 
+  254  ./a.out
+  255  vi arr.c 
+  256  gcc arr.c
+  257  ./a.out
+  258  vi arr.c 
+  259  gcc arr.c
+  260  ./a.out
+  261  vi arr.c 
+  262  gcc arr.c
+  263  ./a.out
+  264  vi arr.c 
+  265  indent arr.c
+  266  su root
+  267  ll
+  268  less arr.c
+  269  gcc arr.c
+  270  ll
+  271  file ./a.out
+  272  ll -h
+  273  man file
+  274  less arr.c
+  275  vi arr.c
+  276  gcc arr.c
+  277  ./a.out
+  278  vi arr.c
+  279  gcc arr.c
+  280  ./a.out
+  281  vi arr.c
+  282  gcc arr.c
+  283  :q
+  284  vi arr.c
+  285  gcc arr.c
+  286  :q
+  287  vi arr.c
+  288  gcc arr.c
+  289  vi arr.c
+  290  gcc arr.c
+  291  vi arr.c
+  292  gcc arr.c
+  293  vi arr.c
+  294  gcc arr.c
+  295  vi arr.c
+  296  gcc arr.c
+  297  vi arr.c
+  298  gcc arr.c
+  299  vi arr.c
+  300  gcc arr.c
+  301  vi arr.c
+  302  gcc arr.c
+  303  vi arr.c
+  304  gcc arr.c
+  305  vi arr.c
+  306  gcc arr.c
+  307  indent arr.c
+  308  ll
+  309  sudo rm arr.c~
+  310  gcc arr.c
+  311  indent arr.c
+  312  less arr.c
+  313  ll
+  314  ll -h
+  315  ll
+  316  arp
+  317  man arp
+  318  arp -a
+  319  man arp
+  320  arp -v
+  321  arp -avl
+  322  arp -va
+  323  routel
+  324  dump a.out
+  325  sudo apt install dump
+  326  dump a.out
+  327  dume -E a.out
+  328  hexdump a.out 
+  329  hexdump a.out |less
+  330  nasm
+  331  sudo apt install nasm
+  332  masm
+  333  tasm
+  334  sudo apt install yasm
+  335  nasm arr.c
+  336  man gcc
+  337  ll
+  338  ls
+  339  la
+  340  ll
+  341  indent arr.c
+  342  less arr.c
+  343  vi arr.c
+  344  indent arr.c
+  345  gcc arr.c
+  346  vi arr.c
+  347  indent arr.c
+  348  gcc arr.c
+  349  less arr.c
+  350  vi arr.c
+  351  less arr.c
+  352  indent arr.c
+  353  gcc arr.c
+  354  ./a.out
+  355  vi arr.c
+  356  gcc arr.c
+  357  clear
+  358  history
+  359  ll
+  360  pwd
+  361  cd ..
+  362  history >>history.txt 
+  363  ll
+  364  sudo history >>history.txt 
+  365  su root
+  366  ll
+  367  cd pg
+  368  ls
+  369  dir
+  370  ll
+  371  vi arr.c
+  372  indent arr.c
+  373  gcc arr.c
+  374  less arr.c
+  375  vi arr.c
+  376  indent arr.c
+  377  vi arr.c
+  378  indent arr.c
+  379  gcc arr.c
+  380  vi arr.c
+  381  indent arr.c
+  382  gcc arr.c
+  383  vi arr.c
+  384  indent arr.c
+  385  gcc arr.c
+  386  ./a.out
+  387  less arr.c
+  388  vi arr.c
+  389  indent arr.c
+  390  gcc arr.c
+  391  ./a.out
+  392  ll
+  393  pwd
+  394  uname
+  395  users
+  396  time
+  397  date
+  398  cal
+  399  uptime
+  400  free
+  401  free -lha
+  402  free -lh
+  403  ps
+  404  netstat
+  405  netstat -i
+  406  route
+  407  routel
+  408  arp
+  409  lsmem
+  410  lscpu
+  411  df
+  412  df -lh
+  413  ps
+  414  ps -aux
+  415  stty
+  416  tty
+  417  tty -a
+  418  tty -l
+  419  man tty
+  420  tty -s
+  421  tty
+  422  id
+  423  uid
+  424  demsg
+  425  dmesg
+  426  cd ..
+  427  ls
+  428  ll
+  429  dmesg >dmesg.txt
+  430  less dmesg.txt 
+  431  ll /proc
+  432  ls /proc
+  433  less /proc/partitions 
+  434  file ./a.out
+  435  pwd
+  436  cd pg
+  437  file ./a.out
+  438  su root
+  439  ll
+  440  ls
+  441  lc
+  442  lcc
+  443  cd pg
+  444  ll
+  445  ls
+  446  indent arr.c
+  447  less arr.c
+  448  ll
+  449  ls
+  450  ./a.out
+  451  vi arr.c
+  452  teim
+  453  time
+  454  route
+  455  arp -a
+  456  arp -i
+  457  arp -e
+  458  arp -ev
+  459  cal
+  460  uptime
+  461  name
+  462  time
+  463  date
+  464  lscpu
+  465  lsipc
+  466  lsipc -h
+  467  man lsipc
+  468  lsipc -i -g
+  469  lsipc -ig
+  470  man lsipc
+  471  lsipc -g
+  472  man lsipc
+  473  lsipc -gq
+  474  lsmod
+  475  free -lh
+  476  pwd
+  477  cd pg
+  478  ll
+  479  dir
+  480  vi arr.c
+  481  indent arr.c
+  482  gcc arr.c
+  483  ./a.out
+  484  vi arr.c
+  485  gcc arr.c
+  486  vi arr.c
+  487  gcc arr.c
+  488  ./a.out
+  489  ll
+  490  ./a.out
+  491  man gcc
+  492  gcc arr.c -o arr
+  493  arr
+  494  ./arr
+  495  ll
+  496  indent arr.c
+  497  less arr.c
+  498  ll
+  499  ls
+  500  la
+  501  free -lh
+  502  uname
+  503  test
+  504  ll
+  505  vi arr.c
+  506  indent arr.c
+  507  gcc -o two
+  508  gcc arr.c -o tow
+  509  mv tow two
+  510  ./two
+  511  cp arr.c rand
+  512  mv rand rand.c
+  513  vi rand.c
+  514  gcc rand.c -o two
+  515  ./two
+  516  vi rand.c
+  517  less rand.c
+  518  indent rand.c
+  519  gcc rand.c -o two
+  520  two
+  521  ./two
+  522  exit
+  523  ll
+  524  cd gp
+  525  cd pg
+  526  ll
+  527  vi rand.c
+  528  indent rand.c
+  529  gcc rand.c -o two
+  530  ./two
+  531  vi rand.c
+  532  gcc rand.c -o two
+  533  ./two
+  534  vi rand.c
+  535  gcc rand.c -o two
+  536  vi rand.c
+  537  gcc rand.c -o two
+  538  vi rand.c
+  539  gcc rand.c -o two
+  540  vi rand.c
+  541  gcc rand.c -o two
+  542  ./two
+  543  ll
+  544  rm two
+  545  gcc rand.c -o two
+  546  ./two
+  547  indent rand.c
+  548  less rand.c
+  549  ll
+  550  ls
+  551  la
+  552  number
+  553  ll
+  554  ls
+  555  la
+  556  ping www.sina.com.cn
+  557  tracert www.sina.com.cn
+  558  traceroute6 www.sina.com.cn
+  559  tracepath www.sina.com.cn
+  560  route print
+  561  route -v
+  562  tracepath www.sina.com.cn
+  563  hostname
+  564  ipconfig /all
+  565  sudo apt install ifconfig
+  566  sudo apt install net-tools
+  567  ifconfig
+  568  ifconfig /all
+  569  ifconfig -a
+  570  fqdn
+  571  nslookup
+  572  arp -a
+  573  nslookup
+  574  ll
+  575  vi rand.c
+  576  time
+  577  date
+  578  cal
+  579  uptime
+  580  uname
+  581  hostname
+  582  users
+  583  uid
+  584  id
+  585  ll
+  586  ls
+  587  ll
+  588  ls
+  589  la
+  590  cd pg
+  591  ll
+  592  ls
+  593  la
+  594  indent arr.c
+  595  indent *.c
+  596  indent *.*
+  597  nslookup
+  598  nsenter
+  599  ping www.sina.com.cn
+  600  cd pg
+  601  ll
+  602  cp rand.c sizeof.c
+  603  vi sizeof.c 
+  604  indent sizeof.c
+  605  gcc sizeof.c -o sizeof
+  606  ./sizeof
+  607  gcc sizeof.c -Wall -o sizeof
+  608  ./sizeof
+  609  ll
+  610  ls *.c
+  611  ll *.c
+  612  clear
+  613  cd ..
+  614  history >>history.txt 
+  615  sudo history >>history.txt 
+  616  root
+  617  sudo root
+  618  su root
+  619  history >history1.txt
+  620  su root
+  621  ll
+  622  cat history*.txt
+  623  cat history.txt history1.txt >history.txt
+  624  su root
+  625  ll
+  626  cd pg
+  627  ll
+  628  ls
+  629  ./two
+  630  ping www.sina.com.cn
+  631  nslookup
+  632  ll
+  633  free -lh
+  634  time
+  635  date
+  636  cal
+  637  uptime
+  638  mem
+  639  memset
+  640  meminfo
+  641  lsmem
+  642  ll
+  643  lsmod
+  644  lsmod|more
+  645  ls ..
+  646  vi sizeof.c
+  647  gcc sizeof.c -Wall -o sizeof
+  648  vi sizeof
+  649  vi sizeof.c
+  650  gcc sizeof.c -Wall -o sizeof
+  651  vi sizeof.c
+  652  gcc sizeof.c -Wall -o sizeof
+  653  vi sizeof.c
+  654  gcc sizeof.c -Wall -o sizeof
+  655  ./sizeof
+  656  netstat -nat
+  657  netstat -i
+  658  man netstat
+  659  netstat -r
+  660  netstat -g
+  661  netstat -s
+  662  netstat -r
+  663  netstat -s
+  664  netstat -g
+  665  man netstat
+  666  netstat -s
+  667  netstat -M
+  668  netstat -m
+  669  netstat -natu
+  670  netstat -atu
+  671  lsof -i:port
+  672  sar -n SOCK
+  673  sudo apt install sysstat
+  674  lsof
+  675  lsof -i
+  676  lsof
+  677  man lsof
+  678  lslogins
+  679  lslogins|less
+  680  man lslogins
+  681  lslogins -l
+  682  man lslogins
+  683  lslogins -lyan
+  684  lslogins -lroot
+  685  man netstat
+  686  netstat -aop
+  687  lsof -t
+  688  netstat -aut
+  689  netstat -aute
+  690  netstat -aute -c 5
+  691  ll
+  692  dir
+  693  free -lh
+  694  vi sizeof.c
+  695  indent sizeof.c
+  696  less sizeof.c
+  697  gcc sizeof.c -Wall -o size
+  698  ./size
+  699  time
+  700  date
+  701  cal
+  702  uptime
+  703  logins
+  704  login
+  705  uname
+  706  usermod
+  707  uuidd
+  708  udi
+  709  uid
+  710  ping www.sina.com.cn
+  711  ping -a 120.192.83.125
+  712  ping -n 1 -r 9 www.sina.com.cn
+  713  ping -r 9 www.sina.com.cn
+  714  ping -r 9
+  715  ! indent
+  716  locate stdio.h
+  717  less /usr/include/x86_64-linux-gnu/bits/stdio.h
+  718  less /usr/include/x86_64-linux-gnu/bits/stdio.h -l
+  719  locate stdio.h -l
+  720  q
+  721  echo $path
+  722  echo $PATH
+  723  which stdio.h
+  724  whereis stdio.h
+  725  ll
+  726  locate stdio.h
+  727  indent *.c
+  728  ll
+  729  ls *.c
+  730  ll *.c
+  731  less sizeof.c
+  732  free -ih
+  733  free -lh
+  734  history
+  735  du 
+  736  df
+  737  df -h
+  738  ll
+  739  dir
+  740  ps
+  741  stty
+  742  tty
+  743  vi sizeof.c
+  744  gcc sizeof.c -o sizeof
+  745  indent sizeof.c
+  746  gcc sizeof.c -o sizeof
+  747  ./sizeof
+  748  vi sizeof.c
+  749  indent sizeof.c
+  750  gcc sizeof.c -o sizeof -Wall
+  751  ./sizeof
+  752  vi sizeof.c
+  753  gcc sizeof.c -o sizeof -Wall
+  754  ./sizeof
+  755  vi sizeof.c
+  756  gcc sizeof.c -o sizeof -Wall
+  757  ./sizeof
+  758  free -lh
+  759  ll
+  760  gzip
+  761  gzip -h
+  762  gzip *.c
+  763  ll
+  764  ls *.gz
+  765  rm *.gz
+  766  ll
+  767  gzip -N c.gz *.c
+  768  gzip -Nc.gz *.c
+  769  man gzip
+  770  ll
+  771  mkdir zip
+  772  cp *.c zip
+  773  cd ll *.c
+  774  mv arr.c~ arr.c
+  775  mv rand.c~ radn.c
+  776  mv sizeof.c~ sizeof.c
+  777  ll
+  778  gcc sizeof.c -o sizeof -Wall
+  779  ./sizeof
+  780  ll zip
+  781  ll *.c
+  782  mv radn.c rand.c
+  783  cp *.c zip
+  784  ll zip
+  785  cd zip
+  786  ll
+  787  gzip *.c
+  788  ll
+  789  unzip *
+  790  ll
+  791  gunzip *.gz
+  792  ll
+  793  man gzip
+  794  gzip *.c -o c.gz
+  795  cat *.c |gzip
+  796  ll
+  797  cat *.c
+  798  cat *.c ||gzip
+  799  gzip <cat *.c
+  800  gzip | cat *.c
+  801  ll
+  802  cd ..
+  803  ll
+  804  cp arr.c list.c
+  805  vi list.c
+  806  indent list.c
+  807  vi list.c
+  808  ll
+  809  vi list.c
+  810  indent list.c
+  811  vi list.c
+  812  indent list.c
+  813  vi list.c
+  814  indent list.c
+  815  vi list.c
+  816  gcc list.c
+  817  :wq
+  818  vi list.c
+  819  gcc list.c
+  820  ll
+  821  cd 
+  822  ll
+  823  vi .viminfo 
+  824  locate .vimrc
+  825  ls /etc
+  826  ls /etc/.vim*
+  827  ls /
+  828  locate vim
+  829  ll
+  830  vi list.c
+  831  cd pg
+  832  vi list.c
+  833  gcc list.c
+  834  vi list.c
+  835  gcc list.c
+  836  ll
+  837  ./a.out
+  838  ll
+  839  ls
+  840  vi list.c
+  841  gcc list.c -o list
+  842  ll
+  843  ./list
+  844  vi list.c
+  845  gcc list.c -o list
+  846  ./list
+  847  ll
+  848  vi list.c
+  849  indent list.c
+  850  less list.c
+  851  gcc list.c -o list
+  852  vi list.c
+  853  gcc list.c -o list
+  854  ./list
+  855  sizeof
+  856  ./sizeof
+  857  vi list.c
+  858  ./sizeof
+  859  vi list.c
+  860  gcc list.c -o list
+  861  vi list.c
+  862  gcc list.c -o list
+  863  vi list.c
+  864  gcc list.c -o list
+  865  ./list
+  866  vi list.c
+  867  gcc list.c -o list
+  868  vi list.c
+  869  gcc list.c -o list
+  870  ./list
+  871  vi list.c
+  872  gcc list.c -o list
+  873  ./list
+  874  gcc list.c -o list
+  875  vi list.c
+  876  gcc list.c -o list
+  877  ./list
+  878  vi list.c
+  879  gcc list.c -o list
+  880  ./list
+  881  clear
+  882  ./list
+  883  vi list.c
+  884  indent list.c
+  885  gcc list.c -o list
+  886  ./list
+  887  vi list.c
+  888  indent list.c
+  889  gcc list.c -o list
+  890  ./list
+  891  :wq
+  892  vi list.c
+  893  indent list.c
+  894  gcc list.c -o list
+  895  ./list
+  896  vi list.c
+  897  gcc list.c -o list
+  898  vi list.c
+  899  gcc list.c -o list
+  900  locate stdio.h
+  901  vi stdio.h
+  902  gcc list.c -o list
+  903  ./list
+  904  vi list.c
+  905  gcc list.c -o list
+  906  vi list.c
+  907  gcc list.c -o list
+  908  clear
+  909  gcc list.c -o list
+  910  vi list.c
+  911  gcc list.c -o list
+  912  ./list
+  913  vi list.c
+  914  gcc list.c -o list
+  915  ./list
+  916  clear
+  917  dir
+  918  ll
+  919  ll -t
+  920  indent *.c
+  921  vi list.c
+  922  indent list.c
+  923  gcc list.c -o list
+  924  vi list.c
+  925  gcc list.c -o list
+  926  vi list.c
+  927  gcc list.c -o list
+  928  ./list
+  929  vi list.c
+  930  indent list.c
+  931  vi list.c
+  932  indent list.c
+  933  vi list.c
+  934  indent list.c
+  935  vi list.c
+  936  indent list.c
+  937  vi list.c
+  938  indent list.c
+  939  vi list.c
+  940  indent list.c
+  941  vi list.c
+  942  indent list.c
+  943  vi list.c
+  944  indent list.c
+  945  vi list.c
+  946  indent list.c
+  947  vi list.c
+  948  indent list.c
+  949  vi list.c
+  950  indent list.c
+  951  vi list.c
+  952  indent list.c
+  953  vi list.c
+  954  indent list.c
+  955  vi list.c
+  956  indent list.c
+  957  vi list.c
+  958  indent list.c
+  959  vi list.c
+  960  indent list.c
+  961  vi list.c
+  962  indent list.c
+  963  gcc list.c -o list
+  964  indent list.c
+  965  vi list.c
+  966  indent list.c
+  967  gcc list.c -o list
+  968  vi list.c
+  969  gcc list.c -o list
+  970  vi list.c
+  971  indent list.c
+  972  gcc list.c -o list
+  973  ./list
+  974  exit
+  975  cd pg
+  976  ll
+  977  vi list.c
+  978  indent list.c
+  979  gcc list.c -o list
+  980  ./list
+  981  vi list.c
+  982  indent list.c
+  983  gcc list.c -o list
+  984  ./list
+  985  vi list.c
+  986  indent list.c
+  987  ./list
+  988  vi list.c
+  989  indent list.c
+  990  ./list
+  991  indent list.c
+  992  gcc list.c -o list
+  993  ./list
+  994  ll
+  995  less rand.c
+  996  vi list.c
+  997  indent list.c
+  998  gcc list.c -o list
+  999  ./list
+ 1000  vi list.c
+ 1001  indent list.c
+ 1002  vi list.c
+ 1003  indent list.c
+ 1004  gcc list.c -o list
+ 1005  ./list
+ 1006  ll
+ 1007  ls
+ 1008  la
+ 1009  ll
+ 1010  vs
+ 1011  ll
+ 1012  dir
+ 1013  vi list.c
+ 1014  indent list.c
+ 1015  gcc list.c -o list
+ 1016  vi list.c
+ 1017  gcc list.c -o list
+ 1018  vi list.c
+ 1019  gcc list.c -o list
+ 1020  vi list.c
+ 1021  gcc list.c -o list
+ 1022  ./list
+ 1023  ll
+ 1024  number
+ 1025  free -ih
+ 1026  free -lh
+ 1027  ll
+ 1028  vi list.c
+ 1029  indent list.c
+ 1030  gcc list.c -o list
+ 1031  ./list
+ 1032  ll
+ 1033  vi list.c
+ 1034  indent list.c
+ 1035  gcc list.c -o list
+ 1036  vi list.c
+ 1037  indent list.c
+ 1038  less list.c
+ 1039  gcc list.c -o list
+ 1040  ./list
+ 1041  ll
+ 1042  ls
+ 1043  dir
+ 1044  less list.c
+ 1045  vi list.c
+ 1046  indent list.c
+ 1047  less list.c
+ 1048  vi list.c
+ 1049  indent list.c
+ 1050  gcc list.c -o list
+ 1051  vi list.c
+ 1052  gcc list.c -o list
+ 1053  vi list.c
+ 1054  gcc list.c -o list
+ 1055  clear
+ 1056  gcc list.c -o list
+ 1057  clear
+ 1058  vi list.c
+ 1059  gcc list.c -o list
+ 1060  vi list.c
+ 1061  gcc list.c -o list
+ 1062  vi list.c
+ 1063  indent list.c
+ 1064  gcc list.c -o list
+ 1065  vi list.c
+ 1066  gcc list.c -o list
+ 1067  ./list
+ 1068  vi list.c
+ 1069  indent list.c
+ 1070  gcc list.c -o list
+ 1071  ./list
+ 1072  vi list.c
+ 1073  gcc list.c -o list
+ 1074  ./list
+ 1075  routel www.sina.com.cn
+ 1076  routel
+ 1077  ls history
+ 1078  ls hoistory.txt
+ 1079  history >> history.txt
+   80  lsusb
+   81  lsns
+   82  lspci
+   83  lspcmcia
+   84  free -lh
+   85  netstat
+   86  top
+   87  du
+   88  df
+   89  df /
+   90  df -lh
+   91  free -ilh
+   92  free -l
+   93  free -lh
+   94  ll
+   95  ls
+   96  netstat -i
+   97  arp
+   98  ping www.sina.com.cn
+   99  vi bincom.txt 
+  100  date
+  101  uptime
+  102  exit
+  103  w
+  104  who
+  105  whoami
+  106  i
+  107  stty
+  108  tty
+  109  ps
+  110  ps -aux
+  111  ps -al
+  112  pid
+  113  id
+  114  nano
+  115  namei
+  116  man namei
+  117  ll
+  118  ls
+  119  la
+  120  ps
+  121  date
+  122  uptime
+  123  ll
+  124  ls
+  125  la
+  126  ll
+  127  ls
+  128  la
+  129  ls -l
+  130  less lsmod.txt
+  131  less mod.txt 
+  132  uptime
+  133  uptime
+  134  man reboot
+  135  reboot -p
+  136  set
+  137  env
+  138  ll
+  139  env >env.txt
+  140  env
+  141  ll
+  142  ls
+  143  la
+  144  man free
+  145  free -lh
+  146  ps
+  147  ps -aux
+  148  ps -a
+  149  ps -al
+  150  man ps
+  151  ps -aux
+  152  ps -al
+  153  uid
+  154  uname
+  155  users
+  156  uudi
+  157  uuid
+  158  su root
+  159  ll
+  160  pwd
+  161  ll
+  162  exit
+  163  ll
+  164  free -lh
+  165  netstat -i
+  166  route
+  167  routel
+  168  ll
+  169  ls
+  170  lc
+  171  ll
+  172  ls
+  173  uname
+  174  free -l
+  175  free -lh
+  176  lsmem
+  177  tree
+  178  ll
+  179  time
+  180  cal
+  181  ll
+  182  ls
+  183  ls /bin
+  184  ll
+  185  la
+  186  dir
+  187  man netstat
+  188  netstat -n
+  189  netstat -i
+  190  netstat -r
+  191  netstat -i -w
+  192  netstat -g
+  193  man netstate
+  194  man netstat
+  195  netstat -e
+  196  man netstat
+  197  netstat -ec
+  198  netstat -ew
+  199  netstat -ewg
+  200  netstat -ewgo
+  201  netstat -ewgor
+  202  ping 192.168.1.0
+  203  ping 127.0.0.0
+  204  ping 127.0.0.1
+  205  dns
+  206  ns
+  207  ll
+  208  ls
+  209  la
+  210  man free
+  211  cache
+  212  free cache
+  213  man free
+  214  free total used cache
+  215  gcc
+  216  ls
+  217  mkdir pg
+  218  cd pg
+  219  vi arr.c
+  220  ls
+  221  gcc arr.c
+  222  ll
+  223  a
+  224  ./a.out 
+  225  vi arr.c
+  226  gcc arr.c
+  227  vi arr.c
+  228  gcc arr.c 
+  229  a
+  230  a.out
+  231  ./a.out
+  232  vi arr.c
+  233  gcc arr.c 
+  234  ./a.out
+  235  vi arr.c
+  236  gcc arr.c
+  237  ./a.out
+  238  vi arr.c 
+  239  gcc arr.c
+  240  ./a.out
+  241  vi arr.c 
+  242  gcc arr.c
+  243  ./a.out
+  244  vi arr.c 
+  245  gcc arr.c
+  246  ./a.out
+  247  vi arr.c 
+  248  gcc arr.c
+  249  ./a.out
+  250  vi arr.c 
+  251  gcc arr.c
+  252  ./a.out
+  253  vi arr.c 
+  254  ./a.out
+  255  vi arr.c 
+  256  gcc arr.c
+  257  ./a.out
+  258  vi arr.c 
+  259  gcc arr.c
+  260  ./a.out
+  261  vi arr.c 
+  262  gcc arr.c
+  263  ./a.out
+  264  vi arr.c 
+  265  indent arr.c
+  266  su root
+  267  ll
+  268  less arr.c
+  269  gcc arr.c
+  270  ll
+  271  file ./a.out
+  272  ll -h
+  273  man file
+  274  less arr.c
+  275  vi arr.c
+  276  gcc arr.c
+  277  ./a.out
+  278  vi arr.c
+  279  gcc arr.c
+  280  ./a.out
+  281  vi arr.c
+  282  gcc arr.c
+  283  :q
+  284  vi arr.c
+  285  gcc arr.c
+  286  :q
+  287  vi arr.c
+  288  gcc arr.c
+  289  vi arr.c
+  290  gcc arr.c
+  291  vi arr.c
+  292  gcc arr.c
+  293  vi arr.c
+  294  gcc arr.c
+  295  vi arr.c
+  296  gcc arr.c
+  297  vi arr.c
+  298  gcc arr.c
+  299  vi arr.c
+  300  gcc arr.c
+  301  vi arr.c
+  302  gcc arr.c
+  303  vi arr.c
+  304  gcc arr.c
+  305  vi arr.c
+  306  gcc arr.c
+  307  indent arr.c
+  308  ll
+  309  sudo rm arr.c~
+  310  gcc arr.c
+  311  indent arr.c
+  312  less arr.c
+  313  ll
+  314  ll -h
+  315  ll
+  316  arp
+  317  man arp
+  318  arp -a
+  319  man arp
+  320  arp -v
+  321  arp -avl
+  322  arp -va
+  323  routel
+  324  dump a.out
+  325  sudo apt install dump
+  326  dump a.out
+  327  dume -E a.out
+  328  hexdump a.out 
+  329  hexdump a.out |less
+  330  nasm
+  331  sudo apt install nasm
+  332  masm
+  333  tasm
+  334  sudo apt install yasm
+  335  nasm arr.c
+  336  man gcc
+  337  ll
+  338  ls
+  339  la
+  340  ll
+  341  indent arr.c
+  342  less arr.c
+  343  vi arr.c
+  344  indent arr.c
+  345  gcc arr.c
+  346  vi arr.c
+  347  indent arr.c
+  348  gcc arr.c
+  349  less arr.c
+  350  vi arr.c
+  351  less arr.c
+  352  indent arr.c
+  353  gcc arr.c
+  354  ./a.out
+  355  vi arr.c
+  356  gcc arr.c
+  357  clear
+  358  history
+  359  ll
+  360  pwd
+  361  cd ..
+  362  history >>history.txt 
+  363  ll
+  364  sudo history >>history.txt 
+  365  su root
+  366  ll
+  367  cd pg
+  368  ls
+  369  dir
+  370  ll
+  371  vi arr.c
+  372  indent arr.c
+  373  gcc arr.c
+  374  less arr.c
+  375  vi arr.c
+  376  indent arr.c
+  377  vi arr.c
+  378  indent arr.c
+  379  gcc arr.c
+  380  vi arr.c
+  381  indent arr.c
+  382  gcc arr.c
+  383  vi arr.c
+  384  indent arr.c
+  385  gcc arr.c
+  386  ./a.out
+  387  less arr.c
+  388  vi arr.c
+  389  indent arr.c
+  390  gcc arr.c
+  391  ./a.out
+  392  ll
+  393  pwd
+  394  uname
+  395  users
+  396  time
+  397  date
+  398  cal
+  399  uptime
+  400  free
+  401  free -lha
+  402  free -lh
+  403  ps
+  404  netstat
+  405  netstat -i
+  406  route
+  407  routel
+  408  arp
+  409  lsmem
+  410  lscpu
+  411  df
+  412  df -lh
+  413  ps
+  414  ps -aux
+  415  stty
+  416  tty
+  417  tty -a
+  418  tty -l
+  419  man tty
+  420  tty -s
+  421  tty
+  422  id
+  423  uid
+  424  demsg
+  425  dmesg
+  426  cd ..
+  427  ls
+  428  ll
+  429  dmesg >dmesg.txt
+  430  less dmesg.txt 
+  431  ll /proc
+  432  ls /proc
+  433  less /proc/partitions 
+  434  file ./a.out
+  435  pwd
+  436  cd pg
+  437  file ./a.out
+  438  su root
+  439  ll
+  440  ls
+  441  lc
+  442  lcc
+  443  cd pg
+  444  ll
+  445  ls
+  446  indent arr.c
+  447  less arr.c
+  448  ll
+  449  ls
+  450  ./a.out
+  451  vi arr.c
+  452  teim
+  453  time
+  454  route
+  455  arp -a
+  456  arp -i
+  457  arp -e
+  458  arp -ev
+  459  cal
+  460  uptime
+  461  name
+  462  time
+  463  date
+  464  lscpu
+  465  lsipc
+  466  lsipc -h
+  467  man lsipc
+  468  lsipc -i -g
+  469  lsipc -ig
+  470  man lsipc
+  471  lsipc -g
+  472  man lsipc
+  473  lsipc -gq
+  474  lsmod
+  475  free -lh
+  476  pwd
+  477  cd pg
+  478  ll
+  479  dir
+  480  vi arr.c
+  481  indent arr.c
+  482  gcc arr.c
+  483  ./a.out
+  484  vi arr.c
+  485  gcc arr.c
+  486  vi arr.c
+  487  gcc arr.c
+  488  ./a.out
+  489  ll
+  490  ./a.out
+  491  man gcc
+  492  gcc arr.c -o arr
+  493  arr
+  494  ./arr
+  495  ll
+  496  indent arr.c
+  497  less arr.c
+  498  ll
+  499  ls
+  500  la
+  501  free -lh
+  502  uname
+  503  test
+  504  ll
+  505  vi arr.c
+  506  indent arr.c
+  507  gcc -o two
+  508  gcc arr.c -o tow
+  509  mv tow two
+  510  ./two
+  511  cp arr.c rand
+  512  mv rand rand.c
+  513  vi rand.c
+  514  gcc rand.c -o two
+  515  ./two
+  516  vi rand.c
+  517  less rand.c
+  518  indent rand.c
+  519  gcc rand.c -o two
+  520  two
+  521  ./two
+  522  exit
+  523  ll
+  524  cd gp
+  525  cd pg
+  526  ll
+  527  vi rand.c
+  528  indent rand.c
+  529  gcc rand.c -o two
+  530  ./two
+  531  vi rand.c
+  532  gcc rand.c -o two
+  533  ./two
+  534  vi rand.c
+  535  gcc rand.c -o two
+  536  vi rand.c
+  537  gcc rand.c -o two
+  538  vi rand.c
+  539  gcc rand.c -o two
+  540  vi rand.c
+  541  gcc rand.c -o two
+  542  ./two
+  543  ll
+  544  rm two
+  545  gcc rand.c -o two
+  546  ./two
+  547  indent rand.c
+  548  less rand.c
+  549  ll
+  550  ls
+  551  la
+  552  number
+  553  ll
+  554  ls
+  555  la
+  556  ping www.sina.com.cn
+  557  tracert www.sina.com.cn
+  558  traceroute6 www.sina.com.cn
+  559  tracepath www.sina.com.cn
+  560  route print
+  561  route -v
+  562  tracepath www.sina.com.cn
+  563  hostname
+  564  ipconfig /all
+  565  sudo apt install ifconfig
+  566  sudo apt install net-tools
+  567  ifconfig
+  568  ifconfig /all
+  569  ifconfig -a
+  570  fqdn
+  571  nslookup
+  572  arp -a
+  573  nslookup
+  574  ll
+  575  vi rand.c
+  576  time
+  577  date
+  578  cal
+  579  uptime
+  580  uname
+  581  hostname
+  582  users
+  583  uid
+  584  id
+  585  ll
+  586  ls
+  587  ll
+  588  ls
+  589  la
+  590  cd pg
+  591  ll
+  592  ls
+  593  la
+  594  indent arr.c
+  595  indent *.c
+  596  indent *.*
+  597  nslookup
+  598  nsenter
+  599  ping www.sina.com.cn
+  600  cd pg
+  601  ll
+  602  cp rand.c sizeof.c
+  603  vi sizeof.c 
+  604  indent sizeof.c
+  605  gcc sizeof.c -o sizeof
+  606  ./sizeof
+  607  gcc sizeof.c -Wall -o sizeof
+  608  ./sizeof
+  609  ll
+  610  ls *.c
+  611  ll *.c
+  612  clear
+  613  cd ..
+  614  history >>history.txt 
+  615  sudo history >>history.txt 
+  616  root
+  617  sudo root
+  618  su root
+  619  history >history1.txt
+  620  su root
+  621  ll
+  622  cat history*.txt
+  623  cat history.txt history1.txt >history.txt
+  624  su root
+  625  ll
+  626  cd pg
+  627  ll
+  628  ls
+  629  ./two
+  630  ping www.sina.com.cn
+  631  nslookup
+  632  ll
+  633  free -lh
+  634  time
+  635  date
+  636  cal
+  637  uptime
+  638  mem
+  639  memset
+  640  meminfo
+  641  lsmem
+  642  ll
+  643  lsmod
+  644  lsmod|more
+  645  ls ..
+  646  vi sizeof.c
+  647  gcc sizeof.c -Wall -o sizeof
+  648  vi sizeof
+  649  vi sizeof.c
+  650  gcc sizeof.c -Wall -o sizeof
+  651  vi sizeof.c
+  652  gcc sizeof.c -Wall -o sizeof
+  653  vi sizeof.c
+  654  gcc sizeof.c -Wall -o sizeof
+  655  ./sizeof
+  656  netstat -nat
+  657  netstat -i
+  658  man netstat
+  659  netstat -r
+  660  netstat -g
+  661  netstat -s
+  662  netstat -r
+  663  netstat -s
+  664  netstat -g
+  665  man netstat
+  666  netstat -s
+  667  netstat -M
+  668  netstat -m
+  669  netstat -natu
+  670  netstat -atu
+  671  lsof -i:port
+  672  sar -n SOCK
+  673  sudo apt install sysstat
+  674  lsof
+  675  lsof -i
+  676  lsof
+  677  man lsof
+  678  lslogins
+  679  lslogins|less
+  680  man lslogins
+  681  lslogins -l
+  682  man lslogins
+  683  lslogins -lyan
+  684  lslogins -lroot
+  685  man netstat
+  686  netstat -aop
+  687  lsof -t
+  688  netstat -aut
+  689  netstat -aute
+  690  netstat -aute -c 5
+  691  ll
+  692  dir
+  693  free -lh
+  694  vi sizeof.c
+  695  indent sizeof.c
+  696  less sizeof.c
+  697  gcc sizeof.c -Wall -o size
+  698  ./size
+  699  time
+  700  date
+  701  cal
+  702  uptime
+  703  logins
+  704  login
+  705  uname
+  706  usermod
+  707  uuidd
+  708  udi
+  709  uid
+  710  ping www.sina.com.cn
+  711  ping -a 120.192.83.125
+  712  ping -n 1 -r 9 www.sina.com.cn
+  713  ping -r 9 www.sina.com.cn
+  714  ping -r 9
+  715  ! indent
+  716  locate stdio.h
+  717  less /usr/include/x86_64-linux-gnu/bits/stdio.h
+  718  less /usr/include/x86_64-linux-gnu/bits/stdio.h -l
+  719  locate stdio.h -l
+  720  q
+  721  echo $path
+  722  echo $PATH
+  723  which stdio.h
+  724  whereis stdio.h
+  725  ll
+  726  locate stdio.h
+  727  indent *.c
+  728  ll
+  729  ls *.c
+  730  ll *.c
+  731  less sizeof.c
+  732  free -ih
+  733  free -lh
+  734  history
+  735  du 
+  736  df
+  737  df -h
+  738  ll
+  739  dir
+  740  ps
+  741  stty
+  742  tty
+  743  vi sizeof.c
+  744  gcc sizeof.c -o sizeof
+  745  indent sizeof.c
+  746  gcc sizeof.c -o sizeof
+  747  ./sizeof
+  748  vi sizeof.c
+  749  indent sizeof.c
+  750  gcc sizeof.c -o sizeof -Wall
+  751  ./sizeof
+  752  vi sizeof.c
+  753  gcc sizeof.c -o sizeof -Wall
+  754  ./sizeof
+  755  vi sizeof.c
+  756  gcc sizeof.c -o sizeof -Wall
+  757  ./sizeof
+  758  free -lh
+  759  ll
+  760  gzip
+  761  gzip -h
+  762  gzip *.c
+  763  ll
+  764  ls *.gz
+  765  rm *.gz
+  766  ll
+  767  gzip -N c.gz *.c
+  768  gzip -Nc.gz *.c
+  769  man gzip
+  770  ll
+  771  mkdir zip
+  772  cp *.c zip
+  773  cd ll *.c
+  774  mv arr.c~ arr.c
+  775  mv rand.c~ radn.c
+  776  mv sizeof.c~ sizeof.c
+  777  ll
+  778  gcc sizeof.c -o sizeof -Wall
+  779  ./sizeof
+  780  ll zip
+  781  ll *.c
+  782  mv radn.c rand.c
+  783  cp *.c zip
+  784  ll zip
+  785  cd zip
+  786  ll
+  787  gzip *.c
+  788  ll
+  789  unzip *
+  790  ll
+  791  gunzip *.gz
+  792  ll
+  793  man gzip
+  794  gzip *.c -o c.gz
+  795  cat *.c |gzip
+  796  ll
+  797  cat *.c
+  798  cat *.c ||gzip
+  799  gzip <cat *.c
+  800  gzip | cat *.c
+  801  ll
+  802  cd ..
+  803  ll
+  804  cp arr.c list.c
+  805  vi list.c
+  806  indent list.c
+  807  vi list.c
+  808  ll
+  809  vi list.c
+  810  indent list.c
+  811  vi list.c
+  812  indent list.c
+  813  vi list.c
+  814  indent list.c
+  815  vi list.c
+  816  gcc list.c
+  817  :wq
+  818  vi list.c
+  819  gcc list.c
+  820  ll
+  821  cd 
+  822  ll
+  823  vi .viminfo 
+  824  locate .vimrc
+  825  ls /etc
+  826  ls /etc/.vim*
+  827  ls /
+  828  locate vim
+  829  ll
+  830  vi list.c
+  831  cd pg
+  832  vi list.c
+  833  gcc list.c
+  834  vi list.c
+  835  gcc list.c
+  836  ll
+  837  ./a.out
+  838  ll
+  839  ls
+  840  vi list.c
+  841  gcc list.c -o list
+  842  ll
+  843  ./list
+  844  vi list.c
+  845  gcc list.c -o list
+  846  ./list
+  847  ll
+  848  vi list.c
+  849  indent list.c
+  850  less list.c
+  851  gcc list.c -o list
+  852  vi list.c
+  853  gcc list.c -o list
+  854  ./list
+  855  sizeof
+  856  ./sizeof
+  857  vi list.c
+  858  ./sizeof
+  859  vi list.c
+  860  gcc list.c -o list
+  861  vi list.c
+  862  gcc list.c -o list
+  863  vi list.c
+  864  gcc list.c -o list
+  865  ./list
+  866  vi list.c
+  867  gcc list.c -o list
+  868  vi list.c
+  869  gcc list.c -o list
+  870  ./list
+  871  vi list.c
+  872  gcc list.c -o list
+  873  ./list
+  874  gcc list.c -o list
+  875  vi list.c
+  876  gcc list.c -o list
+  877  ./list
+  878  vi list.c
+  879  gcc list.c -o list
+  880  ./list
+  881  clear
+  882  ./list
+  883  vi list.c
+  884  indent list.c
+  885  gcc list.c -o list
+  886  ./list
+  887  vi list.c
+  888  indent list.c
+  889  gcc list.c -o list
+  890  ./list
+  891  :wq
+  892  vi list.c
+  893  indent list.c
+  894  gcc list.c -o list
+  895  ./list
+  896  vi list.c
+  897  gcc list.c -o list
+  898  vi list.c
+  899  gcc list.c -o list
+  900  locate stdio.h
+  901  vi stdio.h
+  902  gcc list.c -o list
+  903  ./list
+  904  vi list.c
+  905  gcc list.c -o list
+  906  vi list.c
+  907  gcc list.c -o list
+  908  clear
+  909  gcc list.c -o list
+  910  vi list.c
+  911  gcc list.c -o list
+  912  ./list
+  913  vi list.c
+  914  gcc list.c -o list
+  915  ./list
+  916  clear
+  917  dir
+  918  ll
+  919  ll -t
+  920  indent *.c
+  921  vi list.c
+  922  indent list.c
+  923  gcc list.c -o list
+  924  vi list.c
+  925  gcc list.c -o list
+  926  vi list.c
+  927  gcc list.c -o list
+  928  ./list
+  929  vi list.c
+  930  indent list.c
+  931  vi list.c
+  932  indent list.c
+  933  vi list.c
+  934  indent list.c
+  935  vi list.c
+  936  indent list.c
+  937  vi list.c
+  938  indent list.c
+  939  vi list.c
+  940  indent list.c
+  941  vi list.c
+  942  indent list.c
+  943  vi list.c
+  944  indent list.c
+  945  vi list.c
+  946  indent list.c
+  947  vi list.c
+  948  indent list.c
+  949  vi list.c
+  950  indent list.c
+  951  vi list.c
+  952  indent list.c
+  953  vi list.c
+  954  indent list.c
+  955  vi list.c
+  956  indent list.c
+  957  vi list.c
+  958  indent list.c
+  959  vi list.c
+  960  indent list.c
+  961  vi list.c
+  962  indent list.c
+  963  gcc list.c -o list
+  964  indent list.c
+  965  vi list.c
+  966  indent list.c
+  967  gcc list.c -o list
+  968  vi list.c
+  969  gcc list.c -o list
+  970  vi list.c
+  971  indent list.c
+  972  gcc list.c -o list
+  973  ./list
+  974  exit
+  975  cd pg
+  976  ll
+  977  vi list.c
+  978  indent list.c
+  979  gcc list.c -o list
+  980  ./list
+  981  vi list.c
+  982  indent list.c
+  983  gcc list.c -o list
+  984  ./list
+  985  vi list.c
+  986  indent list.c
+  987  ./list
+  988  vi list.c
+  989  indent list.c
+  990  ./list
+  991  indent list.c
+  992  gcc list.c -o list
+  993  ./list
+  994  ll
+  995  less rand.c
+  996  vi list.c
+  997  indent list.c
+  998  gcc list.c -o list
+  999  ./list
+ 1000  vi list.c
+ 1001  indent list.c
+ 1002  vi list.c
+ 1003  indent list.c
+ 1004  gcc list.c -o list
+ 1005  ./list
+ 1006  ll
+ 1007  ls
+ 1008  la
+ 1009  ll
+ 1010  vs
+ 1011  ll
+ 1012  dir
+ 1013  vi list.c
+ 1014  indent list.c
+ 1015  gcc list.c -o list
+ 1016  vi list.c
+ 1017  gcc list.c -o list
+ 1018  vi list.c
+ 1019  gcc list.c -o list
+ 1020  vi list.c
+ 1021  gcc list.c -o list
+ 1022  ./list
+ 1023  ll
+ 1024  number
+ 1025  free -ih
+ 1026  free -lh
+ 1027  ll
+ 1028  vi list.c
+ 1029  indent list.c
+ 1030  gcc list.c -o list
+ 1031  ./list
+ 1032  ll
+ 1033  vi list.c
+ 1034  indent list.c
+ 1035  gcc list.c -o list
+ 1036  vi list.c
+ 1037  indent list.c
+ 1038  less list.c
+ 1039  gcc list.c -o list
+ 1040  ./list
+ 1041  ll
+ 1042  ls
+ 1043  dir
+ 1044  less list.c
+ 1045  vi list.c
+ 1046  indent list.c
+ 1047  less list.c
+ 1048  vi list.c
+ 1049  indent list.c
+ 1050  gcc list.c -o list
+ 1051  vi list.c
+ 1052  gcc list.c -o list
+ 1053  vi list.c
+ 1054  gcc list.c -o list
+ 1055  clear
+ 1056  gcc list.c -o list
+ 1057  clear
+ 1058  vi list.c
+ 1059  gcc list.c -o list
+ 1060  vi list.c
+ 1061  gcc list.c -o list
+ 1062  vi list.c
+ 1063  indent list.c
+ 1064  gcc list.c -o list
+ 1065  vi list.c
+ 1066  gcc list.c -o list
+ 1067  ./list
+ 1068  vi list.c
+ 1069  indent list.c
+ 1070  gcc list.c -o list
+ 1071  ./list
+ 1072  vi list.c
+ 1073  gcc list.c -o list
+ 1074  ./list
+ 1075  routel www.sina.com.cn
+ 1076  routel
+ 1077  ls history
+ 1078  ls hoistory.txt
+ 1079  history >> history.txt
+    1  sudo passwd root
+    2  su root
+    3  su rooty
+    4  su root
+    5  top
+    6  su root
+    7  lscpu
+    8  su root
+    9  exit
+   10  su root
+   11  exit
+   12  su root
+   13  dir 
+   14  ll
+   15  ls
+   16  lv
+   17  vi initrdls.txt 
+   18  fstype
+   19  less initrdls.txt 
+   20  uname
+   21  name
+   22  w
+   23  who
+   24  whoami
+   25  whereis
+   26  ll
+   27  ls
+   28  ll
+   29  netstat
+   30  ip
+   31  ip -adress
+   32  ip OBJECT adress
+   33  ip adress
+   34  ip address
+   35  dir
+   36  ping www.sina.com.cn
+   37  uname
+   38  lscpu
+   39  ll
+   40  ls
+   41  less history.txt 
+   42  less lsmod.txt 
+   43  ls mod.txt 
+   44  less mod.txt 
+   45  reboot
+   46  clear
+   47  ls
+   48  pwd
+   49  free -lh
+   50  man free
+   51  total
+   52  buffer
+   53  sudo apt install buffer
+   54  man free
+   55  free -lh
+   56  man free
+   57  free -lhwt
+   58  lscpu
+   59  clear
+   60  lscpu
+   61  less /proc/cpuinfo 
+   62  time
+   63  date
+   64  less
+   65  ls
+   66  ll
+   67  la
+   68  lsmem
+   69  reboot
+   70  linuxlogo
+   71  liunx64
+   72  linux-version 
+   73  version
+   74  syslinux
+   75  lscpu
+   76  clear
+   77  lscpu
+   78  lsmem
+   79  lshw
+   80  lsusb
+   81  lsns
+   82  lspci
+   83  lspcmcia
+   84  free -lh
+   85  netstat
+   86  top
+   87  du
+   88  df
+   89  df /
+   90  df -lh
+   91  free -ilh
+   92  free -l
+   93  free -lh
+   94  ll
+   95  ls
+   96  netstat -i
+   97  arp
+   98  ping www.sina.com.cn
+   99  vi bincom.txt 
+  100  date
+  101  uptime
+  102  exit
+  103  w
+  104  who
+  105  whoami
+  106  i
+  107  stty
+  108  tty
+  109  ps
+  110  ps -aux
+  111  ps -al
+  112  pid
+  113  id
+  114  nano
+  115  namei
+  116  man namei
+  117  ll
+  118  ls
+  119  la
+  120  ps
+  121  date
+  122  uptime
+  123  ll
+  124  ls
+  125  la
+  126  ll
+  127  ls
+  128  la
+  129  ls -l
+  130  less lsmod.txt
+  131  less mod.txt 
+  132  uptime
+  133  uptime
+  134  man reboot
+  135  reboot -p
+  136  set
+  137  env
+  138  ll
+  139  env >env.txt
+  140  env
+  141  ll
+  142  ls
+  143  la
+  144  man free
+  145  free -lh
+  146  ps
+  147  ps -aux
+  148  ps -a
+  149  ps -al
+  150  man ps
+  151  ps -aux
+  152  ps -al
+  153  uid
+  154  uname
+  155  users
+  156  uudi
+  157  uuid
+  158  su root
+  159  ll
+  160  pwd
+  161  ll
+  162  exit
+  163  ll
+  164  free -lh
+  165  netstat -i
+  166  route
+  167  routel
+  168  ll
+  169  ls
+  170  lc
+  171  ll
+  172  ls
+  173  uname
+  174  free -l
+  175  free -lh
+  176  lsmem
+  177  tree
+  178  ll
+  179  time
+  180  cal
+  181  ll
+  182  ls
+  183  ls /bin
+  184  ll
+  185  la
+  186  dir
+  187  man netstat
+  188  netstat -n
+  189  netstat -i
+  190  netstat -r
+  191  netstat -i -w
+  192  netstat -g
+  193  man netstate
+  194  man netstat
+  195  netstat -e
+  196  man netstat
+  197  netstat -ec
+  198  netstat -ew
+  199  netstat -ewg
+  200  netstat -ewgo
+  201  netstat -ewgor
+  202  ping 192.168.1.0
+  203  ping 127.0.0.0
+  204  ping 127.0.0.1
+  205  dns
+  206  ns
+  207  ll
+  208  ls
+  209  la
+  210  man free
+  211  cache
+  212  free cache
+  213  man free
+  214  free total used cache
+  215  gcc
+  216  ls
+  217  mkdir pg
+  218  cd pg
+  219  vi arr.c
+  220  ls
+  221  gcc arr.c
+  222  ll
+  223  a
+  224  ./a.out 
+  225  vi arr.c
+  226  gcc arr.c
+  227  vi arr.c
+  228  gcc arr.c 
+  229  a
+  230  a.out
+  231  ./a.out
+  232  vi arr.c
+  233  gcc arr.c 
+  234  ./a.out
+  235  vi arr.c
+  236  gcc arr.c
+  237  ./a.out
+  238  vi arr.c 
+  239  gcc arr.c
+  240  ./a.out
+  241  vi arr.c 
+  242  gcc arr.c
+  243  ./a.out
+  244  vi arr.c 
+  245  gcc arr.c
+  246  ./a.out
+  247  vi arr.c 
+  248  gcc arr.c
+  249  ./a.out
+  250  vi arr.c 
+  251  gcc arr.c
+  252  ./a.out
+  253  vi arr.c 
+  254  ./a.out
+  255  vi arr.c 
+  256  gcc arr.c
+  257  ./a.out
+  258  vi arr.c 
+  259  gcc arr.c
+  260  ./a.out
+  261  vi arr.c 
+  262  gcc arr.c
+  263  ./a.out
+  264  vi arr.c 
+  265  indent arr.c
+  266  su root
+  267  ll
+  268  less arr.c
+  269  gcc arr.c
+  270  ll
+  271  file ./a.out
+  272  ll -h
+  273  man file
+  274  less arr.c
+  275  vi arr.c
+  276  gcc arr.c
+  277  ./a.out
+  278  vi arr.c
+  279  gcc arr.c
+  280  ./a.out
+  281  vi arr.c
+  282  gcc arr.c
+  283  :q
+  284  vi arr.c
+  285  gcc arr.c
+  286  :q
+  287  vi arr.c
+  288  gcc arr.c
+  289  vi arr.c
+  290  gcc arr.c
+  291  vi arr.c
+  292  gcc arr.c
+  293  vi arr.c
+  294  gcc arr.c
+  295  vi arr.c
+  296  gcc arr.c
+  297  vi arr.c
+  298  gcc arr.c
+  299  vi arr.c
+  300  gcc arr.c
+  301  vi arr.c
+  302  gcc arr.c
+  303  vi arr.c
+  304  gcc arr.c
+  305  vi arr.c
+  306  gcc arr.c
+  307  indent arr.c
+  308  ll
+  309  sudo rm arr.c~
+  310  gcc arr.c
+  311  indent arr.c
+  312  less arr.c
+  313  ll
+  314  ll -h
+  315  ll
+  316  arp
+  317  man arp
+  318  arp -a
+  319  man arp
+  320  arp -v
+  321  arp -avl
+  322  arp -va
+  323  routel
+  324  dump a.out
+  325  sudo apt install dump
+  326  dump a.out
+  327  dume -E a.out
+  328  hexdump a.out 
+  329  hexdump a.out |less
+  330  nasm
+  331  sudo apt install nasm
+  332  masm
+  333  tasm
+  334  sudo apt install yasm
+  335  nasm arr.c
+  336  man gcc
+  337  ll
+  338  ls
+  339  la
+  340  ll
+  341  indent arr.c
+  342  less arr.c
+  343  vi arr.c
+  344  indent arr.c
+  345  gcc arr.c
+  346  vi arr.c
+  347  indent arr.c
+  348  gcc arr.c
+  349  less arr.c
+  350  vi arr.c
+  351  less arr.c
+  352  indent arr.c
+  353  gcc arr.c
+  354  ./a.out
+  355  vi arr.c
+  356  gcc arr.c
+  357  clear
+  358  history
+  359  ll
+  360  pwd
+  361  cd ..
+  362  history >>history.txt 
+  363  ll
+  364  sudo history >>history.txt 
+  365  su root
+  366  ll
+  367  cd pg
+  368  ls
+  369  dir
+  370  ll
+  371  vi arr.c
+  372  indent arr.c
+  373  gcc arr.c
+  374  less arr.c
+  375  vi arr.c
+  376  indent arr.c
+  377  vi arr.c
+  378  indent arr.c
+  379  gcc arr.c
+  380  vi arr.c
+  381  indent arr.c
+  382  gcc arr.c
+  383  vi arr.c
+  384  indent arr.c
+  385  gcc arr.c
+  386  ./a.out
+  387  less arr.c
+  388  vi arr.c
+  389  indent arr.c
+  390  gcc arr.c
+  391  ./a.out
+  392  ll
+  393  pwd
+  394  uname
+  395  users
+  396  time
+  397  date
+  398  cal
+  399  uptime
+  400  free
+  401  free -lha
+  402  free -lh
+  403  ps
+  404  netstat
+  405  netstat -i
+  406  route
+  407  routel
+  408  arp
+  409  lsmem
+  410  lscpu
+  411  df
+  412  df -lh
+  413  ps
+  414  ps -aux
+  415  stty
+  416  tty
+  417  tty -a
+  418  tty -l
+  419  man tty
+  420  tty -s
+  421  tty
+  422  id
+  423  uid
+  424  demsg
+  425  dmesg
+  426  cd ..
+  427  ls
+  428  ll
+  429  dmesg >dmesg.txt
+  430  less dmesg.txt 
+  431  ll /proc
+  432  ls /proc
+  433  less /proc/partitions 
+  434  file ./a.out
+  435  pwd
+  436  cd pg
+  437  file ./a.out
+  438  su root
+  439  ll
+  440  ls
+  441  lc
+  442  lcc
+  443  cd pg
+  444  ll
+  445  ls
+  446  indent arr.c
+  447  less arr.c
+  448  ll
+  449  ls
+  450  ./a.out
+  451  vi arr.c
+  452  teim
+  453  time
+  454  route
+  455  arp -a
+  456  arp -i
+  457  arp -e
+  458  arp -ev
+  459  cal
+  460  uptime
+  461  name
+  462  time
+  463  date
+  464  lscpu
+  465  lsipc
+  466  lsipc -h
+  467  man lsipc
+  468  lsipc -i -g
+  469  lsipc -ig
+  470  man lsipc
+  471  lsipc -g
+  472  man lsipc
+  473  lsipc -gq
+  474  lsmod
+  475  free -lh
+  476  pwd
+  477  cd pg
+  478  ll
+  479  dir
+  480  vi arr.c
+  481  indent arr.c
+  482  gcc arr.c
+  483  ./a.out
+  484  vi arr.c
+  485  gcc arr.c
+  486  vi arr.c
+  487  gcc arr.c
+  488  ./a.out
+  489  ll
+  490  ./a.out
+  491  man gcc
+  492  gcc arr.c -o arr
+  493  arr
+  494  ./arr
+  495  ll
+  496  indent arr.c
+  497  less arr.c
+  498  ll
+  499  ls
+  500  la
+  501  free -lh
+  502  uname
+  503  test
+  504  ll
+  505  vi arr.c
+  506  indent arr.c
+  507  gcc -o two
+  508  gcc arr.c -o tow
+  509  mv tow two
+  510  ./two
+  511  cp arr.c rand
+  512  mv rand rand.c
+  513  vi rand.c
+  514  gcc rand.c -o two
+  515  ./two
+  516  vi rand.c
+  517  less rand.c
+  518  indent rand.c
+  519  gcc rand.c -o two
+  520  two
+  521  ./two
+  522  exit
+  523  ll
+  524  cd gp
+  525  cd pg
+  526  ll
+  527  vi rand.c
+  528  indent rand.c
+  529  gcc rand.c -o two
+  530  ./two
+  531  vi rand.c
+  532  gcc rand.c -o two
+  533  ./two
+  534  vi rand.c
+  535  gcc rand.c -o two
+  536  vi rand.c
+  537  gcc rand.c -o two
+  538  vi rand.c
+  539  gcc rand.c -o two
+  540  vi rand.c
+  541  gcc rand.c -o two
+  542  ./two
+  543  ll
+  544  rm two
+  545  gcc rand.c -o two
+  546  ./two
+  547  indent rand.c
+  548  less rand.c
+  549  ll
+  550  ls
+  551  la
+  552  number
+  553  ll
+  554  ls
+  555  la
+  556  ping www.sina.com.cn
+  557  tracert www.sina.com.cn
+  558  traceroute6 www.sina.com.cn
+  559  tracepath www.sina.com.cn
+  560  route print
+  561  route -v
+  562  tracepath www.sina.com.cn
+  563  hostname
+  564  ipconfig /all
+  565  sudo apt install ifconfig
+  566  sudo apt install net-tools
+  567  ifconfig
+  568  ifconfig /all
+  569  ifconfig -a
+  570  fqdn
+  571  nslookup
+  572  arp -a
+  573  nslookup
+  574  ll
+  575  vi rand.c
+  576  time
+  577  date
+  578  cal
+  579  uptime
+  580  uname
+  581  hostname
+  582  users
+  583  uid
+  584  id
+  585  ll
+  586  ls
+  587  ll
+  588  ls
+  589  la
+  590  cd pg
+  591  ll
+  592  ls
+  593  la
+  594  indent arr.c
+  595  indent *.c
+  596  indent *.*
+  597  nslookup
+  598  nsenter
+  599  cd pg
+  600  ll
+  601  cp rand.c sizeof.c
+  602  vi sizeof.c 
+  603  indent sizeof.c
+  604  gcc sizeof.c -o sizeof
+  605  ./sizeof
+  606  gcc sizeof.c -Wall -o sizeof
+  607  ./sizeof
+  608  ll
+  609  ls *.c
+  610  ll *.c
+  611  clear
+  612  cd ..
+  613  history >>history.txt 
+  614  sudo history >>history.txt 
+  615  root
+  616  sudo root
+  617  su root
+  618  history >history1.txt
+    1  ll
+    2  chomd vmware-tools-upgrader-32 +x
+    3  chmod vmware-tools-upgrader*.* +x
+    4  chmod vmware-tools-upgrader* +x
+    5  chmod +x vmware-tools-upgrader-32
+    6  chmod +x vmware-tools-upgrader-64
+    7  ./vmware-install.pl 
+    8  exit
+    9  apt install net-tols
+   10  dkpg --configure -a
+   11  dkpg --configures -a
+   12  man dkpg
+   13  dpkg --configures -a
+   14  man dpkg
+   15  dpkg --configure-a
+   16  dpkg --configure -a
+   17  ll
+   18  ls
+   19  dir
+   20  uptime
+   21  ll
+   22  gcc
+   23  exit
+   24  dpkg --configure -a
+   25  ll
+   26  vi list.c
+   27  indent *.c
+   28  apt install indent
+   29  indent *.c
+   30  vi list.c
+   31  apt install net-tools
+   32  mysql
+   33  ap install mysql-client-core-5.7
+   34  apt install mysql-client-core-5.7
+   35  ll
+   36  dir
+   37  name
+   38  make
+   39  gmake
+   40  nasm
+   41  apt install nasm
+   42  lsipc
+   43  man lsipc
+   44  lsipc -g -i 
+   45  lsipc -g
+   46  netstat -i
+   47  arp -a
+   48  route
+   49  routel
+   50  lsroute
+   51  lroute
+   52  route
+   53  ll
+   54  name
+   55  exit
+   56  akpg --configure -a
+   57  apkg
+   58  akpg
+   59  agkp
+   60  apkg
+   61  vi history
+   62  cd ..
+   63  vi history
+   64  vi history.txt
+   65  vi history1.txt 
+   66  cd pg
+   67  ./list
+   68  vi list.c
+   69  dpkg --configure -a
+   70  date
+   71  apt insatll nasm
+   72  nasm
+   73  apt install nasm
+   74  python
+   75  apt install python3
+   76  ll
+   77  ls
+   78  less list.c
+   79  cd pg
+   80  su yan
+   81  lscpu -aesyx
+   82  lscpu -a  - e - s -y -x
+   83  lscpu -a -e -s -y -x
+   84  lscpu -a -e -s 
+   85  lscpu -a -e 
+   86  lscpu -a -e -y
+   87  cd pg
+   88  less list.c
+   89  dkpg --configure -a
+   90  dpkg --configure -a
+   91  exit
+   92  dpkg --configure -a
+   93  clear
+   94  ll
+   95  ls
+   96  dpkg --configure -a
+   97  man dpkg
+   98  dpkg --configure -a
+   99  vi profile
+  100  exit
+  101  cd /etc
+  102  vi profile
+  103  exit
+  104  mv warty-final-ubuntu.png /usr/share/backgrounds/warty-final-ubuntu.png 
+  105  vi vimrc
+  106  cat vimrc
+  107  vi
+  108  cd
+  109  cd /home/yan
+  110  cd pg
+  111  vi list.c
+  112  locate .vimrc
+  113  locate 
+  114  locate stdio.h
+  115  apt install mlocate
+  116  locate ls
+  117  locat .vimrc
+  118  locate .vimrc
+  119  cd /etc/vim
+  120  vi vimrc
+  121  exit
+  122  cd /usr
+  123  cd share
+  124  ll
+  125  ls
+  126  ls w*.*
+  127  locate wall
+  128  history
+  129  cd backgrounds/
+  130  ll
+  131  apt insatll vim
+  132  apt install vim
+  133  cd pg
+  134  exit
+  135  history >>history.txt
