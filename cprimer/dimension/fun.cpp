@@ -8,23 +8,26 @@ using namespace std;
 const int months = 12;
 int martix[h][v];
 
-int inital ()
+int inital (int i)
 {
-	init_martix (martix);
+	init_martix (martix, i);
 	return 0;
 }
 
-int init_martix (int i[h][v])
+int init_martix (int i[h][v], int inum)
 {
-	srand (time (NULL));
+	print_char ('=', 8 * h);
+	srand (time (NULL) * inum);
 	for (int c = 0; c < h; c++)
 	{
 		for (int l = 0; l < v; l++)
 		{
 			i[c][v] = rand ();
-			cout << ((i[c][v] % 10000) + (i[c][v] / 10000)) / 1000 << "\t";
+			cout << ((i[c][v] % 10000) +
+					 (i[c][v] / 10000)) / 1000 << "\t|";
 		}
 		cout << endl;
+		print_char ('=', 8 * h);
 	}
 	return 0;
 }
@@ -85,6 +88,7 @@ int print_char (char c, int inum)
 	{
 		for (int i = 0; i < inum; i++)
 			cout << c;
+		cout << endl;
 		return inum;
 	}
 	else

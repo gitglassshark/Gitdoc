@@ -9,13 +9,15 @@ using namespace std;
 int main (int argc, char *argv[])
 {
 	//input your program:
-	if (argc < 2)
+	if (argc >= 2)
 	{
-		cout << "Lost input number...exit." << endl;
+		x = atoi (argv[1]);
+	}
+	else
+	{ cout << "Lost input number...exit." << endl;
 		return 0;
 	}
-	inital ();
-	x = atoi (argv[1]);
+	inital (x);
 
 	return 0;
 }
