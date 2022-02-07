@@ -1,4 +1,6 @@
 #include <iostream>
+using namespace std;
+
 
 int readme (int argc, char *argv[] ,char* programname);
 int readme (int argc, char *argv[] ,char* programname)
