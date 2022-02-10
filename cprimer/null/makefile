@@ -1,57 +1,87 @@
 CC= g++
 
-CXXDEBUGFLAGS = -g -Wall -I$(INCLUDEDIRECTORY) -std=c++17
-CXXFLAGS = -w -O0 -I$(INCLUDEDIRECTORY) -std=c++17
+DEBUGS = -g -Wall -I$(INCD) -std=c++17
+CXXFLAGS = -w -O0 -I$(INCD) -std=c++17
 
-INCLUDEDIRECTORY = ./include/
-SRCDIRECTORY = ./src/
-OUTDIRECTORY = ./out/
-SRCFILES = $(wildcard *.c *.cpp ./src/*.cpp ./src/*.c ./include/*.cpp ./include/*.c)
-HEADFILES = $(wildcard *.hpp *.h ./include/*.hpp ./include/*.h)
-OBJECTS  = $(patsubst %.cpp,%.o,$(SRCFILES))
-DEBUGOBJECTS =$(OBJECTS)
+TAGET = main
+INCD = ./include
+SRCD = ./src .
+OUTD = ./out
+VPATH = ./src:./include
+SRCS = $(wildcard $(SRCD)/*.cpp $(SRCD)/*.c $(INCD)/*.cpp $(INCD)/*.c)
+HEADS = $(wildcard *.hpp *.h ./$(INCD)/*.hpp ./$(INCD)/*.h)
+FILES = $(HEADS) $(SRCS)
+OBJS  := $(patsubst %.cpp,%.o,$(SRCS))
 
-.PHONY: build run debugrun rebuild asm debug clean
+.PHONY: all run debugrun rebuild debug  asm clean 
 
-build: main
-	#build: Ok!......the tagert file <main> is scuessful make!
+all: $(TAGET)
+	#build: Ok!......the tagert file <$(TAGET)> is scuessful make!
 
-run:main
-	./main
+run:$(TAGET)
+	./$(TAGET)
 	
 debugrun:debug
-	gdb ./main
+	gdb ./$(TAGET)
 
-rebuild: clean main
+rebuild:clean $(TAGET)
 	#rebuild
 
-debug: clean  
-	#debug: Build the debug object file ......
-	${CC} ${CXXDEBUGFLAGS} -c $(SRCFILES) 
-	#debug: Build the tagert file for debug......
-	${CC} ${CXXDEBUGFLAGS} -o main $(DEBUGOBJECTS) 
-	#deubg:Ok!......the debug tagert file <main> is scuessful make!
+debug: CXXFLAGS = $(DEBUGS)
+debug: clean $(TAGET) 
+	#debug: Build the debug object file ......Ok!The debug mode tagert file <$(TAGET)> is scuessful make!
 
-main: $(OBJECTS)
-	#main: Build the tagert file main......
+$(TAGET):$(OBJS)
+	#$(TAGET): Build the tagert file $(TAGET)......
 	${CC} ${CXXFLAGS} -o $@ $? 
-
-$(OBJECTS): %.o:%.cpp 
+	#$(TAGET): Build the tagert file $(TAGET) is scuessful make!
+	
+$(OBJS): %.o:%.cpp 
 	#obj: Build the object file ......
 	${CC} ${CXXFLAGS} -c $? -o $@
 	
-indent:$(SRCFILES) $(HEADFILES)
-	#indent
-	indent -bad -bap -bbb -bbo -nbc -bl -bli0 -bls -c33 -cd33 -ncdb -ncdw -nce -cli0 -cp33 -cs -d0 -nbfda -di2 -nfc1 -nfca -hnl -ip5 -l75 -lp -pcs -nprs -npsl -saf -sai -saw -nsc -nsob -nss -i4 -ts4 -ut $^ 
+indent:$(FILES)
+	#indent $(FILES)
+	indent -bad -bap -bbb -bbo -nbc -bl -bli0 -bls -c33 -cd33 -ncdb -ncdw -nce -cli0 -cp33 -cs -d0 -nbfda -di2 -nfc1 -nfca -hnl -ip5 -l75 -lp -pcs -nprs -npsl -saf -sai -saw -nsc -nsob -nss -i4 -ts4 -ut $? 
 
-asm:$(SRCFILES)
+asm:$(SRCS)
 	#asm: Build the Asm file ......
 	${CC} ${CXXFLAGS} -S $?
 
 clean:
 	#clean: Clean the useless file ......
-	@rm *.s *.o *~  main -f
+	@rm *.s *.o *~  $(TAGET) -f
 	@find . -name *~ -exec rm -f {} \;
 	@find . -name *.o -exec rm -f {} \;
 	@find . -name *.s -exec rm -f {} \;
-	@find . -name main -exec rm -f {} \;
+	@find . -name $(TAGET) -exec rm -f {} \;
+
+test:
+	make -B -n all
+	make -B -n debug
+	make -B -n rebuild
+	make -B -n clean
+	
+testvar:rebuild
+	@echo -n  DEBUGS: 
+	@echo   $(DEBUGS)
+	@echo -n  CXXFLAGS: 
+	@echo   $(CXXFLAGS)
+	@echo -n  TAGET: 
+	@echo   $(TAGET)
+	@echo -n  INCD: 
+	@echo   $(INCD)
+	@echo -n  SRCD: 
+	@echo   $(SRCD)
+	@echo -n  OUTD: 
+	@echo   $(OUTD)
+	@echo -n  VPATH: 
+	@echo   $(VPATH)
+	@echo -n  SRCS: 
+	@echo   $(SRCS)
+	@echo -n  HEADS: 
+	@echo   $(HEADS)
+	@echo -n  FILES: 
+	@echo   $(FILES)
+	@echo -n  OBJS: 
+	@echo   $(OBJS)

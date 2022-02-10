@@ -1,4 +1,5 @@
-[    0.000000] Linux version 5.13.0-27-generic (buildd@lcy02-amd64-014) (gcc (Ubuntu 11.2.0-7ubuntu2) 11.2.0, GNU ld (GNU Binutils for Ubuntu) 2.37) #29-Ubuntu SMP Wed Jan 12 17:36:47 UTC 2022 (Ubuntu 5.13.0-27.29-generic 5.13.19)
+
+[    0.000000] Linux version 5.13.0-27-generic (buildd@lcy02-amd64-014) (gcc (Ubuntu 11.2.0-7ubuntu2) 11.2.0, GNU ld (GNU Binutils for Ubuntu) 2.37) #29-Ubuntu SMP Wed Jan 12 17:36:47 UTC 2022 (Ubuntu 5.13.0-27.29-generic 5.13.19)``
 [    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-5.13.0-27-generic root=UUID=4120dc8f-fb10-40b3-9f48-2a9133d6ce16 ro quiet splash
 [    0.000000] KERNEL supported cpus:
 [    0.000000]   Intel GenuineIntel
