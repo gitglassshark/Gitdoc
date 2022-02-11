@@ -12,7 +12,6 @@ SRCS = $(wildcard $(SRCD)/*.cpp $(SRCD)/*.c $(INCD)/*.cpp $(INCD)/*.c)
 HEADS = $(wildcard *.hpp *.h ./$(INCD)/*.hpp ./$(INCD)/*.h)
 FILES = $(HEADS) $(SRCS)
 OBJS  := $(patsubst %.cpp,%.o,$(SRCS))
-#$(patsubst %.c,%.o,$(SRCS)
 
 .PHONY: all run debugrun rebuild debug  asm clean 
 
@@ -58,4 +57,31 @@ clean:
 	@find . -name $(TAGET) -exec rm -f {} \;
 
 test:
-	make -B -n
+	make -B -n all
+	make -B -n debug
+	make -B -n rebuild
+	make -B -n clean
+	
+testvar:rebuild
+	@echo -n  DEBUGS: 
+	@echo   $(DEBUGS)
+	@echo -n  CXXFLAGS: 
+	@echo   $(CXXFLAGS)
+	@echo -n  TAGET: 
+	@echo   $(TAGET)
+	@echo -n  INCD: 
+	@echo   $(INCD)
+	@echo -n  SRCD: 
+	@echo   $(SRCD)
+	@echo -n  OUTD: 
+	@echo   $(OUTD)
+	@echo -n  VPATH: 
+	@echo   $(VPATH)
+	@echo -n  SRCS: 
+	@echo   $(SRCS)
+	@echo -n  HEADS: 
+	@echo   $(HEADS)
+	@echo -n  FILES: 
+	@echo   $(FILES)
+	@echo -n  OBJS: 
+	@echo   $(OBJS)

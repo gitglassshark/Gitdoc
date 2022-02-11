@@ -15,8 +15,7 @@ int main (int argc, char *argv[])
 	{
 	int ic = atoi (argv[1]);
 		int il = atoi (argv[2]);
-        
-		int icp = atoi (argv[3]);
+        int icp = atoi (argv[3]);
 
 		inital (icp, ic, il);
 	}

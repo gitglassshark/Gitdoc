@@ -3,15 +3,25 @@
 #include <string>
 #include "h.hpp"
 //#include "fun.hpp"
-//#include "number.hpp"
+#include "printmessage.hpp"
 
 using namespace std;
 
-int main ()
+int main (int argc,char * argv[] )
 {
-	//input your program:
-	print_size (0);
-	cout << "in main" << endl;
+    //input your program:
+    int i=atoi(argv[1]);
+    cout<<"argc is "<<argc<<endl;
+    int n=0;
+start:
+    cout << "start main......\n";
 
-	return 0;
+    runantestbool ();
+    if(n<i)
+    {
+        n++; 
+        goto start;
+    }
+    cout << "end main......\n";
+    return 0;
 }
