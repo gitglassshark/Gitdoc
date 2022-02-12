@@ -1,3 +1,0 @@
-indent list.h run.c list.c
-gcc list.c run.c  -o list -g -O3 -Wall -I.
-

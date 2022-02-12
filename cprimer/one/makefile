@@ -14,7 +14,7 @@ HEADS = $(wildcard *.hpp *.h ./$(INCD)/*.hpp ./$(INCD)/*.h)
 FILES = $(HEADS) $(SRCS)
 OBJS  := $(patsubst %.cpp,%.o,$(SRCS))
 
-.PHONY: all run debugrun rebuild debug  asm clean 
+.PHONY: all debugrun rebuildandrun debug  asm clean 
 
 all: $(TAGET)
 
@@ -24,7 +24,8 @@ run:$(TAGET)
 debugrun:debug
 	gdb ./$(TAGET)
 
-rebuild:clean $(TAGET)
+rebuildandrun:clean $(TAGET)
+	./main 2 4 50
 
 debug: CXXFLAGS = $(DEBUGS)
 debug: clean $(TAGET) 

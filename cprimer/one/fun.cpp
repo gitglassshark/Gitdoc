@@ -11,18 +11,21 @@ int runmytest(int argc, char *argv[])
 {
     return 0;
 }
-int printnameandvalue (const char *pname, const bool bi)
+
+int printnameandvalue (const char *vname, const bool bi)
 {
+    char *value=0;
+    char *ctrue="True";
+    char *cfalse="False";
     if (bi == true)
     {
-        cout << pname << "\t\t\t\t";
-        cout << "true\n";
+        value=ctrue;
     }
     else
     {
-        cout << pname << "\t\t\t\t";
-        cout << "false\n";
-    }
+        value=cfalse;
+    };
+    cout <<'\t'<<vname<<"\t\t\t\t\t"<<value<<endl;
     return 0;
 }
 
@@ -30,33 +33,35 @@ int printnameandvalue (const char *pname, const bool bi)
 int printtb (const char *cmessage[], int n, const char *ptitle)
 {
     cout << ptitle;
-    print_nchar ('=', 60);
+    print_nchar ('=', 70);
+    print_nchar ('=', 70);
     for (int i = 0; i < n; i++)
     {
-        cout << cmessage[i];
-        cout << "\t\t";
+        cout <<'\t'<<cmessage[i]<<"\t\t\t";
     }
-    cout << "\n";
+    cout<<endl;
+    print_nchar ('=', 70);
     return 0;
 }
 
 
-int runtestbool ()
+int run_booltest(int argc,char * argv[])
 {
     bool a = true;
     bool b = false;
     bool c = true;
     bool d = false;
-    const char *Aname = "A";
-    const char *Bname = "B";
-    const char *Cname = "C";
-    const char *Dname = "D";
+    int nbarlen=70;
+    const char *Aname = "A(= true)";
+    const char *Bname = "B(=false)";
+    const char *Cname = "C(= true)";
+    const char *Dname = "D(=false)";
     const int n = 2;
     const char *ptitle =
         "The program run and print bool operator operation :\n";
     const char *cmessage[n] = {
-        "bool varible name",
-        "bool value "
+        "Varible name",
+        "Value"
     };
     //input your program:
     printtb (cmessage, n, ptitle);
@@ -71,37 +76,37 @@ int runtestbool ()
 
     const char *rmessage[n] = {
         "Operation",
-        "Bool value operation result"
+        "Operation Result"
     };
     //input your program:
     printtb (rmessage, n, rtitle);
-    print_nchar ('=', 60);
+    print_nchar ('=', nbarlen);
 
     printnameandvalue ("A+B", a + b);
     printnameandvalue ("A+C", a + c);
     printnameandvalue ("B+D", b + d);
-    print_nchar ('=', 60);
+    print_nchar ('=', nbarlen);
 
 
     printnameandvalue ("A and B", a and b);
     printnameandvalue ("A and C", a and c);
     printnameandvalue ("B and D", b and d);
-    print_nchar ('=', 60);
+    print_nchar ('=', nbarlen);
 
 
     printnameandvalue ("A or B", a or b);
     printnameandvalue ("A or C", a or c);
     printnameandvalue ("B or D", b or d);
-    print_nchar ('=', 60);
+    print_nchar ('=', nbarlen);
 
 
     printnameandvalue ("not  A", not a);
     printnameandvalue ("not  B", not b);
-    print_nchar ('=', 60);
+    print_nchar ('=', nbarlen);
     printnameandvalue ("A xor B", a xor b);
     printnameandvalue ("A xor C", a xor c);
     printnameandvalue ("d xor b", d xor b);
-    print_nchar ('=', 60);
+    print_nchar ('=', nbarlen);
 
     return 0;
 }
@@ -183,23 +188,6 @@ int runmartx(int argc1)
     return 0;
 }
 
-int init_martix (int i[h][v], int argc1)
-{
-    print_char ('=', 8 * h);
-    srand (time (NULL) * argc1);
-    for (int c = 0; c < h; c++)
-    {
-        for (int l = 0; l < v; l++)
-        {
-            i[c][v] = rand ();
-            cout << ((i[c][v] % 10000) +
-                     (i[c][v] / 10000)) / 1000 << "\t|";
-        }
-        cout << endl;
-        print_char ('=', 8 * h);
-    }
-    return 0;
-}
 
 int days[months] = {
     31,							//1
@@ -236,12 +224,13 @@ int runprint_month (int argc1)
     int	x = 0;
     int	y = 0;
     int	z = 0;
+
     char *title = "The numbers of day in month of year is :";
 
     cout << title << endl;
     print_char ('=', strlen (title));
     cout << endl;
-    while (x < 12 && x < argc1)
+    while (x < 12 && x <argc1)
     {
         cout << x + 1 << ".\t" << names[x];
         y = strlen (names[x]);
@@ -252,6 +241,76 @@ int runprint_month (int argc1)
     }
     return 0;
 }
+
+
+int runpickinital (int icp, int ic, int il)
+{
+    init_martix (martix, icp);
+    pickupbig (martix, icp);
+    return 0;
+}
+
+int init_martix (int i[h][v], int argc1)
+{
+    print_char ('=', 8 * v);
+        srand (time (NULL) * argc1);
+    for (int c = 0; c < h; c++)
+    {
+        for (int l = 0; l < v; l++)
+        {
+            i[c][l] = rand ();
+            i[c][l] = ((i[c][l] % 10000) + (i[c][l] / 10000)) / 1000;
+            cout << i[c][l] << "\t|";
+        }
+        cout << endl;
+        print_char ('=', 8 * v);
+    }
+    cout << endl;
+    return 0;
+}
+
+bool pickupbig (int i[h][v], int argc3)
+{
+    int ibig = 0, ismall = 0, iequal = 0;
+
+    cout << "Pick up the numbers to compare :" <<  argc3<< endl;
+    print_char ('=', 8 * v);
+    for (int c = 0; c < h; c++)
+    {
+        for (int l = 0; l < v; l++)
+        {
+            if (i[c][l] < argc3)
+            {
+                ismall++;
+                cout << i[c][l] << "-\t|";
+            }
+            else
+            {
+                if (i[c][l] == argc3)
+                {
+                    iequal++;
+                    cout << i[c][l] << "=\t|";
+                }
+                else
+                {
+                    ibig++;
+                    cout << i[c][l] << "+\t|";
+                }
+            }
+        }
+        cout << endl;
+        print_char ('=', 8 * v);
+    }
+    cout << "The  than "<< argc3<<" more big numbers number is :\t" << ibig << endl;
+    cout << "The  than "<< argc3<<" more small numbers number is :\t" << ismall << endl;
+    cout << "The  than "<< argc3<<" more equal numbers number is :\t" << iequal << endl;
+    cout << "The total numbers number is :\t" << iequal + ismall +
+        ibig << endl;
+    cout << "The total numbers array element's number is :\t" << h *
+        v << endl;
+    return true;
+}
+
 
 int print_char (char c, int inum)
 {

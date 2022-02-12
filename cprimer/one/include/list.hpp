@@ -21,4 +21,4 @@ int getdata (struct list *p, int *loc);
 int resizelist (struct list **pplist, int nnewsize);
 int getnewsize (struct list *poldlist);
 char makemenu ();
-int run ();
+int runlist (int argc,char * argv[]);

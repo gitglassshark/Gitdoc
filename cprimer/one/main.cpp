@@ -1,8 +1,9 @@
 #include <iostream>
+#include "readme.hpp"
 #include <vector>
 #include <string>
 #include "h.hpp"
-//#include "fun.hpp"
+#include "sizeof.hpp"
 #include "printmessage.hpp"
 
 using namespace std;
@@ -15,13 +16,30 @@ int main (int argc, char *argv[])
     if (argc >= 2)
     {
         argc1 = atoi (argv[1]);
+        if(argc1==0)
+            readme(argc,argv);
     }
-    cout << "argc is " << argc << endl;
+
+
+    //input your program:
+    if (argc >= 4)
+    {
+        int ic = atoi (argv[1]);
+        int il = atoi (argv[2]);
+        int icp = atoi (argv[3]);
+        runpickinital (icp, ic, il);
+    }
+    else
+    {
+        readme (argc, argv);
+        cout << "Lost input number...exit." << endl;
+    }
+
     // begin run and test
     //
     runmytest(argc, argv);
     getchar();
-    runtestbool ();
+    run_booltest(argc, argv);
     togoto(argc1);
     getchar();
     getchar();
@@ -31,10 +49,13 @@ int main (int argc, char *argv[])
     getchar();
     runprint_month(argc1);
     getchar();
-    runmartx(argc1);
+    runone ();
+    getchar();
+    runlist(argc,argv);
     getchar();
 
     cout<<"end main.....\n";
     return 0;
 }
+
 

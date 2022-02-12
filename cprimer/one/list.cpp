@@ -1,19 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "list.h"
+#include "list.hpp"
 
 int SIZE = 30;
 int lineitemnumber = 3;
 int ERR1 = 1;
 int initdata = 0;
-int
-run ()
+int runlist (int argc,char * argv[])
 {
 // git test modified text
   int size = SIZE;
   struct list *listone = NULL;
-  listone = malloc (sizeof (struct list) * size);
+  listone =(list *) malloc (sizeof (struct list) * size);
   int listdata = 8;
   initlist (listone, size, initdata);
   char cchoice;
@@ -267,7 +266,7 @@ resizelist (struct list **pplist, int nnewsize)
   else
     {
       free (*pplist);
-      *pplist = malloc (sizeof (struct list) * nnewsize);
+      *pplist = (list*)malloc (sizeof (struct list) * nnewsize);
       initlist (*pplist, nnewsize, initdata);
     }
   return nnewsize;
