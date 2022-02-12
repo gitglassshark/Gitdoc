@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 int printnameandvalue (const char *pname, const bool bi)
 {
 	if (bi == true)
@@ -29,7 +28,7 @@ int printtb (const char *cmessage[], int n, const char *ptitle)
 	for (int i = 0; i < n; i++)
 	{
 		cout << cmessage[i];
-		cout << "\t\t";
+		cout << "\t\t\t";
 	}
 	cout << "\n";
 	return 0;
@@ -42,15 +41,15 @@ int runantestbool ()
 	bool b = false;
 	bool c = true;
 	bool d = false;
-	const char *Aname = "A";
-	const char *Bname = "B";
-	const char *Cname = "C";
-	const char *Dname = "D";
+	const char *Aname = "A.true";
+	const char *Bname = "B.false";
+	const char *Cname = "C.true";
+	const char *Dname = "D.false";
 	const int n = 2;
 	const char *ptitle =
 		"The program run and print bool operator operation :\n";
 	const char *cmessage[n] = {
-		"bool varible name",
+		"bool value name",
 		"bool value "
 	};
 	//input your program:
@@ -98,59 +97,7 @@ int runantestbool ()
 	printnameandvalue ("d xor b", d xor b);
 	print_nchar ('=', 60);
 
+
 	cout << "end runantestbool......\n";
 	return 0;
 }
-
-
-int togoto(int i)
-{
-    int n=0;
-start:
-    cout << "start in togoto......\n";
-    if (n < i)
-    {
-        cout<<n<<endl;
-        n++;
-        goto start;
-    }
-    else
-    {
-        cout << "under the exit......";
-        goto neverget;
-    }
-    cout << "end togoto......\n";
-neverget:
-    cout << "neverget ......\n";
-    return 0;
-}
-
-int    testarraysizeof(int a, int b, int c)
-{
-    //     int [][][]={0, }
-
-    int arraya[x][y][z]={0,[x-1][y-1][z-1]=0};
-    cout<<"array size of is "<<sizeof(arraya)<<endl;
-    initalarray(arraya, a);
-    cout<<"end testarraysizeof.....\n";
-    return 0;
-}
-
-int initalarray(int arrayb[x][y][z], int i)
-{
-    int a=0; int b=0; int c=0;
-    cout<<"array size of is "<<sizeof(arrayb)<<endl;
-    for(a=0;a<x;a++){
-        for(b=0;b<y;b++){
-            for(c=0;c<z;c++)
-                cout<<arrayb[a][b][c]<<"|*\t";
-            cout<<"||**\n"<<endl;
-        }
-        cout<<"|||***\n\n"<<endl;
-    }   
-    cout<<"array size of is "<<sizeof(arrayb)<<endl;
-    cout<<"array size of is "<<sizeof(arrayb[x][y][z])<<endl;
-    cout<<"array number elements numbe of is "<<x*y*z<<endl;
-    cout<<"array element size of is "<<sizeof(int)<<endl;
-    return 0;
-};

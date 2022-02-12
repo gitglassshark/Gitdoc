@@ -1,0 +1,3 @@
+#!/bin/bash
+vi fun.cpp main.cpp include/fun.hpp -O
+./run
