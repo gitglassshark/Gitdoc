@@ -1,5 +1,5 @@
 #pragma once
-int prints (char const *const cmessage);
-int printsl (char const *const cmessage);
-int print_nchar (char c, int inum);
-int printst (char const *const cmessage);
+int PrintS (char const *const cmessage);
+int PrintSL (char const *const cmessage);
+int Print_NChar (char c, int inum);
+int PrintST (char const *const cmessage);

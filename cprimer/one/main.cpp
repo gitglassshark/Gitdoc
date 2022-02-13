@@ -11,13 +11,13 @@ using namespace std;
 int main (int argc, char *argv[])
 {
     //input your program:
-    cout << "start main......\n";
+    cout << "主程序开始运行......\n";
     int argc1;
     if (argc >= 2)
     {
         argc1 = atoi (argv[1]);
         if(argc1==0)
-            readme(argc,argv);
+            RunReadmeRE(argc,argv);
     }
 
 
@@ -27,34 +27,33 @@ int main (int argc, char *argv[])
         int ic = atoi (argv[1]);
         int il = atoi (argv[2]);
         int icp = atoi (argv[3]);
-        runpickinital (icp, ic, il);
+        RunPickInitalFN (icp, ic, il);
     }
     else
     {
-        readme (argc, argv);
-        cout << "Lost input number...exit." << endl;
+        cout << "缺少参数...exit." << endl;
+        RunReadmeRE (argc, argv);
     }
 
     // begin run and test
     //
-    runmytest(argc, argv);
+    RunMyTestFN(argc, argv);
     getchar();
-    run_booltest(argc, argv);
-    togoto(argc1);
+    Run_BoolTestFN(argc, argv);
+    (argc1);
     getchar();
+    RunTestArraySizeofFN(argc1);
     getchar();
-    testarraysizeof(argc1);
+    RunArrAddFN(5);
     getchar();
-    arradd(5); 
+    RunPrint_MonthFN(argc1);
     getchar();
-    runprint_month(argc1);
+    RunOneSF();
     getchar();
-    runone ();
-    getchar();
-    runlist(argc,argv);
+    RunListLT(argc,argv);
     getchar();
 
-    cout<<"end main.....\n";
+    cout<<"结束程序，退出.....\n";
     return 0;
 }
 

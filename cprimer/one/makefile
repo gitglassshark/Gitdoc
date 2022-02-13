@@ -14,18 +14,15 @@ HEADS = $(wildcard *.hpp *.h ./$(INCD)/*.hpp ./$(INCD)/*.h)
 FILES = $(HEADS) $(SRCS)
 OBJS  := $(patsubst %.cpp,%.o,$(SRCS))
 
-.PHONY: all debugrun rebuildandrun debug  asm clean 
+.PHONY: all debugrun rebuild debug  asm clean 
 
 all: $(TAGET)
 
-run:$(TAGET)
-	./$(TAGET)
 	
 debugrun:debug
 	gdb ./$(TAGET)
 
-rebuildandrun:clean $(TAGET)
-	./main 2 4 50
+rebuild:clean $(TAGET)
 
 debug: CXXFLAGS = $(DEBUGS)
 debug: clean $(TAGET) 
@@ -39,6 +36,18 @@ $(OBJS): %.o:%.cpp
 indent:$(FILES)
 	indent -bad -bap -bbb -bbo -nbc -bl -bli0 -bls -c33 -cd33 -ncdb -ncdw -nce -cli0 -cp33 -cs -d0 -nbfda -di2 -nfc1 -nfca -hnl -ip5 -l75 -lp -pcs -nprs -npsl -saf -sai -saw -nsc -nsob -nss -i4 -ts4 -ut $? 
 
+linux:$(FILES)
+	astyle --style=linux $(FILES)
+
+gnu:$(FILES)
+	astyle --style=gnu $(FILES)
+	
+bsd:$(FILES)
+	astyle --style=bsd $(FILES)
+
+google:$(FILES)
+	astyle --style=google  $(FILES)
+
 asm:$(SRCS)
 	${CC} ${CXXFLAGS} -S $?
 
@@ -47,15 +56,17 @@ clean:
 	@rm *.s *.o *~  $(TAGET) -f
 	@find . -name *~ -exec rm -f {} \;
 	@find . -name *.o -exec rm -f {} \;
+	@find . -name "*.orig" -exec rm -f {} \;
 	@find . -name *.s -exec rm -f {} \;
 	@find . -name $(TAGET) -exec rm -f {} \;
 
 test:
 	make -B -n all
 	make -B -n debug
-	make -B -n rebuild
+	make -B -n indent
+	make -B -n asm
 	make -B -n clean
-	
+
 testvar:rebuild
 	@echo -n  DEBUGS: 
 	@echo   $(DEBUGS)

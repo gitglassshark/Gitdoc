@@ -2,301 +2,298 @@
 #include <stdlib.h>
 #include <time.h>
 #include "list.hpp"
-
-int SIZE = 30;
-int lineitemnumber = 3;
-int ERR1 = 1;
-int initdata = 0;
-int runlist (int argc,char * argv[])
+// 数组列表
+//
+#define SIZE 100
+int nListSize = 30;
+int nLineNumber = 3;
+int ERR_CODE_1 = 1;
+int nInitData = 0;
+int RunListLT (int argc,char * argv[])
 {
-// git test modified text
-  int size = SIZE;
-  struct list *listone = NULL;
-  listone =(list *) malloc (sizeof (struct list) * size);
-  int listdata = 8;
-  initlist (listone, size, initdata);
-  char cchoice;
-  int isignexit = 0;
-  while (isignexit == 0)
+    // git test modified text
+    int nListSize = SIZE;
+    struct list *pListOne = NULL;
+    pListOne =(list *) malloc (sizeof (struct list) * nListSize);
+    int nInitData = 8;
+    InitList (pListOne, nListSize, nInitData);
+    char cChoiceMenu=0;
+    int nSingExit = 0;
+    while (nSingExit == 0)
     {
-      cchoice = makemenu ();
-      switch (cchoice)
-	{
-	case '1':
-	  initlist (listone, size, initdata);
-	  break;
-	case '2':
-	  randmakelist (listone, size, 200, listdata);
-	  break;
-	case '3':
-	  putlistndata (listone, 4, 7);
-	  break;
-	case '4':
-	  printlist (listone, lineitemnumber);
-	  break;
-	case '5':
-	  printlistp (listone, size, lineitemnumber);
-	  break;
-	case '6':
-	  printf ("List total is:%d\n", totallist (listone, size));
-	  break;
-	case '7':
-	  {
-	    int gdata = 0;
-	    int locate = 0;
-	    gdata = getdata (listone, &locate);
-	    printf ("The locate %d data is %d\n", locate + 1, gdata);
-	  }
-	  break;
-	case '8':
-	  {
-	    size = getnewsize (listone);
-	    resizelist (&listone, size);
-	  }
-	  break;
-	case '9':
-	  {
-	    printf ("List size is %d\n", getlistsize (listone));
-	  }
-	  break;
-	case '0':
-	  isignexit = 1;
-	  break;
-	default:
-	  printf ("error cchoice can't be run.....\n");
-	}
-      getchar ();
+        cChoiceMenu = MakeMenu ();
+        switch (cChoiceMenu)
+        {
+        case '1':
+            InitList (pListOne, nListSize, nInitData);
+            break;
+        case '2':
+            RandMakeList (pListOne, nListSize, 200, nInitData);
+            break;
+        case '3':
+            PutListnData (pListOne, 4, 7);
+            break;
+        case '4':
+            PrintList (pListOne, nLineNumber);
+            break;
+        case '5':
+            PrintListP (pListOne, nListSize, nLineNumber);
+            break;
+        case '6':
+            printf ("List total is:%d\n", TotalList (pListOne, nListSize));
+            break;
+        case '7':
+        {
+            int gdata = 0;
+            int locate = 0;
+            gdata = GetData (pListOne, &locate);
+            printf ("The locate %d data is %d\n", locate + 1, gdata);
+        }
+        break;
+        case '8':
+        {
+            nListSize = GetNewSize (pListOne);
+            ReSizeList (&pListOne, nListSize);
+        }
+        break;
+        case '9':
+        {
+            printf ("List size is %d\n", GetListSize (pListOne));
+        }
+        break;
+        case '0':
+            nSingExit = 1;
+            break;
+        default:
+            printf ("error cChoiceMenu can't be run.....\n");
+        }
+        getchar ();
     }
 
-  /*
-     int No = 84;
-     printf ("THE LIST No%d LOCATE DATA IS:%d.\n", No, getlistndata
-     (listone, No)); */
-  free (listone);
-  listone = NULL;
-  return 0;
+    free (pListOne);
+    pListOne = NULL;
+    return 0;
 }
 
-char
-makemenu ()
+char MakeMenu ()
 {
-  printf ("===== List fuction menu=====\n");
-  printf ("(Right Author by yan:bbc@sina.com)\n");
-  printf ("1.Reinital List\n");
-  printf ("2.Use random data make List\n");
-  printf ("3.Put data to List\n");
-  printf ("4.Print List\n");
-  printf ("5.Print List data memory Address\n");
-  printf ("6.Total List data\n");
-  printf ("7.Get List data\n");
-  printf ("8.Resize List\n");
-  printf ("9.Get List size\n");
-  printf ("0.Exit\n");
-  char i = getchar ();
-  printf ("%c\n", i);
-  return i;
+    printf ("===== List fuction menu=====\n");
+    printf ("(Right Author by yan:bbc@sina.com)\n");
+    printf ("(版权作者：yan:bbc@sina.com)，在GPL下\n");
+    printf ("请选择一个项目执行，选择数字\n");
+    printf ("1.Reinital List\n");
+    printf ("1.重新初始化数组\n");
+    printf ("2.Use random data make List\n");
+    printf ("2.使用随机数生成列表结构\n");
+    printf ("3.Put data to List\n");
+    printf ("3.放入数值至列表\n");
+    printf ("4.Print List\n");
+    printf ("4.打印列表值\n");
+    printf ("5.Print List data memory Address\n");
+    printf ("5.打印列表数据内存地址\n");
+    printf ("6.Total List data\n");
+    printf ("6.列表数据值累计值\n");
+    printf ("7.Get List data\n");
+    printf ("7.得到列表数据\n");
+    printf ("8.Resize List\n");
+    printf ("8.重新设置列表大小尺寸\n");
+    printf ("9.Get List size\n");
+    printf ("9.得到列表尺寸\n");
+    printf ("0.Exit\n");
+    printf ("0.退出\n");
+    char i = getchar ();
+    printf ("%c\n", i);
+    return i;
 };
 
-int
-totallist (struct list *p, int datasize)
+int TotalList (struct list *p, int datasize)
 {
-  int total = 0;
-  for (int i = 0; i < datasize; i++)
+    int total = 0;
+    for (int i = 0; i < datasize; i++)
     {
-      total += p[i].data;
+        total += p[i].nData;
     }
-  return total;
+    return total;
 };
 
-int
-initlist (struct list *p, int datasize, int initdata)
+int InitList (struct list *p, int datasize, int nInitData)
 {
-  for (int i = 0; i < datasize; i++)
+    for (int i = 0; i < datasize; i++)
     {
-      p[i].data = initdata;
-      if (i == datasize - 1)
-	{
-	  p[i].pn = NULL;
-	}
-      else
-	{
-	  p[i].pn = &p[i + 1];
-	}
+        p[i].nData = nInitData;
+        if (i == datasize - 1)
+        {
+            p[i].pn = NULL;
+        }
+        else
+        {
+            p[i].pn = &p[i + 1];
+        }
     }
-  printf ("initlist......\n");
-  return 0;
+    printf ("初始化列表......\n");
+    return 0;
 };
 
-int
-printlistp (struct list *p, int datasize, int ncol)
+int PrintListP (struct list *p, int datasize, int ncol)
 {
-  printf ("LIST STRUCT PIONTER :\n");
-  for (int i = 0; i < datasize; i++)
+    printf ("LIST STRUCT PIONTER :\n");
+    for (int i = 0; i < datasize; i++)
     {
-      printf ("No%d struct Memaddress is %p,No%d->P is %p\t", i,
-	      (void *) &p[i], i, (void *) p[i].pn);
-      if ((i + 1) % ncol == 0)
-	printf ("\n");
+        printf ("No%d 结构内存地址%p,No%d->P 是 %p\t", i,
+                (void *) &p[i], i, (void *) p[i].pn);
+        if ((i + 1) % ncol == 0)
+            printf ("\n");
     }
-  printf ("\n");
-  return 0;
+    printf ("\n");
+    return 0;
 };
 
-int
-printlist (struct list *p, int ncol)
+int PrintList (struct list *p, int ncol)
 {
-  printf ("LIST LIST'S DATA\n");
-  int i;
-  for (i = 0; p != NULL; i++)
+    printf ("列出列表数据：\n");
+    int i;
+    for (i = 0; p != NULL; i++)
     {
-      printf ("No%d DATA:%d\t", i + 1, p->data);
-      p = p->pn;
-      if ((i + 1) % ncol == 0)
-	printf ("\n");
+        printf ("No%d 数据:%d\t", i + 1, p->nData);
+        p = p->pn;
+        if ((i + 1) % ncol == 0)
+            printf ("\n");
     }
-  printf ("\n");
-  return i;
+    printf ("\n");
+    return i;
 };
 
-int
-randmakelist (struct list *p, int datasize, int mod, int listdata)
+int RandMakeList (struct list *p, int datasize, int mod, int nInitData)
 {
-  srand (time (NULL));
-/*  for (int i = 0; i < datasize; i++)
+    srand (time (NULL));
+    /*  for (int i = 0; i < datasize; i++)
+        {
+        p[i].nData = rand () % mod;
+        if (i == datasize - 1)
+        {
+        p[i].pn = NULL;
+        }
+        else
+        {
+        p[i].pn = &p[i + 1];
+        }
+        }
+        */
+    struct list *pc = p;
+    for (int i = 0; i < datasize; i++)
     {
-      p[i].data = rand () % mod;
-      if (i == datasize - 1)
-	{
-	  p[i].pn = NULL;
-	}
-      else
-	{
-	  p[i].pn = &p[i + 1];
-	}
+        pc->nData = rand () % mod;
+        if (i == datasize - 1)
+        {
+            pc->pn = NULL;
+        }
+        else
+        {
+            pc->pn = (pc + 1);
+        }
+        pc++;
     }
-*/
-  struct list *pc = p;
-  for (int i = 0; i < datasize; i++)
-    {
-      pc->data = rand () % mod;
-      if (i == datasize - 1)
-	{
-	  pc->pn = NULL;
-	}
-      else
-	{
-	  pc->pn = (pc + 1);
-	}
-      pc++;
-    }
-//
-  return 0;
+    //
+    return 0;
 };
 
-int
-putlistndata (struct list *p, int datalocate, int data)
+int PutListnData (struct list *p, int datalocate, int data)
 {
 
-  int i = 0;
-  struct list *pmark = p;
-  for (i = 0; i < datalocate; i++)
-    if (pmark->pn != NULL)
-      {
-	pmark = pmark->pn;
-      }
+    int i = 0;
+    struct list *pmark = p;
+    for (i = 0; i < datalocate; i++)
+        if (pmark->pn != NULL)
+        {
+            pmark = pmark->pn;
+        }
+        else
+        {
+            return ERR_CODE_1;
+        }
+    pmark->nData = data;
+    printf ("置入数据项No%d 数据is %d.\n", datalocate + 1, pmark->nData);
+    return 0;
+};
+
+int GetListNData (struct list *p, int datalocate)
+{
+
+    int i = 0;
+    struct list *pmark = p;
+    int listsize = GetListSize (p);
+    if (datalocate > listsize)
+        return ERR_CODE_1;
     else
-      {
-	return ERR1;
-      }
-  pmark->data = data;
-  printf ("THE PUT No%d DATA is %d.\n", datalocate + 1, pmark->data);
-  return 0;
-};
-
-int
-getlistndata (struct list *p, int datalocate)
-{
-
-  int i = 0;
-  struct list *pmark = p;
-  int listsize = getlistsize (p);
-  if (datalocate > listsize)
-    return ERR1;
-  else
     {
-      for (i = 0; i < datalocate; i++)
-	{
-	  if (pmark->pn != NULL)
-	    {
-	      pmark = pmark->pn;
-	    }
-	  else
-	    {
-	      return ERR1;
-	    }
-	}
+        for (i = 0; i < datalocate; i++)
+        {
+            if (pmark->pn != NULL)
+            {
+                pmark = pmark->pn;
+            }
+            else
+            {
+                return ERR_CODE_1;
+            }
+        }
     }
-  return pmark->data;
+    return pmark->nData;
 };
 
-int
-getdata (struct list *p, int *loc)
+int GetData (struct list *p, int *loc)
 {
-  int listsize = 0;
-  listsize = getlistsize (p);
-  printf ("Please input the locate of want to get data(1-%d)\n", listsize);
-  scanf ("%d", loc);
-  return getlistndata (p, *loc);
+    int listsize = 0;
+    listsize = GetListSize (p);
+    printf ("请输入准备取值的数据位置-%d)\n", listsize);
+    scanf ("%d", loc);
+    return GetListNData (p, *loc);
 };
 
-int
-getlistsize (struct list *p)
+int GetListSize (struct list *p)
 {
-  int icount;
-  for (icount = 0; p != NULL; icount++)
-    p = p->pn;
-  return icount;
+    int icount;
+    for (icount = 0; p != NULL; icount++)
+        p = p->pn;
+    return icount;
 };
 
-int
-resizelist (struct list **pplist, int nnewsize)
+int ReSizeList (struct list **pplist, int nnewsize)
 {
-  if (*pplist == NULL || nnewsize == 0)
-    return ERR1;
-  else
+    if (*pplist == NULL || nnewsize == 0)
+        return ERR_CODE_1;
+    else
     {
-      free (*pplist);
-      *pplist = (list*)malloc (sizeof (struct list) * nnewsize);
-      initlist (*pplist, nnewsize, initdata);
+        free (*pplist);
+        *pplist = (list*)malloc (sizeof (struct list) * nnewsize);
+        InitList (*pplist, nnewsize, nInitData);
     }
-  return nnewsize;
+    return nnewsize;
 };
 
-int
-getnewsize (struct list *poldlist)
+int GetNewSize (struct list *poldlist)
 {
-  int oldlistsize = 0;
-  int newlistsize = 0;
-  oldlistsize = getlistsize (poldlist);
-  printf ("Please input the new size(Current list size is %d)\n",
-	  oldlistsize);
-  scanf ("%d", &newlistsize);
-  if (oldlistsize != newlistsize)
-    return newlistsize;
-  else
-    return ERR1;
+    int oldlistsize = 0;
+    int newlistsize = 0;
+    oldlistsize = GetListSize (poldlist);
+    printf ("请输入新尺寸(当前列表尺寸是： %d)\n",
+            oldlistsize);
+    scanf ("%d", &newlistsize);
+    if (oldlistsize != newlistsize)
+        return newlistsize;
+    else
+        return ERR_CODE_1;
 };
 
-int
-inserttolist (struct list *plist, int insertlocate, int insertdata)
+int InsertToList (struct list *plist, int insertlocate, int insertdata)
 {
-  int i = 0;
-  struct list *pcurrentlist;
-  for (i = 0; i < getlistsize (plist) && i < insertlocate; i++)
+    int i = 0;
+    struct list *pcurrentlist;
+    for (i = 0; i < GetListSize (plist) && i < insertlocate; i++)
     {
-      pcurrentlist = plist->pn;
-      pcurrentlist = pcurrentlist->pn;
+        pcurrentlist = plist->pn;
+        pcurrentlist = pcurrentlist->pn;
     }
-  pcurrentlist->data = insertdata;
-  return 0;
+    pcurrentlist->nData = insertdata;
+    return 0;
 };

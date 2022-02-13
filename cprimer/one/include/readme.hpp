@@ -1,4 +1,4 @@
 #pragma once
 
-int readme (int argc, char *argv[]);
+int RunReadmeRE (int argc, char *argv[]);
 

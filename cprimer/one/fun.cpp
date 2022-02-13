@@ -7,12 +7,12 @@
 using namespace std;
 
 
-int runmytest(int argc, char *argv[])
+int RunMyTestFN(int argc, char *argv[])
 {
     return 0;
 }
 
-int printnameandvalue (const char *vname, const bool bi)
+int PrintNameAndValueL (const char *vname, const bool bi)
 {
     char *value=0;
     char *ctrue="True";
@@ -30,22 +30,22 @@ int printnameandvalue (const char *vname, const bool bi)
 }
 
 
-int printtb (const char *cmessage[], int n, const char *ptitle)
+int PrintTBL (const char *cmessage[], int n, const char *ptitle)
 {
     cout << ptitle;
-    print_nchar ('=', 70);
-    print_nchar ('=', 70);
+    Print_NChar ('=', 70);
+    Print_NChar ('=', 70);
     for (int i = 0; i < n; i++)
     {
         cout <<'\t'<<cmessage[i]<<"\t\t\t";
     }
     cout<<endl;
-    print_nchar ('=', 70);
+    Print_NChar ('=', 70);
     return 0;
 }
 
 
-int run_booltest(int argc,char * argv[])
+int Run_BoolTestFN(int argc,char * argv[])
 {
     bool a = true;
     bool b = false;
@@ -58,64 +58,66 @@ int run_booltest(int argc,char * argv[])
     const char *Dname = "D(=false)";
     const int n = 2;
     const char *ptitle =
-        "The program run and print bool operator operation :\n";
-    const char *cmessage[n] = {
-        "Varible name",
-        "Value"
+        "本程序模块运行逻辑运算并打印运行结果...\n";
+    const char *cmessage[n] =
+    {
+        "变量名",
+        "变量值"
     };
     //input your program:
-    printtb (cmessage, n, ptitle);
+    PrintTBL (cmessage, n, ptitle);
 
-    printnameandvalue (Aname, a);
-    printnameandvalue (Bname, b);
-    printnameandvalue (Cname, c);
-    printnameandvalue (Dname, d);
+    PrintNameAndValueL (Aname, a);
+    PrintNameAndValueL (Bname, b);
+    PrintNameAndValueL (Cname, c);
+    PrintNameAndValueL (Dname, d);
     cout << endl;
 
-    const char *rtitle = "The bool  operation and operation result:\n";
+    const char *rtitle = "逻辑运算及运算结果.....\n";
 
-    const char *rmessage[n] = {
-        "Operation",
-        "Operation Result"
+    const char *rmessage[n] =
+    {
+        "运算模式",
+        "运算模式结果"
     };
     //input your program:
-    printtb (rmessage, n, rtitle);
-    print_nchar ('=', nbarlen);
+    PrintTBL (rmessage, n, rtitle);
+    Print_NChar ('=', nbarlen);
 
-    printnameandvalue ("A+B", a + b);
-    printnameandvalue ("A+C", a + c);
-    printnameandvalue ("B+D", b + d);
-    print_nchar ('=', nbarlen);
-
-
-    printnameandvalue ("A and B", a and b);
-    printnameandvalue ("A and C", a and c);
-    printnameandvalue ("B and D", b and d);
-    print_nchar ('=', nbarlen);
+    PrintNameAndValueL ("A+B(和)", a + b);
+    PrintNameAndValueL ("A+C(和)", a + c);
+    PrintNameAndValueL ("B+D(和)", b + d);
+    Print_NChar ('=', nbarlen);
 
 
-    printnameandvalue ("A or B", a or b);
-    printnameandvalue ("A or C", a or c);
-    printnameandvalue ("B or D", b or d);
-    print_nchar ('=', nbarlen);
+    PrintNameAndValueL ("A and B(并)", a and b);
+    PrintNameAndValueL ("A and C(并)", a and c);
+    PrintNameAndValueL ("B and D(并)", b and d);
+    Print_NChar ('=', nbarlen);
 
 
-    printnameandvalue ("not  A", not a);
-    printnameandvalue ("not  B", not b);
-    print_nchar ('=', nbarlen);
-    printnameandvalue ("A xor B", a xor b);
-    printnameandvalue ("A xor C", a xor c);
-    printnameandvalue ("d xor b", d xor b);
-    print_nchar ('=', nbarlen);
+    PrintNameAndValueL ("A or B(或)", a or b);
+    PrintNameAndValueL ("A or C(或)", a or c);
+    PrintNameAndValueL ("B or D(或)", b or d);
+    Print_NChar ('=', nbarlen);
+
+
+    PrintNameAndValueL ("not  A(取反)", not a);
+    PrintNameAndValueL ("not  B(取反)", not b);
+    Print_NChar ('=', nbarlen);
+    PrintNameAndValueL ("A xor B(异或)", a xor b);
+    PrintNameAndValueL ("A xor C(异或)", a xor c);
+    PrintNameAndValueL ("d xor b(异或)", d xor b);
+    Print_NChar ('=', nbarlen);
 
     return 0;
 }
 
 
-int togoto(int argc1)
+int RunToGotoFN(int argc1)
 {
     int n=0;
-    cout << "start in togoto......\n";
+    cout << "开始跳转模块......\n";
 start:
     if (n <  argc1)
     {
@@ -125,34 +127,39 @@ start:
     }
     else
     {
-        cout << "\noverflow and exit....\n";
+        cout << "\n超过循环次数，退出....\n";
         goto get;
     }
 neverget:
-    cout << "neverget to be jump to......\n";
+    cout << "跳转从来不会到达的地方......\n";
 get:
-    cout << "get in end......\n";
+    cout << "模块结束......\n";
     return 0;
 }
 
-int    testarraysizeof(int argc1)
+int    RunTestArraySizeofFN(int argc1)
 {
     //     int [][][]={0, }
 
-    int arraya[x][y][z]={0,[x-1][y-1][z-1]=0};
-    cout<<"array size of is "<<sizeof(arraya)<<endl;
-    initalarray(arraya, argc1);
-    cout<<"end testarraysizeof.....\n";
+    int arraya[x][y][z]= {0,[x-1][y-1][z-1]=0};
+    cout<<"数组尺寸大小是： "<<sizeof(arraya)<<endl;
+    InitalArrayL(arraya, argc1);
+    cout<<"测试对象尺寸模块结束.....\n";
     return 0;
 }
 
-int initalarray(int arrayb[x][y][z], int argc1)
+int InitalArrayL(int arrayb[x][y][z], int argc1)
 {
-    int a=0; int b=0; int c=0;
-    cout<<"array size of is "<<sizeof(arrayb)<<endl;
-    for(a=0;a<x;a++){
-        for(b=0;b<y;b++){
-            for(c=0;c<z;c++){
+    int a=0;
+    int b=0;
+    int c=0;
+    cout<<"数组尺寸大小是:  "<<sizeof(arrayb)<<endl;
+    for(a=0; a<x; a++)
+    {
+        for(b=0; b<y; b++)
+        {
+            for(c=0; c<z; c++)
+            {
                 cout<<arrayb[a][b][c]<<"|*";
                 arrayb[a][b][c]=argc1;
                 cout<<arrayb[a][b][c]<<"|+\t";
@@ -160,18 +167,19 @@ int initalarray(int arrayb[x][y][z], int argc1)
             cout<<"||**\n"<<endl;
         }
         cout<<"|||***\n\n"<<endl;
-    }   
-    cout<<"array size of is "<<sizeof(arrayb)<<endl;
-    cout<<"array size of is "<<sizeof(arrayb[x][y][z])<<endl;
-    cout<<"array number elements numbe of is "<<x*y*z<<endl;
-    cout<<"array element size of is "<<sizeof(int)<<endl;
+    }
+    cout<<"数组尺寸大小是：  "<<sizeof(arrayb)<<endl;
+    cout<<"数组尺寸大小是：  "<<sizeof(arrayb[x][y][z])<<endl;
+    cout<<"数组总计元素空间大小是： "<<x*y*z<<endl;
+    cout<<"数组元素单元大小size是：（整型）"<<sizeof(int)<<endl;
     return 0;
 };
 
 
-int arradd(int i)
+int RunArrAddFN(int i)
 {
-    int  carr[9]={
+    int  carr[9]=
+    {
         9,8,7,6,5,4,3,2,1
     };
     cout<<*carr+2<<endl;
@@ -182,14 +190,15 @@ int arradd(int i)
 const int months = 12;
 int martix[h][v];
 
-int runmartx(int argc1)
+int MartxL(int argc1)
 {
-    init_martix (martix, argc1);
+    Init_MartixL (martix, argc1);
     return 0;
 }
 
 
-int days[months] = {
+int days[months] =
+{
     31,							//1
     28,							//2
     31,							//3
@@ -204,7 +213,8 @@ int days[months] = {
     31							//12
 };
 
-const char *names[months] = {
+const char *names[months] =
+{
     "January",
     "February",
     "March",
@@ -219,16 +229,16 @@ const char *names[months] = {
     "December"
 };
 
-int runprint_month (int argc1)
+int RunPrint_MonthFN (int argc1)
 {
     int	x = 0;
     int	y = 0;
     int	z = 0;
 
-    char *title = "The numbers of day in month of year is :";
+    char *title = "一年中各月的天数是：";
 
     cout << title << endl;
-    print_char ('=', strlen (title));
+    Print_NChar ('=', strlen (title));
     cout << endl;
     while (x < 12 && x <argc1)
     {
@@ -236,24 +246,24 @@ int runprint_month (int argc1)
         y = strlen (names[x]);
         for (z = 0; z < strlen (title) - y - 20; z++)
             cout << " ";
-        cout << "days is " << days[x] << endl;
+        cout << "天数是：" << days[x] << endl;
         x++;
     }
     return 0;
 }
 
 
-int runpickinital (int icp, int ic, int il)
+int RunPickInitalFN (int icp, int ic, int il)
 {
-    init_martix (martix, icp);
-    pickupbig (martix, icp);
+    Init_MartixL (martix, icp);
+    PickUpBigL (martix, icp);
     return 0;
 }
 
-int init_martix (int i[h][v], int argc1)
+int Init_MartixL (int i[h][v], int argc1)
 {
-    print_char ('=', 8 * v);
-        srand (time (NULL) * argc1);
+    Print_NChar ('=', 8 * v);
+    srand (time (NULL) * argc1);
     for (int c = 0; c < h; c++)
     {
         for (int l = 0; l < v; l++)
@@ -263,18 +273,18 @@ int init_martix (int i[h][v], int argc1)
             cout << i[c][l] << "\t|";
         }
         cout << endl;
-        print_char ('=', 8 * v);
+        Print_NChar ('=', 8 * v);
     }
     cout << endl;
     return 0;
 }
 
-bool pickupbig (int i[h][v], int argc3)
+bool PickUpBigL (int i[h][v], int argc3)
 {
     int ibig = 0, ismall = 0, iequal = 0;
 
-    cout << "Pick up the numbers to compare :" <<  argc3<< endl;
-    print_char ('=', 8 * v);
+    cout << "挑选数字去和矩阵中的值去比较筛选" <<  argc3<< endl;
+    Print_NChar ('=', 8 * v);
     for (int c = 0; c < h; c++)
     {
         for (int l = 0; l < v; l++)
@@ -299,30 +309,13 @@ bool pickupbig (int i[h][v], int argc3)
             }
         }
         cout << endl;
-        print_char ('=', 8 * v);
+        Print_NChar ('=', 8 * v);
     }
-    cout << "The  than "<< argc3<<" more big numbers number is :\t" << ibig << endl;
-    cout << "The  than "<< argc3<<" more small numbers number is :\t" << ismall << endl;
-    cout << "The  than "<< argc3<<" more equal numbers number is :\t" << iequal << endl;
-    cout << "The total numbers number is :\t" << iequal + ismall +
-        ibig << endl;
-    cout << "The total numbers array element's number is :\t" << h *
-        v << endl;
+    cout << "比"<< argc3<<"更大的数字个数是：\t" << ibig << endl;
+    cout << "比"<< argc3<<"更小的数字个数是：\t" << ismall << endl;
+    cout << "比"<< argc3<<"相等的数字个数是：\t" << iequal << endl;
+    cout << "合计:\t" << iequal + ismall + ibig << endl;
+    cout << "数组大小为：\t" << h * v << endl;
     return true;
 }
 
-
-int print_char (char c, int inum)
-{
-    if (inum > 0)
-    {
-        for (int i = 0; i < inum; i++)
-            cout << c;
-        cout << endl;
-        return inum;
-    }
-    else
-    {
-        return 0;
-    }
-}
