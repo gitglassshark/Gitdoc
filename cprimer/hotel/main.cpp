@@ -1,8 +1,7 @@
+#include <stdio.h>
 #include <iostream>
 #include <vector>
 #include <string>
-#include "fun.hpp"
-#include "number.hpp"
 
 using namespace std;
 
@@ -10,11 +9,8 @@ int main()
 {
     string start_msg ="Start! ......\n";
     string end_msg="End! ......\n";
-  程序清单9.9 usehotel.c控制模块
 /* usehotel.c -- 房间费率程序 */
 /* 与程序清单9.10一起编译 */
-#include <stdio.h>
-#include "hotel.h" /* 定义符号常量，声明函数 */
 int main(void)
 {
 int nights;
@@ -42,10 +38,7 @@ showprice(hotel_rate, nights);
 printf("Thank you and goodbye.\n");
 return 0;
 }
-程序清单9.10 hotel.c函数支持模块
 /* hotel.c -- 酒店管理函数 */
-#include <stdio.h>
-#include "hotel.h"
 int menu(void)
 {
 int code, status;
@@ -84,7 +77,6 @@ for (n = 1; n <= nights; n++, factor *= DISCOUNT)
 total += rate * factor;
 printf("The total cost will be $%0.2f.\n", total);
 }
-程序清单9.11 hotel.h头文件
 /* hotel.h -- 符号常量和 hotel.c 中所有函数的原型 */
 #define QUIT 5
 #define HOTEL1 180.00

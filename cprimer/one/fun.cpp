@@ -6,11 +6,12 @@
 
 using namespace std;
 
+int ToGotoL(int argc1);
+int Init_MartixL (int i[h][v], int argc1);
+bool PickUpBigL (int i[h][v], int argc3);
+int InitalArrayL(int arrayb[x][y][z], int argc1);
+int InitalArrayL(int arrayb[x][y][z], int argc1);
 
-int RunMyTestFN(int argc, char *argv[])
-{
-    return 0;
-}
 
 int PrintNameAndValueL (const char *vname, const bool bi)
 {
@@ -33,14 +34,14 @@ int PrintNameAndValueL (const char *vname, const bool bi)
 int PrintTBL (const char *cmessage[], int n, const char *ptitle)
 {
     cout << ptitle;
-    Print_NChar ('=', 70);
-    Print_NChar ('=', 70);
+    Print_NCharx ('=', 70);
+    Print_NCharx ('=', 70);
     for (int i = 0; i < n; i++)
     {
         cout <<'\t'<<cmessage[i]<<"\t\t\t";
     }
     cout<<endl;
-    Print_NChar ('=', 70);
+    Print_NCharx ('=', 70);
     return 0;
 }
 
@@ -82,33 +83,33 @@ int Run_BoolTestFN(int argc,char * argv[])
     };
     //input your program:
     PrintTBL (rmessage, n, rtitle);
-    Print_NChar ('=', nbarlen);
+    Print_NCharx ('=', nbarlen);
 
     PrintNameAndValueL ("A+B(和)", a + b);
     PrintNameAndValueL ("A+C(和)", a + c);
     PrintNameAndValueL ("B+D(和)", b + d);
-    Print_NChar ('=', nbarlen);
+    Print_NCharx ('=', nbarlen);
 
 
     PrintNameAndValueL ("A and B(并)", a and b);
     PrintNameAndValueL ("A and C(并)", a and c);
     PrintNameAndValueL ("B and D(并)", b and d);
-    Print_NChar ('=', nbarlen);
+    Print_NCharx ('=', nbarlen);
 
 
     PrintNameAndValueL ("A or B(或)", a or b);
     PrintNameAndValueL ("A or C(或)", a or c);
     PrintNameAndValueL ("B or D(或)", b or d);
-    Print_NChar ('=', nbarlen);
+    Print_NCharx ('=', nbarlen);
 
 
     PrintNameAndValueL ("not  A(取反)", not a);
     PrintNameAndValueL ("not  B(取反)", not b);
-    Print_NChar ('=', nbarlen);
+    Print_NCharx ('=', nbarlen);
     PrintNameAndValueL ("A xor B(异或)", a xor b);
     PrintNameAndValueL ("A xor C(异或)", a xor c);
     PrintNameAndValueL ("d xor b(异或)", d xor b);
-    Print_NChar ('=', nbarlen);
+    Print_NCharx ('=', nbarlen);
 
     return 0;
 }
@@ -137,7 +138,7 @@ get:
     return 0;
 }
 
-int    RunTestArraySizeofFN(int argc1)
+int RunTestArraySizeofFN(int argc1)
 {
     //     int [][][]={0, }
 
@@ -238,7 +239,7 @@ int RunPrint_MonthFN (int argc1)
     char *title = "一年中各月的天数是：";
 
     cout << title << endl;
-    Print_NChar ('=', strlen (title));
+    Print_NCharx ('=', strlen (title));
     cout << endl;
     while (x < 12 && x <argc1)
     {
@@ -262,7 +263,7 @@ int RunPickInitalFN (int icp, int ic, int il)
 
 int Init_MartixL (int i[h][v], int argc1)
 {
-    Print_NChar ('=', 8 * v);
+    Print_NCharx ('=', 8 * v);
     srand (time (NULL) * argc1);
     for (int c = 0; c < h; c++)
     {
@@ -273,7 +274,7 @@ int Init_MartixL (int i[h][v], int argc1)
             cout << i[c][l] << "\t|";
         }
         cout << endl;
-        Print_NChar ('=', 8 * v);
+        Print_NCharx ('=', 8 * v);
     }
     cout << endl;
     return 0;
@@ -284,7 +285,7 @@ bool PickUpBigL (int i[h][v], int argc3)
     int ibig = 0, ismall = 0, iequal = 0;
 
     cout << "挑选数字去和矩阵中的值去比较筛选" <<  argc3<< endl;
-    Print_NChar ('=', 8 * v);
+    Print_NCharx ('=', 8 * v);
     for (int c = 0; c < h; c++)
     {
         for (int l = 0; l < v; l++)
@@ -309,7 +310,7 @@ bool PickUpBigL (int i[h][v], int argc3)
             }
         }
         cout << endl;
-        Print_NChar ('=', 8 * v);
+        Print_NCharx ('=', 8 * v);
     }
     cout << "比"<< argc3<<"更大的数字个数是：\t" << ibig << endl;
     cout << "比"<< argc3<<"更小的数字个数是：\t" << ismall << endl;

@@ -1,0 +1,6 @@
+make main --dry-run --keep-going --print-directory
+make: Entering directory '/home/yan/do/cprimer/one'
+clang -lstdc++ -w -O0 -I./include -std=c++17 -c maze.cpp -o maze.o
+clang -lstdc++ -w -O0 -I./include -std=c++17 -o main maze.o 
+make: Leaving directory '/home/yan/do/cprimer/one'
+ 

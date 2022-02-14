@@ -9,7 +9,24 @@ int nListSize = 30;
 int nLineNumber = 3;
 int ERR_CODE_1 = 1;
 int nInitData = 0;
-int RunListLT (int argc,char * argv[])
+
+int RunListLTx (int argc,char * argv[]);
+
+int InitList (struct list *pListT, int nDataSizeT, int initdata);
+int PrintList (struct list *pListT, int ncol);
+int TotalList (struct list *pListT, int nDataSizeT);
+int PrintListP (struct list *pListT, int nDataSizeT, int ncol);
+int RandMakeList (struct list *pListT, int nDataSizeT, int nMod, int nListdata);
+int PutListnData (struct list *pListT, int nDataLocate, int nData);
+int GetListNData (struct list *pListT, int nDataLocate);
+int GetListSize (struct list *pListT);
+int GetData (struct list *pListT, int *nLoc);
+int ReSizeList (struct list **pPList, int nNewSize);
+int GetNewSize (struct list *pOldList);
+char MakeMenu ();
+
+
+int RunListLTx (int argc,char * argv[])
 {
     // git test modified text
     int nListSize = SIZE;
@@ -18,10 +35,13 @@ int RunListLT (int argc,char * argv[])
     int nInitData = 8;
     InitList (pListOne, nListSize, nInitData);
     char cChoiceMenu=0;
+    char cGetforMenu=0;
     int nSingExit = 0;
     while (nSingExit == 0)
     {
         cChoiceMenu = MakeMenu ();
+        if('\n'==cChoiceMenu)
+            continue;
         switch (cChoiceMenu)
         {
         case '1':
@@ -43,31 +63,30 @@ int RunListLT (int argc,char * argv[])
             printf ("List total is:%d\n", TotalList (pListOne, nListSize));
             break;
         case '7':
-        {
-            int gdata = 0;
-            int locate = 0;
-            gdata = GetData (pListOne, &locate);
-            printf ("The locate %d data is %d\n", locate + 1, gdata);
-        }
-        break;
+            {
+                int gdata = 0;
+                int locate = 0;
+                gdata = GetData (pListOne, &locate);
+                printf ("The locate %d data is %d\n", locate + 1, gdata);
+            }
+            break;
         case '8':
-        {
-            nListSize = GetNewSize (pListOne);
-            ReSizeList (&pListOne, nListSize);
-        }
-        break;
+            {
+                nListSize = GetNewSize (pListOne);
+                ReSizeList (&pListOne, nListSize);
+            }
+            break;
         case '9':
-        {
-            printf ("List size is %d\n", GetListSize (pListOne));
-        }
-        break;
+            {
+                printf ("List size is %d\n", GetListSize (pListOne));
+            }
+            break;
         case '0':
             nSingExit = 1;
             break;
         default:
             printf ("error cChoiceMenu can't be run.....\n");
         }
-        getchar ();
     }
 
     free (pListOne);
@@ -101,7 +120,9 @@ char MakeMenu ()
     printf ("9.得到列表尺寸\n");
     printf ("0.Exit\n");
     printf ("0.退出\n");
-    char i = getchar ();
+    char i='\n';
+    while('\n'==(i=getchar()));
+    getchar();
     printf ("%c\n", i);
     return i;
 };

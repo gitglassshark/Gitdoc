@@ -14,37 +14,37 @@ struct pn
 };
 
 int InitPN (struct pn *p, int nSizeT);
-int RunSF (struct pn *arstart, int nSizeT);
-int RunOneSF();
+int RunSFLl (struct pn *arstart, int nSizeT);
+int RunOneSFx();
 
-int RunOneSF()
+int RunOneSFx()
 {
     int iROSizeL=nSize;
     struct pn pasSizeRO[nSize];
-    RunSF (pasSizeRO, nSize);
+    RunSFLl (pasSizeRO, nSize);
     int inOddNumber = 0;
     int inEvenNumber = 0;
     int iTotalRO = 0, iNumRO = 0;
     srand (time (NULL));
     while (iROSizeL > 0)
-    {
-        iNumRO = rand () % 100;
-        if (iNumRO % 2)
         {
-            inOddNumber++;
+            iNumRO = rand () % 100;
+            if (iNumRO % 2)
+                {
+                    inOddNumber++;
+                }
+            else
+                {
+                    inEvenNumber++;
+                }
+            printf ("%d:%d\t", iROSizeL, iNumRO);
+            iTotalRO += iNumRO;
+            iROSizeL--;
+            if (!(iROSizeL % 18))
+                {
+                    printf ("\n");
+                }
         }
-        else
-        {
-            inEvenNumber++;
-        }
-        printf ("%d:%d\t", iROSizeL, iNumRO);
-        iTotalRO += iNumRO;
-        iROSizeL--;
-        if (!(iROSizeL % 18))
-        {
-            printf ("\n");
-        }
-    }
 
     printf
     ("total number is :%d,EvenNumber is %d,OddNumber is %d,Avage number is %f.\n",
@@ -60,7 +60,7 @@ int RunOneSF()
 
 }
 
-int RunSF (struct pn *arstart, int nSizeT)
+int RunSFLl (struct pn *arstart, int nSizeT)
 {
     //int i = 0;
     for (int i = 0; i < nSizeT; i++)
@@ -75,12 +75,12 @@ int InitPN (struct pn *p, int nSizeT)
         return 100;
     int i = 0;
     while (nSizeT > 0)
-    {
-        p[i].lp = &p[i + 1];
-        p[i].l = nSizeT;
-        i++;
-        nSizeT--;
-    }
+        {
+            p[i].lp = &p[i + 1];
+            p[i].l = nSizeT;
+            i++;
+            nSizeT--;
+        }
 
     return 0;
 }

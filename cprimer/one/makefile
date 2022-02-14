@@ -18,7 +18,12 @@ OBJS  := $(patsubst %.cpp,%.o,$(SRCS))
 
 all: $(TAGET)
 
+run:rebuild
+	./main 8 8 8
 	
+t:rebuild
+	./main 0 8 8
+
 debugrun:debug
 	gdb ./$(TAGET)
 
