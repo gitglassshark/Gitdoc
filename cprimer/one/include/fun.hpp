@@ -12,7 +12,6 @@ int RunMyTestFN(int argc, char *argv[]);
 const int h = 9;
 const int v = 9;
 int RunPrint_MonthFN (int argc1);
-int Print_Char (char c, int inum);
 
 int RunPickInitalFN (int icp, int ic, int il);
 

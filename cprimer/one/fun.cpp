@@ -2,7 +2,6 @@
 #include<time.h>
 #include<cstring>
 #include "h.hpp"
-#include "printmessage.hpp"
 
 using namespace std;
 
@@ -15,9 +14,9 @@ int InitalArrayL(int arrayb[x][y][z], int argc1);
 
 int PrintNameAndValueL (const char *vname, const bool bi)
 {
-    char *value=0;
-    char *ctrue="True";
-    char *cfalse="False";
+    const char *value=0;
+    const char *ctrue="True";
+    const char *cfalse="False";
     if (bi == true)
     {
         value=ctrue;
@@ -142,7 +141,7 @@ int RunTestArraySizeofFN(int argc1)
 {
     //     int [][][]={0, }
 
-    int arraya[x][y][z]= {0,[x-1][y-1][z-1]=0};
+    int arraya[x][y][z]= {(0,0,0)};
     cout<<"数组尺寸大小是： "<<sizeof(arraya)<<endl;
     InitalArrayL(arraya, argc1);
     cout<<"测试对象尺寸模块结束.....\n";
@@ -151,9 +150,9 @@ int RunTestArraySizeofFN(int argc1)
 
 int InitalArrayL(int arrayb[x][y][z], int argc1)
 {
-    int a=0;
-    int b=0;
-    int c=0;
+    long unsigned int a=0;
+    long unsigned int b=0;
+    long unsigned int c=0;
     cout<<"数组尺寸大小是:  "<<sizeof(arrayb)<<endl;
     for(a=0; a<x; a++)
     {
@@ -232,16 +231,16 @@ const char *names[months] =
 
 int RunPrint_MonthFN (int argc1)
 {
-    int	x = 0;
-    int	y = 0;
-    int	z = 0;
+    long unsigned int	x = 0;
+    long unsigned int	y = 0;
+    long unsigned int	z = 0;
 
-    char *title = "一年中各月的天数是：";
+    const char *title = "一年中各月的天数是：";
 
     cout << title << endl;
     Print_NCharx ('=', strlen (title));
     cout << endl;
-    while (x < 12 && x <argc1)
+    while (x < 12 && x <(long signed int)argc1)
     {
         cout << x + 1 << ".\t" << names[x];
         y = strlen (names[x]);

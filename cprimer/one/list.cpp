@@ -35,7 +35,7 @@ int RunListLTx (int argc,char * argv[])
     int nInitData = 8;
     InitList (pListOne, nListSize, nInitData);
     char cChoiceMenu=0;
-    char cGetforMenu=0;
+//     char cGetforMenu=0;
     int nSingExit = 0;
     while (nSingExit == 0)
     {

@@ -1,14 +1,21 @@
 #include <iostream> //
 #include <stdio.h>
 #include <stdlib.h>
+#include "mylib.hpp"
+
 
 using namespace std;
 
 int testone();
 int testtwo(int argc,char * argv[] );
 int testthree( int argc, char *argv[]);
-static int key=1;
-extern int  ekey=5;
+
+int RunMyTestFN(int argc, char *argv[])
+{
+    Print_NCharx('a',100);
+    PrintClassSize();
+    return 0;
+}
 
 int testtwo(int argc,char * argv[] )
 {
@@ -31,21 +38,11 @@ int PrintLongSizeL(int argc, char *argv[])
         lmaxlong*=2;
     cout<<"long sizeof is "<<sizeof(long)<<endl;
     cout<<"max long is "<<lmaxlong<<endl;
-    cout<<"max long is "<<lmaxlong*2<<endl;
     cout<<"int sizeof is "<<sizeof(int)<<endl;
 
     return 0;
 }
 
-int RunMyTestFN(int argc, char *argv[])
-{
-    //     testthree( argc, argv);
-    //     testone();
-    //     testtwo(argc,argv );
-
-    PrintLongSizeL(argc, argv);
-    return 0;
-}
 
 int FCopyFileDelteNCharFN(char *pcFormFile,char *pcDestFile,char cCharIsNDelete)
 {
@@ -97,8 +94,6 @@ int testone()
 {
 
     // 测试变量作用域,
-    cout<<"key is "<<endl;
-    cout<<key<<endl;
     int key=100;
     {
         cout<<"in {}key is "<<endl;
@@ -106,7 +101,6 @@ int testone()
         cout<<key<<endl;
     }
     cout<<key<<endl;
-
     int i=22;
     for(int i=0; i<9; i++)
     {

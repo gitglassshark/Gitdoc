@@ -1,0 +1,10 @@
+#clean: Clean the useless file ......
+clang -lstdc++ -Wall -g -I./include -std=c++17 -c fun.cpp -o fun.o
+clang -lstdc++ -Wall -g -I./include -std=c++17 -c list.cpp -o list.o
+clang -lstdc++ -Wall -g -I./include -std=c++17 -c main.cpp -o main.o
+clang -lstdc++ -Wall -g -I./include -std=c++17 -c menu.cpp -o menu.o
+clang -lstdc++ -Wall -g -I./include -std=c++17 -c mylib.cpp -o mylib.o
+clang -lstdc++ -Wall -g -I./include -std=c++17 -c readme.cpp -o readme.o
+clang -lstdc++ -Wall -g -I./include -std=c++17 -c sizeof.cpp -o sizeof.o
+clang -lstdc++ -Wall -g -I./include -std=c++17 -c test.cpp -o test.o
+clang -lstdc++ -Wall -g -I./include -std=c++17 -o main fun.o list.o main.o menu.o mylib.o readme.o sizeof.o test.o 

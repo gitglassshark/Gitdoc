@@ -1,8 +1,8 @@
 CC= clang
 #CC= g++
 
-DEBUGS = -g -Wall -I$(INCD) -std=c++17
-CXXFLAGS = -lstdc++ -w -O0 -I$(INCD) -std=c++17
+DEBUGS   = -lstdc++ -Wall -g -I$(INCD) -std=c++17
+CXXFLAGS = -lstdc++ -w -O0   -I$(INCD) -std=c++17
 
 TAGET = main
 INCD = ./include
@@ -14,13 +14,17 @@ HEADS = $(wildcard *.hpp *.h ./$(INCD)/*.hpp ./$(INCD)/*.h)
 FILES = $(HEADS) $(SRCS)
 OBJS  := $(patsubst %.cpp,%.o,$(SRCS))
 
-.PHONY: all debugrun rebuild debug  asm clean 
 
 all: $(TAGET)
+.PHONY: all gcc gccdebug t debugrun rebuild debug indent linux gnu bsd google asm test testvar clean 
 
-run:rebuild
-	./main 8 8 8
-	
+gcc:CC=g++
+gcc:rebuild
+
+gccdebug:CC=g++
+gccdebug:CXXFLAGS = $(DEBUGS)
+gccdebug:rebuild
+
 t:rebuild
 	./main 0 8 8
 
