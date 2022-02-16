@@ -1,30 +1,14 @@
-#include <iostream> //
-#include <string> //
+#include <iostream>
+#include <string>
 #include <stdio.h>
 #include <stdlib.h>
 #include "mylib.hpp"
-extern const int constintest=100;
-
 using namespace std;
 
-int testone();
-int testtwo(int argc,char * argv[] );
-int testthree( int argc, char *argv[]);
-
-
-int testtwo(int argc,char * argv[] )
-{
-    //测试函数原型作用域及可见性
-    cout<<"in test......\n测试函数原型作用域及可见性"<<endl;
-    cout<<"end test......"<<endl;
-    return 0;
-}
+extern const int constintest=100;
 
 int PrintLongSizeL(int argc, char *argv[])
 {
-    //     testthree( argc, argv);
-    //     testone();
-    //     testtwo(argc,argv );
     cout<<"long long sizeof is "<<sizeof(long)<<endl;
     int  isizeoflong =sizeof(long);
     isizeoflong =sizeof(long)*8;
@@ -34,63 +18,11 @@ int PrintLongSizeL(int argc, char *argv[])
     cout<<"long sizeof is "<<sizeof(long)<<endl;
     cout<<"max long is "<<lmaxlong<<endl;
     cout<<"int sizeof is "<<sizeof(int)<<endl;
-
     return 0;
 }
 
-
-int FCopyFileDelteNCharFN(char *pcFormFile,char *pcDestFile,char cCharIsNDelete)
+int one()
 {
-    //编写一个程序，将输入文件复制到输出文件，在复制过程中，要求将输入
-    //文件中的多个连续空格转化为一个空格并复制到输出文件中，其它字符不
-    //变，原样复制。。
-    FILE *fIn,*fOut;
-    fIn=fopen(pcFormFile,"r");
-    fOut=fopen(pcDestFile,"w+");
-    if((!fIn)||(!fOut))
-        {
-            cout<<"File error!exit......\n";
-            exit(0);
-        }
-    int c;
-    cCharIsNDelete=' ';
-    long long iS=0;
-    while((c=fgetc(fIn))!=EOF)
-        {
-            if(c==cCharIsNDelete)
-                {
-                    if(!iS++)
-                        fputc(c,fOut);
-                }
-            else
-                {
-                    fputc(c,fOut);
-                    iS=0;
-                }
-
-        }
-    fclose(fIn);
-    fclose(fOut);
-    return 0;
-}
-
-
-int testthree( int argc, char *argv[])
-{
-    int iArgcTotalL=0;
-    cout<<"打印参数列表："<<endl;
-    for(int i=0; i<argc; i++)
-        {
-            iArgcTotalL+=atoi(argv[i]);
-            cout<<argv[i]<<endl;
-        }
-    cout<<iArgcTotalL<<endl;
-    return 0;
-}
-
-int testone()
-{
-
     // 测试变量作用域,
     int key=100;
     {
@@ -115,22 +47,28 @@ int testone()
     return 0;
 }
 
-int xi()
+int two(int argc,char * argv[] )
 {
-    string strStarLine="****************************"
-                       "**************************\n";
-//    cout<<strStarLine;
-    string strStarn=string(60,'*');
-    strStarn+='\n';
-    cout<<strStarn;
-    return 0;
-}
-int t(int argc,char * argv[] )
-{
+    //测试函数原型作用域及可见性
+    cout<<"in test......\n测试函数原型作用域及可见性"<<endl;
+    cout<<"end test......"<<endl;
     return 0;
 }
 
-int tthree(int argc,char * argv[] )
+int three( int argc, char *argv[])
+{
+    int iArgcTotalL=0;
+    cout<<"打印参数列表："<<endl;
+    for(int i=0; i<argc; i++)
+        {
+            iArgcTotalL+=atoi(argv[i]);
+            cout<<argv[i]<<endl;
+        }
+    cout<<iArgcTotalL<<endl;
+    return 0;
+}
+
+int four(int argc,char * argv[] )
 {
     int i=100;
     int &x=i;
@@ -144,23 +82,37 @@ int tthree(int argc,char * argv[] )
     cout<<i<<endl;
     return 0;
 }
-int tone(int argc,char * argv[] )
+
+int five(int argc,char * argv[] )
 {
     cout<<"line one\n" "line two"
         "line one\n" "line two"
         <<endl;
-    xi();
     cout<<constintest*2<<endl;
     return 0;
 }
-int ttwo(int argc,char * argv[] )
+
+int star()
 {
-    xi();
+    string strStarLine=string(60,'*');
+    cout<<strStarLine<<endl;
+    return 0;
+}
+
+int six(int argc,char * argv[] )
+{
+    star();
     return 0;
 }
 
 int RunMyTestFN(int argc, char *argv[])
 {
-    ttwo(argc,argv);
+    six(argc,argv);
     return 0;
 }
+
+int t(int argc,char * argv[] )
+{
+    return 0;
+}
+

@@ -50,7 +50,6 @@ int ReTurn(int argc, char *argv[])
             nArgc1 = atoi (argv[1]);
             if(nArgc1==0)
                 {
-                    // begin run and test
                     RunTest(argc,argv);
                     return 0;
                 }
@@ -89,7 +88,7 @@ int RunMainL(int nArgc1,int nArgc2,int nArgc3,char *argv[],int nMenuSign )
 
 int RunTest(int argc, char *argv[])
 {
-    cout<<"Enter Test Moudle ......\n";
+//    cout<<"Enter Test Moudle ......\n";
     RunMyTestFN(argc,argv);
     return 0;
 }
