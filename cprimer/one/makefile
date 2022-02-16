@@ -38,7 +38,7 @@ rebuild:clean $(TAGET)
 debug: CXXFLAGS = $(DEBUGS)
 debug: clean $(TAGET) 
 
-$(TAGET):$(OBJS)
+$(TAGET):$(OBJS) gnu
 	${CC} ${CXXFLAGS} -o $@ $(OBJS) 
 	
 $(OBJS): %.o:%.cpp 

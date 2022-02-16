@@ -94,7 +94,7 @@ int starline(int nStartLen=60)
         }
     else
         {
-            string strStarn=string(nStartLen,'*');
+            string strStarn(nStartLen,'*');
             cout<<strStarn<<endl;
         }
     return 0;

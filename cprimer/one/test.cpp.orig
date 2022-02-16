@@ -105,9 +105,9 @@ int six(int argc,char * argv[] )
     star();
 //    string strArgOne=argv[1];
 //    cout<<atoi(strArgOne)<<endl;
-    string strgetline;
-    getline(cin,strgetline);
-    cout<<strgetline<<endl;
+string strgetline;
+getline(cin,strgetline);
+cout<<strgetline<<endl;
     return 0;
 }
 

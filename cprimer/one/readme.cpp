@@ -6,7 +6,7 @@ int RunReadmeRE (int argc, char *argv[])
 {
     string strStarStartLine="************************************"
                             "**************************\n";
-    string strStarNEnd=string(60,'*');
+    string strStarNEnd(60,'*');
     strStarNEnd+='\n';
     string strReadme="Compare random number's arrary 0.10\n"
                      "Copyleft (C) 2022 Free Software gitglassshark@Nothing, INC:bbc@sina.com.\n"
