@@ -1,8 +1,9 @@
 #include <iostream> //
+#include <string> //
 #include <stdio.h>
 #include <stdlib.h>
 #include "mylib.hpp"
-
+extern const int constintest=100;
 
 using namespace std;
 
@@ -10,12 +11,6 @@ int testone();
 int testtwo(int argc,char * argv[] );
 int testthree( int argc, char *argv[]);
 
-int RunMyTestFN(int argc, char *argv[])
-{
-    Print_NCharx('a',100);
-    PrintClassSize();
-    return 0;
-}
 
 int testtwo(int argc,char * argv[] )
 {
@@ -34,7 +29,7 @@ int PrintLongSizeL(int argc, char *argv[])
     int  isizeoflong =sizeof(long);
     isizeoflong =sizeof(long)*8;
     unsigned long  lmaxlong =1;
-    for(int i=0;i<isizeoflong-1;i++)
+    for(int i=0; i<isizeoflong-1; i++)
         lmaxlong*=2;
     cout<<"long sizeof is "<<sizeof(long)<<endl;
     cout<<"max long is "<<lmaxlong<<endl;
@@ -53,24 +48,27 @@ int FCopyFileDelteNCharFN(char *pcFormFile,char *pcDestFile,char cCharIsNDelete)
     fIn=fopen(pcFormFile,"r");
     fOut=fopen(pcDestFile,"w+");
     if((!fIn)||(!fOut))
-    {
-        cout<<"File error!exit......\n";
-        exit(0);
-    }
+        {
+            cout<<"File error!exit......\n";
+            exit(0);
+        }
     int c;
     cCharIsNDelete=' ';
     long long iS=0;
-    while((c=fgetc(fIn))!=EOF){
-        if(c==cCharIsNDelete){
-            if(!iS++)
-                fputc(c,fOut);
-        }
-        else{
-            fputc(c,fOut);
-            iS=0;
-        }
+    while((c=fgetc(fIn))!=EOF)
+        {
+            if(c==cCharIsNDelete)
+                {
+                    if(!iS++)
+                        fputc(c,fOut);
+                }
+            else
+                {
+                    fputc(c,fOut);
+                    iS=0;
+                }
 
-    }
+        }
     fclose(fIn);
     fclose(fOut);
     return 0;
@@ -82,10 +80,10 @@ int testthree( int argc, char *argv[])
     int iArgcTotalL=0;
     cout<<"打印参数列表："<<endl;
     for(int i=0; i<argc; i++)
-    {
-        iArgcTotalL+=atoi(argv[i]);
-        cout<<argv[i]<<endl;
-    }
+        {
+            iArgcTotalL+=atoi(argv[i]);
+            cout<<argv[i]<<endl;
+        }
     cout<<iArgcTotalL<<endl;
     return 0;
 }
@@ -103,19 +101,66 @@ int testone()
     cout<<key<<endl;
     int i=22;
     for(int i=0; i<9; i++)
-    {
-        if(i==8)
         {
-            cout<<"in if, i=8"<<i<<endl;
+            if(i==8)
+                {
+                    cout<<"in if, i=8"<<i<<endl;
+                }
+            if(i==9)
+                {
+                    cout<<i<<endl;
+                }
         }
-        if(i==9)
-        {
-            cout<<i<<endl;
-        }
-    }
     cout<<i<<endl;
     return 0;
 }
 
+int xi()
+{
+    string strStarLine="****************************"
+                       "**************************\n";
+//    cout<<strStarLine;
+    string strStarn=string(60,'*');
+    strStarn+='\n';
+    cout<<strStarn;
+    return 0;
+}
+int t(int argc,char * argv[] )
+{
+    return 0;
+}
 
+int tthree(int argc,char * argv[] )
+{
+    int i=100;
+    int &x=i;
+    cout<<x<<endl;
+    cout<<i<<endl;
+    x++;
+    cout<<x<<endl;
+    cout<<i<<endl;
+    i++;
+    cout<<x<<endl;
+    cout<<i<<endl;
+    return 0;
+}
+int tone(int argc,char * argv[] )
+{
+    cout<<"line one\n" "line two"
+        "line one\n" "line two"
+        <<endl;
+    xi();
+    cout<<constintest*2<<endl;
+    return 0;
+}
+int ttwo(int argc,char * argv[] )
+{
+    xi();
+    return 0;
+}
 
+int RunMyTestFN(int argc, char *argv[])
+{
+    ttwo(argc,argv);
+    return 0;
+}

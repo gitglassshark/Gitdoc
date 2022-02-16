@@ -6,7 +6,7 @@ echo -e "ls git files:"
 git ls
 echo -e "======================================="
 git add *
-git cm "add and commit"
+git cm "auto add and commit"
 echo -e "stat git:"
 echo -e "======================================="
 git s -b --show-stash --short

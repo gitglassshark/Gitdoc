@@ -25,7 +25,9 @@ gccdebug:CC=g++
 gccdebug:CXXFLAGS = $(DEBUGS)
 gccdebug:rebuild
 
-t:rebuild
+g:gccdebug
+	./main 0 8 8
+t:debug
 	./main 0 8 8
 
 debugrun:debug
@@ -37,7 +39,7 @@ debug: CXXFLAGS = $(DEBUGS)
 debug: clean $(TAGET) 
 
 $(TAGET):$(OBJS)
-	${CC} ${CXXFLAGS} -o $@ $? 
+	${CC} ${CXXFLAGS} -o $@ $(OBJS) 
 	
 $(OBJS): %.o:%.cpp 
 	${CC} ${CXXFLAGS} -c $? -o $@

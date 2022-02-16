@@ -6,19 +6,42 @@
 #include "test.hpp"
 #include "sizeof.hpp"
 
+extern const int constintest;
+
 using namespace std;
 
-int RunMainL(int nArgc1,int nArgc2,int nArgc3,char *argv[],int nMenuSign );
+int ReTurn(int argc, char *argv[]);
+int RunTest(int argc, char *argv[]);
+int RunMainL(int Argc1,int nArgc2,int nArgc3,char *argv[],int nMenuSign );
 
 int main (int argc, char *argv[])
 {
     //input your program:
+    enum enArgNumStatus {enStatusExit=1,enStatusTest=2,enStatusOK=4,enStatusTooMuch,enStatusEtc};
+    enArgNumStatus enStatus=enStatusExit;
+    switch(argc)
+        {
+        case enStatusTest:
+            RunTest(argc,argv);
+            break;
+        case enStatusOK:
+            ReTurn(argc, argv);
+            break;
+        case enStatusExit:
+        default:
+            RunReadmeRE (argc, argv);
+            break;
+        }
+    return 0;
+}
+
+int ReTurn(int argc, char *argv[])
+{
     int nArgc1;
     int nArgc2;
     int nArgc3;
     if (argc== 1)
         {
-            cout << "缺少参数...." << endl;
             RunReadmeRE (argc, argv);
             return 0;
         }
@@ -28,7 +51,7 @@ int main (int argc, char *argv[])
             if(nArgc1==0)
                 {
                     // begin run and test
-                    RunMyTestFN(argc,argv);
+                    RunTest(argc,argv);
                     return 0;
                 }
             //input your program:
@@ -64,5 +87,11 @@ int RunMainL(int nArgc1,int nArgc2,int nArgc3,char *argv[],int nMenuSign )
     return 0;
 }
 
+int RunTest(int argc, char *argv[])
+{
+    cout<<"Enter Test Moudle ......\n";
+    RunMyTestFN(argc,argv);
+    return 0;
+}
 
 

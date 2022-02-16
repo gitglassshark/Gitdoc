@@ -38,56 +38,56 @@ int RunListLTx (int argc,char * argv[])
 //     char cGetforMenu=0;
     int nSingExit = 0;
     while (nSingExit == 0)
-    {
-        cChoiceMenu = MakeMenu ();
-        if('\n'==cChoiceMenu)
-            continue;
-        switch (cChoiceMenu)
         {
-        case '1':
-            InitList (pListOne, nListSize, nInitData);
-            break;
-        case '2':
-            RandMakeList (pListOne, nListSize, 200, nInitData);
-            break;
-        case '3':
-            PutListnData (pListOne, 4, 7);
-            break;
-        case '4':
-            PrintList (pListOne, nLineNumber);
-            break;
-        case '5':
-            PrintListP (pListOne, nListSize, nLineNumber);
-            break;
-        case '6':
-            printf ("List total is:%d\n", TotalList (pListOne, nListSize));
-            break;
-        case '7':
-            {
-                int gdata = 0;
-                int locate = 0;
-                gdata = GetData (pListOne, &locate);
-                printf ("The locate %d data is %d\n", locate + 1, gdata);
-            }
-            break;
-        case '8':
-            {
-                nListSize = GetNewSize (pListOne);
-                ReSizeList (&pListOne, nListSize);
-            }
-            break;
-        case '9':
-            {
-                printf ("List size is %d\n", GetListSize (pListOne));
-            }
-            break;
-        case '0':
-            nSingExit = 1;
-            break;
-        default:
-            printf ("error cChoiceMenu can't be run.....\n");
+            cChoiceMenu = MakeMenu ();
+            if('\n'==cChoiceMenu)
+                continue;
+            switch (cChoiceMenu)
+                {
+                case '1':
+                    InitList (pListOne, nListSize, nInitData);
+                    break;
+                case '2':
+                    RandMakeList (pListOne, nListSize, 200, nInitData);
+                    break;
+                case '3':
+                    PutListnData (pListOne, 4, 7);
+                    break;
+                case '4':
+                    PrintList (pListOne, nLineNumber);
+                    break;
+                case '5':
+                    PrintListP (pListOne, nListSize, nLineNumber);
+                    break;
+                case '6':
+                    printf ("List total is:%d\n", TotalList (pListOne, nListSize));
+                    break;
+                case '7':
+                {
+                    int gdata = 0;
+                    int locate = 0;
+                    gdata = GetData (pListOne, &locate);
+                    printf ("The locate %d data is %d\n", locate + 1, gdata);
+                }
+                break;
+                case '8':
+                {
+                    nListSize = GetNewSize (pListOne);
+                    ReSizeList (&pListOne, nListSize);
+                }
+                break;
+                case '9':
+                {
+                    printf ("List size is %d\n", GetListSize (pListOne));
+                }
+                break;
+                case '0':
+                    nSingExit = 1;
+                    break;
+                default:
+                    printf ("error cChoiceMenu can't be run.....\n");
+                }
         }
-    }
 
     free (pListOne);
     pListOne = NULL;
@@ -131,26 +131,26 @@ int TotalList (struct list *p, int datasize)
 {
     int total = 0;
     for (int i = 0; i < datasize; i++)
-    {
-        total += p[i].nData;
-    }
+        {
+            total += p[i].nData;
+        }
     return total;
 };
 
 int InitList (struct list *p, int datasize, int nInitData)
 {
     for (int i = 0; i < datasize; i++)
-    {
-        p[i].nData = nInitData;
-        if (i == datasize - 1)
         {
-            p[i].pn = NULL;
+            p[i].nData = nInitData;
+            if (i == datasize - 1)
+                {
+                    p[i].pn = NULL;
+                }
+            else
+                {
+                    p[i].pn = &p[i + 1];
+                }
         }
-        else
-        {
-            p[i].pn = &p[i + 1];
-        }
-    }
     printf ("初始化列表......\n");
     return 0;
 };
@@ -159,12 +159,12 @@ int PrintListP (struct list *p, int datasize, int ncol)
 {
     printf ("LIST STRUCT PIONTER :\n");
     for (int i = 0; i < datasize; i++)
-    {
-        printf ("No%d 结构内存地址%p,No%d->P 是 %p\t", i,
-                (void *) &p[i], i, (void *) p[i].pn);
-        if ((i + 1) % ncol == 0)
-            printf ("\n");
-    }
+        {
+            printf ("No%d 结构内存地址%p,No%d->P 是 %p\t", i,
+                    (void *) &p[i], i, (void *) p[i].pn);
+            if ((i + 1) % ncol == 0)
+                printf ("\n");
+        }
     printf ("\n");
     return 0;
 };
@@ -174,12 +174,12 @@ int PrintList (struct list *p, int ncol)
     printf ("列出列表数据：\n");
     int i;
     for (i = 0; p != NULL; i++)
-    {
-        printf ("No%d 数据:%d\t", i + 1, p->nData);
-        p = p->pn;
-        if ((i + 1) % ncol == 0)
-            printf ("\n");
-    }
+        {
+            printf ("No%d 数据:%d\t", i + 1, p->nData);
+            p = p->pn;
+            if ((i + 1) % ncol == 0)
+                printf ("\n");
+        }
     printf ("\n");
     return i;
 };
@@ -202,18 +202,18 @@ int RandMakeList (struct list *p, int datasize, int mod, int nInitData)
         */
     struct list *pc = p;
     for (int i = 0; i < datasize; i++)
-    {
-        pc->nData = rand () % mod;
-        if (i == datasize - 1)
         {
-            pc->pn = NULL;
+            pc->nData = rand () % mod;
+            if (i == datasize - 1)
+                {
+                    pc->pn = NULL;
+                }
+            else
+                {
+                    pc->pn = (pc + 1);
+                }
+            pc++;
         }
-        else
-        {
-            pc->pn = (pc + 1);
-        }
-        pc++;
-    }
     //
     return 0;
 };
@@ -225,13 +225,13 @@ int PutListnData (struct list *p, int datalocate, int data)
     struct list *pmark = p;
     for (i = 0; i < datalocate; i++)
         if (pmark->pn != NULL)
-        {
-            pmark = pmark->pn;
-        }
+            {
+                pmark = pmark->pn;
+            }
         else
-        {
-            return ERR_CODE_1;
-        }
+            {
+                return ERR_CODE_1;
+            }
     pmark->nData = data;
     printf ("置入数据项No%d 数据is %d.\n", datalocate + 1, pmark->nData);
     return 0;
@@ -246,19 +246,19 @@ int GetListNData (struct list *p, int datalocate)
     if (datalocate > listsize)
         return ERR_CODE_1;
     else
-    {
-        for (i = 0; i < datalocate; i++)
         {
-            if (pmark->pn != NULL)
-            {
-                pmark = pmark->pn;
-            }
-            else
-            {
-                return ERR_CODE_1;
-            }
+            for (i = 0; i < datalocate; i++)
+                {
+                    if (pmark->pn != NULL)
+                        {
+                            pmark = pmark->pn;
+                        }
+                    else
+                        {
+                            return ERR_CODE_1;
+                        }
+                }
         }
-    }
     return pmark->nData;
 };
 
@@ -284,11 +284,11 @@ int ReSizeList (struct list **pplist, int nnewsize)
     if (*pplist == NULL || nnewsize == 0)
         return ERR_CODE_1;
     else
-    {
-        free (*pplist);
-        *pplist = (list*)malloc (sizeof (struct list) * nnewsize);
-        InitList (*pplist, nnewsize, nInitData);
-    }
+        {
+            free (*pplist);
+            *pplist = (list*)malloc (sizeof (struct list) * nnewsize);
+            InitList (*pplist, nnewsize, nInitData);
+        }
     return nnewsize;
 };
 
@@ -311,10 +311,10 @@ int InsertToList (struct list *plist, int insertlocate, int insertdata)
     int i = 0;
     struct list *pcurrentlist;
     for (i = 0; i < GetListSize (plist) && i < insertlocate; i++)
-    {
-        pcurrentlist = plist->pn;
-        pcurrentlist = pcurrentlist->pn;
-    }
+        {
+            pcurrentlist = plist->pn;
+            pcurrentlist = pcurrentlist->pn;
+        }
     pcurrentlist->nData = insertdata;
     return 0;
 };

@@ -18,13 +18,13 @@ int PrintNameAndValueL (const char *vname, const bool bi)
     const char *ctrue="True";
     const char *cfalse="False";
     if (bi == true)
-    {
-        value=ctrue;
-    }
+        {
+            value=ctrue;
+        }
     else
-    {
-        value=cfalse;
-    };
+        {
+            value=cfalse;
+        };
     cout <<'\t'<<vname<<"\t\t\t\t\t"<<value<<endl;
     return 0;
 }
@@ -36,9 +36,9 @@ int PrintTBL (const char *cmessage[], int n, const char *ptitle)
     Print_NCharx ('=', 70);
     Print_NCharx ('=', 70);
     for (int i = 0; i < n; i++)
-    {
-        cout <<'\t'<<cmessage[i]<<"\t\t\t";
-    }
+        {
+            cout <<'\t'<<cmessage[i]<<"\t\t\t";
+        }
     cout<<endl;
     Print_NCharx ('=', 70);
     return 0;
@@ -120,16 +120,16 @@ int RunToGotoFN(int argc1)
     cout << "开始跳转模块......\n";
 start:
     if (n <  argc1)
-    {
-        cout<<n<<'\t';
-        n++;
-        goto start;
-    }
+        {
+            cout<<n<<'\t';
+            n++;
+            goto start;
+        }
     else
-    {
-        cout << "\n超过循环次数，退出....\n";
-        goto get;
-    }
+        {
+            cout << "\n超过循环次数，退出....\n";
+            goto get;
+        }
 neverget:
     cout << "跳转从来不会到达的地方......\n";
 get:
@@ -155,19 +155,19 @@ int InitalArrayL(int arrayb[x][y][z], int argc1)
     long unsigned int c=0;
     cout<<"数组尺寸大小是:  "<<sizeof(arrayb)<<endl;
     for(a=0; a<x; a++)
-    {
-        for(b=0; b<y; b++)
         {
-            for(c=0; c<z; c++)
-            {
-                cout<<arrayb[a][b][c]<<"|*";
-                arrayb[a][b][c]=argc1;
-                cout<<arrayb[a][b][c]<<"|+\t";
-            }
-            cout<<"||**\n"<<endl;
+            for(b=0; b<y; b++)
+                {
+                    for(c=0; c<z; c++)
+                        {
+                            cout<<arrayb[a][b][c]<<"|*";
+                            arrayb[a][b][c]=argc1;
+                            cout<<arrayb[a][b][c]<<"|+\t";
+                        }
+                    cout<<"||**\n"<<endl;
+                }
+            cout<<"|||***\n\n"<<endl;
         }
-        cout<<"|||***\n\n"<<endl;
-    }
     cout<<"数组尺寸大小是：  "<<sizeof(arrayb)<<endl;
     cout<<"数组尺寸大小是：  "<<sizeof(arrayb[x][y][z])<<endl;
     cout<<"数组总计元素空间大小是： "<<x*y*z<<endl;
@@ -241,14 +241,14 @@ int RunPrint_MonthFN (int argc1)
     Print_NCharx ('=', strlen (title));
     cout << endl;
     while (x < 12 && x <(long signed int)argc1)
-    {
-        cout << x + 1 << ".\t" << names[x];
-        y = strlen (names[x]);
-        for (z = 0; z < strlen (title) - y - 20; z++)
-            cout << " ";
-        cout << "天数是：" << days[x] << endl;
-        x++;
-    }
+        {
+            cout << x + 1 << ".\t" << names[x];
+            y = strlen (names[x]);
+            for (z = 0; z < strlen (title) - y - 20; z++)
+                cout << " ";
+            cout << "天数是：" << days[x] << endl;
+            x++;
+        }
     return 0;
 }
 
@@ -265,16 +265,16 @@ int Init_MartixL (int i[h][v], int argc1)
     Print_NCharx ('=', 8 * v);
     srand (time (NULL) * argc1);
     for (int c = 0; c < h; c++)
-    {
-        for (int l = 0; l < v; l++)
         {
-            i[c][l] = rand ();
-            i[c][l] = ((i[c][l] % 10000) + (i[c][l] / 10000)) / 1000;
-            cout << i[c][l] << "\t|";
+            for (int l = 0; l < v; l++)
+                {
+                    i[c][l] = rand ();
+                    i[c][l] = ((i[c][l] % 10000) + (i[c][l] / 10000)) / 1000;
+                    cout << i[c][l] << "\t|";
+                }
+            cout << endl;
+            Print_NCharx ('=', 8 * v);
         }
-        cout << endl;
-        Print_NCharx ('=', 8 * v);
-    }
     cout << endl;
     return 0;
 }
@@ -286,31 +286,31 @@ bool PickUpBigL (int i[h][v], int argc3)
     cout << "挑选数字去和矩阵中的值去比较筛选" <<  argc3<< endl;
     Print_NCharx ('=', 8 * v);
     for (int c = 0; c < h; c++)
-    {
-        for (int l = 0; l < v; l++)
         {
-            if (i[c][l] < argc3)
-            {
-                ismall++;
-                cout << i[c][l] << "-\t|";
-            }
-            else
-            {
-                if (i[c][l] == argc3)
+            for (int l = 0; l < v; l++)
                 {
-                    iequal++;
-                    cout << i[c][l] << "=\t|";
+                    if (i[c][l] < argc3)
+                        {
+                            ismall++;
+                            cout << i[c][l] << "-\t|";
+                        }
+                    else
+                        {
+                            if (i[c][l] == argc3)
+                                {
+                                    iequal++;
+                                    cout << i[c][l] << "=\t|";
+                                }
+                            else
+                                {
+                                    ibig++;
+                                    cout << i[c][l] << "+\t|";
+                                }
+                        }
                 }
-                else
-                {
-                    ibig++;
-                    cout << i[c][l] << "+\t|";
-                }
-            }
+            cout << endl;
+            Print_NCharx ('=', 8 * v);
         }
-        cout << endl;
-        Print_NCharx ('=', 8 * v);
-    }
     cout << "比"<< argc3<<"更大的数字个数是：\t" << ibig << endl;
     cout << "比"<< argc3<<"更小的数字个数是：\t" << ismall << endl;
     cout << "比"<< argc3<<"相等的数字个数是：\t" << iequal << endl;
