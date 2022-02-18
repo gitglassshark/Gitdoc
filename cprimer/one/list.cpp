@@ -1,9 +1,11 @@
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include "list.hpp"
 // 数组列表
 //
+using namespace std;
 #define SIZE 100
 int nListSize = 30;
 int nLineNumber = 3;
@@ -122,7 +124,7 @@ char MakeMenu ()
     printf ("0.退出\n");
     char i='\n';
     while('\n'==(i=getchar()));
-    getchar();
+    cin.clear();
     printf ("%c\n", i);
     return i;
 };

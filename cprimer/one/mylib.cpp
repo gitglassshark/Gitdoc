@@ -2,6 +2,36 @@
 #include <stdio.h>
 using namespace std;
 
+int newline()
+{
+    cout<<endl;
+    return 0;
+}
+
+int blankline()
+{
+    cout<<endl<<endl;
+    return 0;
+}
+
+int star(int c,int n)
+{
+    string strStarLine=string(n,'*');
+    cout<<c<<'\t'<<strStarLine<<endl;
+    return 0;
+}
+int star(int c)
+{
+    string strStarLine=string(80,'*');
+    cout<<c<<':'<<strStarLine<<endl;
+    return 0;
+}
+int star()
+{
+    string strStarLine=string(80,'*');
+    cout<<strStarLine<<endl;
+    return 0;
+}
 
 int PrintSx (char const *const cmessage)
 {

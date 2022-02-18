@@ -1,5 +1,11 @@
 #pragma once
 
+
+int star(int c,int n);
+int newline();
+int blankline();
+int star();
+int star(int c);
 int PrintClassSize();
 int PrintSx (char const *const cmessage);
 int PrintSLx (char const *const cmessage);

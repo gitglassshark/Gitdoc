@@ -18,16 +18,16 @@ OBJS  := $(patsubst %.cpp,%.o,$(SRCS))
 all: $(TAGET)
 .PHONY: all gcc gccdebug t debugrun rebuild debug indent linux gnu bsd google asm test testvar clean 
 
-gcc:CC=g++
-gcc:rebuild
 
 gccdebug:CC=g++
 gccdebug:CXXFLAGS = $(DEBUGS)
 gccdebug:rebuild
 
-g:gccdebug
+g:CC=g++
+g:rebuild
 	./main 0 8 8
-t:debug
+
+t:$(TAGET)
 	./main 0 8 8
 
 debugrun:debug
@@ -38,7 +38,7 @@ rebuild:clean $(TAGET)
 debug: CXXFLAGS = $(DEBUGS)
 debug: clean $(TAGET) 
 
-$(TAGET):$(OBJS) gnu
+$(TAGET):$(OBJS) 
 	${CC} ${CXXFLAGS} -o $@ $(OBJS) 
 	
 $(OBJS): %.o:%.cpp 
