@@ -6,9 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "mylib.hpp"
+#include "menu.hpp"
 using namespace std;
 
-extern const int constintest=100;
 
 char t='\t';
 char e='\n';
@@ -93,7 +93,7 @@ int five(int argc,char * argv[] )
     cout<<"line one\n" "line two"
         "line one\n" "line two"
         <<endl;
-    cout<<constintest*2<<endl;
+    //    cout<<constintest*2<<endl;
     return 0;
 }
 
@@ -731,7 +731,7 @@ int localreloadtest(int argc,char *argv[])
     rl(i);
     return 0;
 }
-int  setwindwoswidlen(const int wid,const int len)
+constexpr int  setwindwoswidlen(const int wid,const int len)
 {
     return 0;
 }
@@ -745,9 +745,9 @@ int runrecursion(int i)
 {
     if (i>0)
     {
-    std::cout << "The variable i is " <<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
-    runrecursion(i-1);
-    std::cout << "The variable i address is :"<<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
+        std::cout << "The variable i is " <<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
+        runrecursion(i-1);
+        std::cout << "The variable i address is :"<<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
     }
     return 0;
 }
@@ -763,7 +763,7 @@ long long int maxsizeofn(long long int i)
     int y,x;
     y=sizeof(i)*8-2;
     long long int max=2;
-    for (x=0;x<y;x++)
+    for (x=0; x<y; x++)
         max=2*max;
     return (max+max/2);
 }
@@ -832,49 +832,67 @@ int testmacro(int argc,char * argv[] )
 
 int print (int i)
 {
-	return 0;
+    return 0;
 }
 
 int printarrarytest ()
 {
-	//input your program:
+    //input your program:
     int y;
     const int x = 6;
-	int price[x] = { 4, 5, 6, 7, 9, 10 };
-	for (y = 0; y < x; y++)
-	{
-		cout << price[y] << " ";
-	}
-	cout << endl;
+    int price[x] = { 4, 5, 6, 7, 9, 10 };
+    for (y = 0; y < x; y++)
+    {
+        cout << price[y] << " ";
+    }
+    cout << endl;
 
-	return 0;
+    return 0;
 }
 int print_binary (int i)
 {
     int x=0;
-    cout << "the number " << i << " binary mode number is :";
-    while (i > 2)
+    int y=i;
+    int len =  sizeof (int) * 8 ;
+    char cbinary[len];
+    for(auto &element:cbinary)
+    {
+        element='0';
+    }
+    --len;
+    while (i > 0&&len>0)
     {
         x = i % 2;
-        cout << x;
+        if(x==1)
+        {
+            cbinary[len]='1';
+        }
         i = i / 2;
+        --len;
     }
-    cout << i << endl;
-    cout << endl;
+    cout <<y<<"的二进制： ";
+    for(auto &element:cbinary)
+    {
+        cout<<element;
+    }
+    cout<<endl;
     return 0;
 }
 
 int binarytest (int argc,char * argv[] )
 {
     //input your program:
-    int x = 100;
-
-    int len = 0;
-    char cbinary[sizeof (int) * 8];
-    print_binary (x);
-
-    cout << "二进制： " << bitset < sizeof (x) * 8 > (x) << endl;
-
+    int binx = 1;
+    while(binx)
+    {
+        cout<<"Please input a number coversion to binary:(0=exit)";
+        cin>>binx;
+        print_binary (binx);
+        star();
+        cout <<binx<<"的二进制： " << bitset < sizeof (binx) * 8 > (binx) << endl;
+        star();
+        cin.clear();
+    }
     return 0;
 }
 
@@ -885,14 +903,35 @@ int funpointtest(int argc,char * argv[] )
     ptest(argc,argv);
     return 0;
 }
+
 int RunMyTestFN(int argc, char *argv[])
 {
-    int (*ptest)(int argc,char* argv[])=nullptr;
-    ptest=&RunMyTestFN;
-    ptest=binarytest;
-    ptest(argc,argv);
+    vector<string>Menu;
+    vector<PFp>Command;
+    string strMenuTitle="Please choice a Menu command No to run a command,choice 0 = exit...";
+    Menu.push_back(strMenuTitle);
+    Command.push_back(nullptr);
+    string strMenuName="testmacro";
+    
+    Menu.push_back(strMenuName);
+    Command.push_back(testmacro);
+
+    Menu.push_back("binarytest");
+    Command.push_back(binarytest);
+
+    Menu.push_back("facttest");
+    Command.push_back(facttest);
+    
+    Menu.push_back("arraytest");
+    Command.push_back(arraytest);
+
+    RunMenuMU(argc, argv,Menu,Command);
+
+//    int (*ptest)(int argc,char* argv[])=nullptr;
+//    ptest(argc,argv);
     return 0;
 }
+
 
 int xx(int argc,char * argv[] )
 {

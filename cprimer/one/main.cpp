@@ -6,7 +6,6 @@
 #include "test.hpp"
 #include "sizeof.hpp"
 
-extern const int constintest;
 
 using namespace std;
 
@@ -68,7 +67,6 @@ int ReTurn(int argc, char *argv[])
 
 int RunMainL(int nArgc1,int nArgc2,int nArgc3,char *argv[],int nMenuSign )
 {
-    //
     RunPickInitalFN (nArgc1,nArgc2,nArgc3);
     getchar();
     Run_BoolTestFN(nArgc1, argv);

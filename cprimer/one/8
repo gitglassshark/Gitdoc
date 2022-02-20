@@ -1,9 +1,0 @@
-> < map <C-A> ggVGY
-> < map! <C-A> <Esc>ggVGY
-> < map <F12> gg=G
- 
- > < nnoremap <F2> :g/^\s*$/d<CR> 
-> < nnoremap <C-F2> :vert diffsplit 
-> < map <M-F2> :tabnew<CR> 
-> < map <F3> :tabnew .<CR> 
-> < map <buffer> <leader><space> :w<cr>:make<cr>
