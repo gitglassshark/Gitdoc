@@ -2,7 +2,7 @@ CC= clang
 #CC= g++
 
 DEBUGS   = -lstdc++ -Wall -g -I$(INCD) -std=c++17
-CXXFLAGS = -lstdc++ -w -O0   -I$(INCD) -std=c++17
+CXXFLAGS = -lstdc++ -w -O0 -D NDEBUG  -I$(INCD) -std=c++17
 
 TAGET = main
 INCD = ./include
@@ -18,17 +18,17 @@ OBJS  := $(patsubst %.cpp,%.o,$(SRCS))
 all: $(TAGET)
 .PHONY: all gcc gccdebug t debugrun rebuild debug indent linux gnu bsd google asm test testvar clean 
 
-gcc:CC=g++
-gcc:rebuild
 
 gccdebug:CC=g++
 gccdebug:CXXFLAGS = $(DEBUGS)
 gccdebug:rebuild
 
-g:gccdebug
-	./main 0 8 8
-t:debug
-	./main 0 8 8
+g:CC=g++
+g:rebuild
+	./main 0 9 6
+
+t:$(TAGET)
+	./main 0 9 6
 
 debugrun:debug
 	gdb ./$(TAGET)
@@ -38,7 +38,7 @@ rebuild:clean $(TAGET)
 debug: CXXFLAGS = $(DEBUGS)
 debug: clean $(TAGET) 
 
-$(TAGET):$(OBJS)
+$(TAGET):$(OBJS) 
 	${CC} ${CXXFLAGS} -o $@ $(OBJS) 
 	
 $(OBJS): %.o:%.cpp 
