@@ -1,6 +1,0 @@
-	echo "Clean the useless file ......"
-	rm *.s *.o *~  main -f
-	find . -name "*~" -exec rm -f {} \;
-	find . -name "*.o" -exec rm -f {} \;
-	find . -name "*.s" -exec rm -f {} \;
-	find . -name "main" -exec rm -f {} \;

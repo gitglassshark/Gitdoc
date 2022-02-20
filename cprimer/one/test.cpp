@@ -741,6 +741,74 @@ constexpr int windowswid(const int wid,const int len)
     return wid;
 }
 
+int runrecursion(int i)
+{
+    if (i>0)
+    {
+    std::cout << "The variable i is " <<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
+    runrecursion(i-1);
+    std::cout << "The variable i address is :"<<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
+    }
+    return 0;
+}
+
+int runrecursiontest()
+{
+    std::cout << "Hello world" << std::endl;
+    runrecursion(10);
+    return 0;
+}
+long long int maxsizeofn(long long int i)
+{
+    int y,x;
+    y=sizeof(i)*8-2;
+    long long int max=2;
+    for (x=0;x<y;x++)
+        max=2*max;
+    return (max+max/2);
+}
+int test_maxsizeofn(int i)
+{
+    int x;
+    x=sizeof(i);
+    cout<<"The int number size of is "<<x<<endl;
+    cout<<"The int number max number is "<<maxsizeofn(i)<<endl;
+    return x;
+}
+int facttest (int imin, int imax)
+{
+    //input you program:
+    int isave = 0;
+
+    isave = imin;
+    cout << imin;
+    while (imin < imax || imax < imin)
+    {
+        if (imin < imax)
+        {
+            imin++;
+            isave = isave * imin;
+        }
+        else
+        {
+            imin--;
+            isave = isave * imin;
+        }
+        cout << "*" << imin;
+    }
+    cout << "=";
+    return isave;
+}
+
+int maintest ()
+{
+    //input you program:
+    cout << facttest (20, 12) << endl;
+    cout << facttest (12, 20) << endl;
+    cout << 10 * 11 * 12 << endl;
+    return 0;
+}
+
 int testmacro(int argc,char * argv[] )
 {
     funname();
@@ -751,13 +819,77 @@ int testmacro(int argc,char * argv[] )
     cout<<__LINE__<<endl;
     timenow();
     datenow();
+    const char* (*pmacroa)(int)=nullptr;
+    const char* (*pmacrob)(int)=nullptr;
+    pmacroa=timenow;
+    pmacrob=&timenow;
+    star("ptr fun test");
+    pmacroa(1);
+    pmacrob(1);
+    *pmacrob(1);
+    return 0;
+}
+
+int print (int i)
+{
+	return 0;
+}
+
+int printarrarytest ()
+{
+	//input your program:
+    int y;
+    const int x = 6;
+	int price[x] = { 4, 5, 6, 7, 9, 10 };
+	for (y = 0; y < x; y++)
+	{
+		cout << price[y] << " ";
+	}
+	cout << endl;
+
+	return 0;
+}
+int print_binary (int i)
+{
+    int x=0;
+    cout << "the number " << i << " binary mode number is :";
+    while (i > 2)
+    {
+        x = i % 2;
+        cout << x;
+        i = i / 2;
+    }
+    cout << i << endl;
+    cout << endl;
+    return 0;
+}
+
+int binarytest (int argc,char * argv[] )
+{
+    //input your program:
+    int x = 100;
+
+    int len = 0;
+    char cbinary[sizeof (int) * 8];
+    print_binary (x);
+
+    cout << "二进制： " << bitset < sizeof (x) * 8 > (x) << endl;
+
+    return 0;
+}
+
+int funpointtest(int argc,char * argv[] )
+{
+    int (*ptest)(int argc,char* argv[])=nullptr;
+    ptest=testmacro;
+    ptest(argc,argv);
     return 0;
 }
 int RunMyTestFN(int argc, char *argv[])
 {
     int (*ptest)(int argc,char* argv[])=nullptr;
     ptest=&RunMyTestFN;
-    ptest=testmacro;
+    ptest=binarytest;
     ptest(argc,argv);
     return 0;
 }

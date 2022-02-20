@@ -8,7 +8,7 @@ int star(const char c);
 int star(const int &n=0);
 int star(const int c,const int n);
 int star(const char c,const int n);
-int star(const char *p);
+int star(const char * const p);
 int starn();
 int PrintClassSize();
 int PrintSx (char const *const cmessage);

@@ -29,7 +29,7 @@ int star(const int c,const int n)
     return 0;
 }
 
-int star(const char const *p)
+int star(const char * const p)
 {
     string strStarLine=string(80-strlen(p)-1,'*');
     cout<<p<<':'<<strStarLine<<endl;
