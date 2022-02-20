@@ -1,2 +1,2 @@
 #!/bin/bash
-vi test.cpp main.cpp -O
+vi test.cpp main.cpp mylib.cpp -O

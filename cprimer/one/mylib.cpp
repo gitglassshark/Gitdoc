@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include <stdio.h>
 using namespace std;
 
@@ -14,25 +15,58 @@ int blankline()
     return 0;
 }
 
-int star(int c,int n)
+int star(const char c,const int n)
+{
+    string strStarLine=string(n,c);
+    cout<<strStarLine<<endl;
+    return 0;
+}
+
+int star(const int c,const int n)
 {
     string strStarLine=string(n,'*');
     cout<<c<<'\t'<<strStarLine<<endl;
     return 0;
 }
-int star(int c)
+
+int star(const char const *p)
 {
-    string strStarLine=string(80,'*');
-    cout<<c<<':'<<strStarLine<<endl;
-    return 0;
-}
-int star()
-{
-    string strStarLine=string(80,'*');
-    cout<<strStarLine<<endl;
+    string strStarLine=string(80-strlen(p)-1,'*');
+    cout<<p<<':'<<strStarLine<<endl;
     return 0;
 }
 
+int star(const char c)
+{
+    string strStarLine=string(78,'*');
+    cout<<c<<':'<<strStarLine<<endl;
+    return 0;
+}
+
+int starn()
+{
+    static int n=0;
+    n++;
+    string strStarLine=string(78,'*');
+    cout<<n<<':'<<strStarLine<<endl;
+    return 0;
+}
+
+int star(const int &n=0)
+{
+    string strStarLine;
+    if(n==0)
+        {
+            strStarLine=string(80,'*');
+            cout<<strStarLine<<endl;
+        }
+    else
+        {
+            strStarLine=string(78,'*');
+            cout<<n<<':'<<strStarLine<<endl;
+        }
+    return 0;
+}
 int PrintSx (char const *const cmessage)
 {
     cout << cmessage;

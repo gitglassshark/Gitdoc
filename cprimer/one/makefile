@@ -2,7 +2,7 @@ CC= clang
 #CC= g++
 
 DEBUGS   = -lstdc++ -Wall -g -I$(INCD) -std=c++17
-CXXFLAGS = -lstdc++ -w -O0   -I$(INCD) -std=c++17
+CXXFLAGS = -lstdc++ -w -O0 -D NDEBUG  -I$(INCD) -std=c++17
 
 TAGET = main
 INCD = ./include
@@ -25,10 +25,10 @@ gccdebug:rebuild
 
 g:CC=g++
 g:rebuild
-	./main 0 8 8
+	./main 0 9 6
 
 t:$(TAGET)
-	./main 0 8 8
+	./main 0 9 6
 
 debugrun:debug
 	gdb ./$(TAGET)

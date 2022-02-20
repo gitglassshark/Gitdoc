@@ -38,16 +38,16 @@ int none()
     cout<<key<<endl;
     int i=22;
     for(int i=0; i<9; i++)
+    {
+        if(i==8)
         {
-            if(i==8)
-                {
-                    cout<<"in if, i=8"<<i<<endl;
-                }
-            if(i==9)
-                {
-                    cout<<i<<endl;
-                }
+            cout<<"in if, i=8"<<i<<endl;
         }
+        if(i==9)
+        {
+            cout<<i<<endl;
+        }
+    }
     cout<<i<<endl;
     return 0;
 }
@@ -65,10 +65,10 @@ int three( int argc, char *argv[])
     int iArgcTotalL=0;
     cout<<"打印参数列表："<<endl;
     for(int i=0; i<argc; i++)
-        {
-            iArgcTotalL+=atoi(argv[i]);
-            cout<<argv[i]<<endl;
-        }
+    {
+        iArgcTotalL+=atoi(argv[i]);
+        cout<<argv[i]<<endl;
+    }
     cout<<iArgcTotalL<<endl;
     return 0;
 }
@@ -134,10 +134,10 @@ int seven(int argc,char * argv[] )
     cout<<strline<<endl;
     newline();
     for(char &a:strline)
-        {
-            if(ispunct(a))
-                a=' ';
-        }
+    {
+        if(ispunct(a))
+            a=' ';
+    }
     cout<<strline<<endl;
     cout<<endl;
     return 0;
@@ -281,34 +281,34 @@ int pointerandrefence(int argc,char * argv[] )
     int iarray[50];
     int (&rarray)[50]=iarray;
     for(auto &i:iarray)
-        {
-            i=2;
-        }
+    {
+        i=2;
+    }
     star();
     for(auto &i:iarray)
-        {
-            cout<<i<<t;
-        }
+    {
+        cout<<i<<t;
+    }
     cout<<e;
     star();
 
     cout<<"print reference rarray value:\n";
     for(auto &i:rarray)
-        {
-            i=3;
-        }
+    {
+        i=3;
+    }
     star();
     for(auto &i:rarray)
-        {
-            cout<<i<<t;
-        }
+    {
+        cout<<i<<t;
+    }
     cout<<e;
     cout<<"print reference iarray value:\n";
     star();
     for(auto &i:iarray)
-        {
-            cout<<i<<t;
-        }
+    {
+        cout<<i<<t;
+    }
     cout<<e;
     star(8);
     int *pb=begin(rarray);
@@ -358,6 +358,8 @@ int relationoperation(int argc,char * argv[] )
         cout<<"argv1 is 0"<<e;
     if(btest3)
         cout<<"argc is 4"<<e;
+    star();
+    cout<<((btest2==true)?"true":"false")<<endl;
     return 0;
 }
 
@@ -436,12 +438,327 @@ int bittest(int argc,char * argv[] )
     y[3]=0;
     y[5]=0;
     cout<<y<<endl;
+    star(11);
+    cout<<sizeof(bit64)<<e;
+    size_t isize=sizeof (unsigned long);
+    isize=sizeof (0UL);
+    cout<<isize<<e;
     return 0;
 }
 
+int commatest(int argc,char * argv[] )
+{
+    int i=0;
+    int y=100;
+    star(1);
+    cout<<i<<t<<y<<e;
+    (i++,cout<<i<<e);
+    cout<<i<<t<<y<<e;
+    star(2);
+    cout<<i<<t<<y<<e;
+    cout<<(++i,++y)<<e;
+    cout<<i<<t<<y<<e;
+    star(3);
+    cout<<i<<t<<y<<e;
+    cout<<++(++i,++y)<<e;
+    cout<<i<<t<<y<<e;
+    star(4);
+    cout<<i<<t<<y<<e;
+    cout<<++(i,y)<<e;
+    cout<<i<<t<<y<<e;
+    star(5);
+    cout<<++(i,y)<<e;
+    cout<<i<<t<<y<<e;
+    star(6);
+    cout<<i<<t<<y<<e;
+    return 0;
+}
+
+int sentencetest(int argc,char * argv[] )
+{
+    int array[36];
+    star(1);
+    cout<<sizeof(array)<<e;
+    star(2);
+    for(int &i:array)
+        (i=&i-array,((&i-array+1)%6==0)?cout<<i<<e:cout<<i<<t);
+    cout<<e;
+    star(2);
+    return 0;
+}
+
+int compundstatement(int argc,char * argv[] )
+{
+    int i=6;
+    {
+        int i=0;
+        for(int i=0; i<9; cout<<i++)
+            ;
+        cout<<e<<i<<t<<e;
+    }
+    star(1);
+    {
+        int i=0;
+        for(int i=0; i<9; cout<<i++)
+            ;
+        cout<<e<<i<<t<<e;
+    }
+    star(2);
+    cout<<i<<t<<e;
+    return 0;
+}
+
+int switchtest(int argc,char * argv[] )
+{
+    int i=1;
+    bool icon=true;
+    //    while(icon==true)
+    while(i)
+    {
+        cout<<"Please input a number:(1-3,0 is exit) \t";
+        cin>>i;
+        cin.clear();
+        switch(i)
+        {
+        case 1:
+            cout<<"This is one condition..."<<e;
+            break;
+        case 2:
+            cout<<"This is two condition..."<<e;
+            break;
+        case 3:
+            cout<<"This is three condition..."<<e;
+            break;
+        case 0:
+            icon=false;
+            break;
+        default:
+            cout<<"This is default condition..."<<e;
+        }
+        cout<<"end"<<e;
+    }
+    return 0;
+}
+
+int dowhiletest(int argc,char * argv[] )
+{
+    cout<<"Is begin test......\n";
+    int i=0;
+    bool icon=true;
+    do
+    {
+        cout<<"Please input a number:(1-3 to choice ,0 is exit)\t";
+        cin>>i;
+        cin.clear();
+        switch(i)
+        {
+        case 1:
+            cout<<"This is one condition..."<<e;
+            break;
+        case 2:
+            cout<<"This is two condition..."<<e;
+            break;
+        case 3:
+            cout<<"This is three condition..."<<e;
+            break;
+        case 0:
+            icon=false;
+            break;
+        default:
+            cout<<"This is default condition..."<<e;
+        }
+    }
+    while(i!=0);
+    return 0;
+}
+
+int vectortest(int argc,char * argv[] )
+{
+    vector<int> i_vector_one(10);
+    star("start");
+    star(1);
+    for(auto &i:i_vector_one)
+    {
+        cout<<i<<t;
+    }
+    cout<<e;
+    star("now");
+
+    decltype(i_vector_one.size()) j=0;
+    for(auto i=i_vector_one.size(),j=i_vector_one.size()-i_vector_one.size(); i>0; --i,++j)
+    {
+        i_vector_one.push_back(j);
+    }
+    int ic=0;
+    for(auto i:i_vector_one)
+    {
+        if((ic++%10)==9)
+            cout<<i<<e;
+        else
+            cout<<i<<t;
+    }
+    cout<<e;
+    star("end");
+    return 0;
+}
+
+
+int breaktest(int argc,char * argv[] )
+{
+    bool bcontinue=false,bbreak=false,breturn=false;
+    star("start:");
+    int i=0;
+    bool icon=true;
+    do
+    {
+        cout<<"Please input a number:(1-3 to choice ,0 is exit)\n""1.This is break condition...\n""2.This is continue condition...\n""3.This is return condition...\n";
+        cin>>i;
+        cin.clear();
+        switch(i)
+        {
+        case 1:
+            bbreak=true;
+            goto tagbreak;
+            break;
+        case 2:
+            bcontinue=true;
+            goto tagcontinue;
+            break;
+        case 3:
+            breturn=true;
+            goto tagreturn;
+            break;
+        case 0:
+        default:
+            icon=false;
+            cout<<"This is default condition..."<<e;
+        }
+tagbreak:
+        break;
+tagcontinue:
+        continue;
+tagreturn:
+        return 0;
+        cout<<"This is innter dowhile end\n";
+    }
+    while(i!=0);
+    cout<<"This is outside of while.\n";
+    return 0;
+}
+int n=0;
+long fact(int n,int m)
+{
+    long l=1;
+    for(int i=n<m?n:m; i<=(n<m?m:n); ++i)
+    {
+        l*=i;
+    }
+    return l;
+}
+
+long fact(int n)
+{
+    long l=1;
+    for(int i=1; i<=n; ++i)
+    {
+        l*=i;
+    }
+    return l;
+}
+
+int facttest(int argc,char * argv[] )
+{
+    if(argc<4)
+    {
+        star();
+        star(6);
+        star(8);
+        return 0;
+    }
+    int in=atoi(argv[2]);
+    int im=atoi(argv[3]);
+    starn();
+    cout<<in<<"\'s fact is "<<fact(in)<<"."<<e;
+    starn();
+    cout<<im<<"\'s fact is "<<fact(im)<<"."<<e;
+    starn();
+    cout<<in<<"--"<<im<<"\'s fact is "<<fact(in,im)<<"."<<e;
+    return 0;
+}
+
+int arraytest(int argc, char *argv[])
+{
+    int arraytest[10];
+    for(auto &i:arraytest)
+        i=10;
+    int *pbegin=begin(arraytest);
+    int *pend=end(arraytest);
+    starn();
+    cout<<*pbegin<<t<<*(pend-1)<<e;
+    *pbegin=20;
+    *(pend-1)=30;
+    starn();
+    cout<<*pbegin<<t<<*(pend-1)<<e;
+    starn();
+    for(auto i:arraytest)
+        cout<<i<<t;
+    cout<<e;
+    starn();
+    cout<<"end()-begin() is "<<end(arraytest)-begin(arraytest)<<e;
+    return 0;
+}
+
+int rl(int &argc)
+{
+    star(2);
+    return 0;
+}
+
+int rl(const int &argc)
+{
+    star(2);
+    return 0;
+}
+
+int rl(int argc, char *argv[])
+{
+    star(3);
+    return 0;
+}
+int localreloadtest(int argc,char *argv[])
+{
+    const int i=2;
+    rl(i);
+    return 0;
+}
+int  setwindwoswidlen(const int wid,const int len)
+{
+    return 0;
+}
+constexpr int windowswid(const int wid,const int len)
+{
+    setwindwoswidlen(wid,len);
+    return wid;
+}
+
+int testmacro(int argc,char * argv[] )
+{
+    funname();
+    cout<<__func__<<endl;
+    filename();
+    cout<<__FILE__<<endl;
+    line();
+    cout<<__LINE__<<endl;
+    timenow();
+    datenow();
+    return 0;
+}
 int RunMyTestFN(int argc, char *argv[])
 {
-    bittest(argc,argv);
+    int (*ptest)(int argc,char* argv[])=nullptr;
+    ptest=&RunMyTestFN;
+    ptest=testmacro;
+    ptest(argc,argv);
     return 0;
 }
 
