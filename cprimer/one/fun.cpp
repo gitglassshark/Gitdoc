@@ -11,7 +11,6 @@ bool PickUpBigL (int i[h][v], int argc3);
 int InitalArrayL(int arrayb[x][y][z], int argc1);
 int InitalArrayL(int arrayb[x][y][z], int argc1);
 
-
 int PrintNameAndValueL (const char *vname, const bool bi)
 {
     const char *value=0;
@@ -29,7 +28,6 @@ int PrintNameAndValueL (const char *vname, const bool bi)
     return 0;
 }
 
-
 int PrintTBL (const char *cmessage[], int n, const char *ptitle)
 {
     cout << ptitle;
@@ -43,7 +41,6 @@ int PrintTBL (const char *cmessage[], int n, const char *ptitle)
     Print_NCharx ('=', 70);
     return 0;
 }
-
 
 int Run_BoolTestFN(int argc,char * argv[])
 {
@@ -113,7 +110,6 @@ int Run_BoolTestFN(int argc,char * argv[])
     return 0;
 }
 
-
 int RunToGotoFN(int argc1)
 {
     int n=0;
@@ -137,13 +133,11 @@ get:
     return 0;
 }
 
-int RunTestArraySizeofFN(int argc1)
+int RunTestArraySizeofFN(int argc, char *argv[])
 {
-    //     int [][][]={0, }
-
     int arraya[x][y][z]= {(0,0,0)};
     cout<<"数组尺寸大小是： "<<sizeof(arraya)<<endl;
-    InitalArrayL(arraya, argc1);
+    InitalArrayL(arraya, atoi(argv[1]));
     cout<<"测试对象尺寸模块结束.....\n";
     return 0;
 }
@@ -175,8 +169,7 @@ int InitalArrayL(int arrayb[x][y][z], int argc1)
     return 0;
 };
 
-
-int RunArrAddFN(int i)
+int RunArrAddFN(int argc, char *argv[])
 {
     int  carr[9]=
     {
@@ -195,7 +188,6 @@ int MartxL(int argc1)
     Init_MartixL (martix, argc1);
     return 0;
 }
-
 
 int days[months] =
 {
@@ -229,7 +221,7 @@ const char *names[months] =
     "December"
 };
 
-int RunPrint_MonthFN (int argc1)
+int RunPrint_MonthFN (int argc,char *argv[])
 {
     long unsigned int	x = 0;
     long unsigned int	y = 0;
@@ -240,7 +232,7 @@ int RunPrint_MonthFN (int argc1)
     cout << title << endl;
     Print_NCharx ('=', strlen (title));
     cout << endl;
-    while (x < 12 && x <(long signed int)argc1)
+    while (x < 12)
         {
             cout << x + 1 << ".\t" << names[x];
             y = strlen (names[x]);
@@ -249,12 +241,36 @@ int RunPrint_MonthFN (int argc1)
             cout << "天数是：" << days[x] << endl;
             x++;
         }
+    int ichoice=1;
+    while ((ichoice<= 12)&&(ichoice!=0))
+        {
+            cout<<"please a month(1-12,0=exit)"<<endl;
+            cin>>ichoice;
+            cin.clear();
+            if(ichoice==0)
+                {
+                    break;
+                }
+            cout << ichoice << ".\t" << names[ichoice-1];
+            y = strlen (names[ichoice-1]);
+            for (z = 0; z < strlen (title) - y - 20; z++)
+                cout << " ";
+            cout << "天数是：" << days[ichoice-1] << endl;
+        }
     return 0;
 }
 
-
-int RunPickInitalFN (int icp, int ic, int il)
+int RunPickInitalFN (int argc, char *argv[])
 {
+    int icp=8;
+    int ic=8;
+    int il=8;
+    if(argc>4)
+        {
+            icp=atoi(argv[1]);
+            ic=atoi(argv[2]);
+            il=atoi(argv[3]);
+        }
     Init_MartixL (martix, icp);
     PickUpBigL (martix, icp);
     return 0;
@@ -283,7 +299,10 @@ bool PickUpBigL (int i[h][v], int argc3)
 {
     int ibig = 0, ismall = 0, iequal = 0;
 
-    cout << "挑选数字去和矩阵中的值去比较筛选" <<  argc3<< endl;
+    cout << "挑选数字去和矩阵中的值去比较筛选" << endl;
+    cout<<"Please input a number to compare:";
+    cin>>argc3;
+    cin.clear();
     Print_NCharx ('=', 8 * v);
     for (int c = 0; c < h; c++)
         {

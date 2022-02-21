@@ -38,16 +38,16 @@ int none()
     cout<<key<<endl;
     int i=22;
     for(int i=0; i<9; i++)
-    {
-        if(i==8)
         {
-            cout<<"in if, i=8"<<i<<endl;
+            if(i==8)
+                {
+                    cout<<"in if, i=8"<<i<<endl;
+                }
+            if(i==9)
+                {
+                    cout<<i<<endl;
+                }
         }
-        if(i==9)
-        {
-            cout<<i<<endl;
-        }
-    }
     cout<<i<<endl;
     return 0;
 }
@@ -65,10 +65,10 @@ int three( int argc, char *argv[])
     int iArgcTotalL=0;
     cout<<"打印参数列表："<<endl;
     for(int i=0; i<argc; i++)
-    {
-        iArgcTotalL+=atoi(argv[i]);
-        cout<<argv[i]<<endl;
-    }
+        {
+            iArgcTotalL+=atoi(argv[i]);
+            cout<<argv[i]<<endl;
+        }
     cout<<iArgcTotalL<<endl;
     return 0;
 }
@@ -134,10 +134,10 @@ int seven(int argc,char * argv[] )
     cout<<strline<<endl;
     newline();
     for(char &a:strline)
-    {
-        if(ispunct(a))
-            a=' ';
-    }
+        {
+            if(ispunct(a))
+                a=' ';
+        }
     cout<<strline<<endl;
     cout<<endl;
     return 0;
@@ -281,34 +281,34 @@ int pointerandrefence(int argc,char * argv[] )
     int iarray[50];
     int (&rarray)[50]=iarray;
     for(auto &i:iarray)
-    {
-        i=2;
-    }
+        {
+            i=2;
+        }
     star();
     for(auto &i:iarray)
-    {
-        cout<<i<<t;
-    }
+        {
+            cout<<i<<t;
+        }
     cout<<e;
     star();
 
     cout<<"print reference rarray value:\n";
     for(auto &i:rarray)
-    {
-        i=3;
-    }
+        {
+            i=3;
+        }
     star();
     for(auto &i:rarray)
-    {
-        cout<<i<<t;
-    }
+        {
+            cout<<i<<t;
+        }
     cout<<e;
     cout<<"print reference iarray value:\n";
     star();
     for(auto &i:iarray)
-    {
-        cout<<i<<t;
-    }
+        {
+            cout<<i<<t;
+        }
     cout<<e;
     star(8);
     int *pb=begin(rarray);
@@ -514,29 +514,29 @@ int switchtest(int argc,char * argv[] )
     bool icon=true;
     //    while(icon==true)
     while(i)
-    {
-        cout<<"Please input a number:(1-3,0 is exit) \t";
-        cin>>i;
-        cin.clear();
-        switch(i)
         {
-        case 1:
-            cout<<"This is one condition..."<<e;
-            break;
-        case 2:
-            cout<<"This is two condition..."<<e;
-            break;
-        case 3:
-            cout<<"This is three condition..."<<e;
-            break;
-        case 0:
-            icon=false;
-            break;
-        default:
-            cout<<"This is default condition..."<<e;
+            cout<<"Please input a number:(1-3,0 is exit) \t";
+            cin>>i;
+            cin.clear();
+            switch(i)
+                {
+                case 1:
+                    cout<<"This is one condition..."<<e;
+                    break;
+                case 2:
+                    cout<<"This is two condition..."<<e;
+                    break;
+                case 3:
+                    cout<<"This is three condition..."<<e;
+                    break;
+                case 0:
+                    icon=false;
+                    break;
+                default:
+                    cout<<"This is default condition..."<<e;
+                }
+            cout<<"end"<<e;
         }
-        cout<<"end"<<e;
-    }
     return 0;
 }
 
@@ -546,28 +546,28 @@ int dowhiletest(int argc,char * argv[] )
     int i=0;
     bool icon=true;
     do
-    {
-        cout<<"Please input a number:(1-3 to choice ,0 is exit)\t";
-        cin>>i;
-        cin.clear();
-        switch(i)
         {
-        case 1:
-            cout<<"This is one condition..."<<e;
-            break;
-        case 2:
-            cout<<"This is two condition..."<<e;
-            break;
-        case 3:
-            cout<<"This is three condition..."<<e;
-            break;
-        case 0:
-            icon=false;
-            break;
-        default:
-            cout<<"This is default condition..."<<e;
+            cout<<"Please input a number:(1-3 to choice ,0 is exit)\t";
+            cin>>i;
+            cin.clear();
+            switch(i)
+                {
+                case 1:
+                    cout<<"This is one condition..."<<e;
+                    break;
+                case 2:
+                    cout<<"This is two condition..."<<e;
+                    break;
+                case 3:
+                    cout<<"This is three condition..."<<e;
+                    break;
+                case 0:
+                    icon=false;
+                    break;
+                default:
+                    cout<<"This is default condition..."<<e;
+                }
         }
-    }
     while(i!=0);
     return 0;
 }
@@ -578,25 +578,25 @@ int vectortest(int argc,char * argv[] )
     star("start");
     star(1);
     for(auto &i:i_vector_one)
-    {
-        cout<<i<<t;
-    }
+        {
+            cout<<i<<t;
+        }
     cout<<e;
     star("now");
 
     decltype(i_vector_one.size()) j=0;
     for(auto i=i_vector_one.size(),j=i_vector_one.size()-i_vector_one.size(); i>0; --i,++j)
-    {
-        i_vector_one.push_back(j);
-    }
+        {
+            i_vector_one.push_back(j);
+        }
     int ic=0;
     for(auto i:i_vector_one)
-    {
-        if((ic++%10)==9)
-            cout<<i<<e;
-        else
-            cout<<i<<t;
-    }
+        {
+            if((ic++%10)==9)
+                cout<<i<<e;
+            else
+                cout<<i<<t;
+        }
     cout<<e;
     star("end");
     return 0;
@@ -610,37 +610,37 @@ int breaktest(int argc,char * argv[] )
     int i=0;
     bool icon=true;
     do
-    {
-        cout<<"Please input a number:(1-3 to choice ,0 is exit)\n""1.This is break condition...\n""2.This is continue condition...\n""3.This is return condition...\n";
-        cin>>i;
-        cin.clear();
-        switch(i)
         {
-        case 1:
-            bbreak=true;
-            goto tagbreak;
-            break;
-        case 2:
-            bcontinue=true;
-            goto tagcontinue;
-            break;
-        case 3:
-            breturn=true;
-            goto tagreturn;
-            break;
-        case 0:
-        default:
-            icon=false;
-            cout<<"This is default condition..."<<e;
-        }
+            cout<<"Please input a number:(1-3 to choice ,0 is exit)\n""1.This is break condition...\n""2.This is continue condition...\n""3.This is return condition...\n";
+            cin>>i;
+            cin.clear();
+            switch(i)
+                {
+                case 1:
+                    bbreak=true;
+                    goto tagbreak;
+                    break;
+                case 2:
+                    bcontinue=true;
+                    goto tagcontinue;
+                    break;
+                case 3:
+                    breturn=true;
+                    goto tagreturn;
+                    break;
+                case 0:
+                default:
+                    icon=false;
+                    cout<<"This is default condition..."<<e;
+                }
 tagbreak:
-        break;
+            break;
 tagcontinue:
-        continue;
+            continue;
 tagreturn:
-        return 0;
-        cout<<"This is innter dowhile end\n";
-    }
+            return 0;
+            cout<<"This is innter dowhile end\n";
+        }
     while(i!=0);
     cout<<"This is outside of while.\n";
     return 0;
@@ -650,9 +650,9 @@ long fact(int n,int m)
 {
     long l=1;
     for(int i=n<m?n:m; i<=(n<m?m:n); ++i)
-    {
-        l*=i;
-    }
+        {
+            l*=i;
+        }
     return l;
 }
 
@@ -660,21 +660,21 @@ long fact(int n)
 {
     long l=1;
     for(int i=1; i<=n; ++i)
-    {
-        l*=i;
-    }
+        {
+            l*=i;
+        }
     return l;
 }
 
-int facttest(int argc,char * argv[] )
+int RunFactTestFn(int argc,char * argv[] )
 {
     if(argc<4)
-    {
-        star();
-        star(6);
-        star(8);
-        return 0;
-    }
+        {
+            star();
+            star(6);
+            star(8);
+            return 0;
+        }
     int in=atoi(argv[2]);
     int im=atoi(argv[3]);
     starn();
@@ -686,13 +686,13 @@ int facttest(int argc,char * argv[] )
     return 0;
 }
 
-int arraytest(int argc, char *argv[])
+int RunArrayTestFN(int argc, char *argv[])
 {
-    int arraytest[10];
-    for(auto &i:arraytest)
+    int RunArrayTestFN[10];
+    for(auto &i:RunArrayTestFN)
         i=10;
-    int *pbegin=begin(arraytest);
-    int *pend=end(arraytest);
+    int *pbegin=begin(RunArrayTestFN);
+    int *pend=end(RunArrayTestFN);
     starn();
     cout<<*pbegin<<t<<*(pend-1)<<e;
     *pbegin=20;
@@ -700,11 +700,11 @@ int arraytest(int argc, char *argv[])
     starn();
     cout<<*pbegin<<t<<*(pend-1)<<e;
     starn();
-    for(auto i:arraytest)
+    for(auto i:RunArrayTestFN)
         cout<<i<<t;
     cout<<e;
     starn();
-    cout<<"end()-begin() is "<<end(arraytest)-begin(arraytest)<<e;
+    cout<<"end()-begin() is "<<end(RunArrayTestFN)-begin(RunArrayTestFN)<<e;
     return 0;
 }
 
@@ -744,11 +744,11 @@ constexpr int windowswid(const int wid,const int len)
 int runrecursion(int i)
 {
     if (i>0)
-    {
-        std::cout << "The variable i is " <<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
-        runrecursion(i-1);
-        std::cout << "The variable i address is :"<<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
-    }
+        {
+            std::cout << "The variable i is " <<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
+            runrecursion(i-1);
+            std::cout << "The variable i address is :"<<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
+        }
     return 0;
 }
 
@@ -775,7 +775,7 @@ int test_maxsizeofn(int i)
     cout<<"The int number max number is "<<maxsizeofn(i)<<endl;
     return x;
 }
-int facttest (int imin, int imax)
+int RunFactTestFn (int imin, int imax)
 {
     //input you program:
     int isave = 0;
@@ -783,19 +783,19 @@ int facttest (int imin, int imax)
     isave = imin;
     cout << imin;
     while (imin < imax || imax < imin)
-    {
-        if (imin < imax)
         {
-            imin++;
-            isave = isave * imin;
+            if (imin < imax)
+                {
+                    imin++;
+                    isave = isave * imin;
+                }
+            else
+                {
+                    imin--;
+                    isave = isave * imin;
+                }
+            cout << "*" << imin;
         }
-        else
-        {
-            imin--;
-            isave = isave * imin;
-        }
-        cout << "*" << imin;
-    }
     cout << "=";
     return isave;
 }
@@ -803,13 +803,13 @@ int facttest (int imin, int imax)
 int maintest ()
 {
     //input you program:
-    cout << facttest (20, 12) << endl;
-    cout << facttest (12, 20) << endl;
+    cout << RunFactTestFn (20, 12) << endl;
+    cout << RunFactTestFn (12, 20) << endl;
     cout << 10 * 11 * 12 << endl;
     return 0;
 }
 
-int testmacro(int argc,char * argv[] )
+int RunTestFN(int argc,char * argv[] )
 {
     funname();
     cout<<__func__<<endl;
@@ -842,9 +842,9 @@ int printarrarytest ()
     const int x = 6;
     int price[x] = { 4, 5, 6, 7, 9, 10 };
     for (y = 0; y < x; y++)
-    {
-        cout << price[y] << " ";
-    }
+        {
+            cout << price[y] << " ";
+        }
     cout << endl;
 
     return 0;
@@ -856,51 +856,60 @@ int print_binary (int i)
     int len =  sizeof (int) * 8 ;
     char cbinary[len];
     for(auto &element:cbinary)
-    {
-        element='0';
-    }
+        {
+            element='0';
+        }
     --len;
     while (i > 0&&len>0)
-    {
-        x = i % 2;
-        if(x==1)
         {
-            cbinary[len]='1';
+            x = i % 2;
+            if(x==1)
+                {
+                    cbinary[len]='1';
+                }
+            i = i / 2;
+            --len;
         }
-        i = i / 2;
-        --len;
-    }
     cout <<y<<"的二进制： ";
     for(auto &element:cbinary)
-    {
-        cout<<element;
-    }
+        {
+            cout<<element;
+        }
     cout<<endl;
     return 0;
 }
 
-int binarytest (int argc,char * argv[] )
+int RunBinaryTestFN (int argc,char * argv[] )
 {
     //input your program:
     int binx = 1;
     while(binx)
-    {
-        cout<<"Please input a number coversion to binary:(0=exit)";
-        cin>>binx;
-        print_binary (binx);
-        star();
-        cout <<binx<<"的二进制： " << bitset < sizeof (binx) * 8 > (binx) << endl;
-        star();
-        cin.clear();
-    }
+        {
+            cout<<"Please input a number coversion to binary:(0=exit)";
+            cin>>binx;
+            print_binary (binx);
+            star();
+            cout <<binx<<"的二进制： " << bitset < sizeof (binx) * 8 > (binx) << endl;
+            star();
+            cin.clear();
+        }
     return 0;
 }
 
 int funpointtest(int argc,char * argv[] )
 {
     int (*ptest)(int argc,char* argv[])=nullptr;
-    ptest=testmacro;
+    ptest=RunTestFN;
     ptest(argc,argv);
+    return 0;
+}
+
+int RunBitSetTest(int argc,char * argv[] )
+{
+    int i=200;
+
+    star();
+    cout<<bitset<64>(i)<<endl;
     return 0;
 }
 
@@ -911,24 +920,25 @@ int RunMyTestFN(int argc, char *argv[])
     string strMenuTitle="Please choice a Menu command No to run a command,choice 0 = exit...";
     Menu.push_back(strMenuTitle);
     Command.push_back(nullptr);
-    string strMenuName="testmacro";
-    
+    string strMenuName="RunBitSetTest";
+
     Menu.push_back(strMenuName);
-    Command.push_back(testmacro);
+    Command.push_back(RunBitSetTest);
 
-    Menu.push_back("binarytest");
-    Command.push_back(binarytest);
+    Menu.push_back("Run Binary Number Print Module");
+    Command.push_back(RunBinaryTestFN);
 
-    Menu.push_back("facttest");
-    Command.push_back(facttest);
-    
-    Menu.push_back("arraytest");
-    Command.push_back(arraytest);
+    Menu.push_back("RunFactTestFn");
+    Command.push_back(RunFactTestFn);
+
+    Menu.push_back("RunArrayTestFN");
+    Command.push_back(RunArrayTestFN);
+
+    Menu.push_back("Run Main Module");
+    Command.push_back( RunMainShell);
 
     RunMenuMU(argc, argv,Menu,Command);
 
-//    int (*ptest)(int argc,char* argv[])=nullptr;
-//    ptest(argc,argv);
     return 0;
 }
 

@@ -7,4 +7,4 @@ struct pn
     int l;
 };
 
-int RunOneSFx();
+int RunOneSFx(int argc,char*argv[]);

@@ -15,9 +15,9 @@ struct pn
 
 int InitPN (struct pn *p, int nSizeT);
 int RunSFLl (struct pn *arstart, int nSizeT);
-int RunOneSFx();
+int RunOneSFx(int argc,char*argv[]);
 
-int RunOneSFx()
+int RunOneSFx(int argc,char*argv[])
 {
     int iROSizeL=nSize;
     struct pn pasSizeRO[nSize];
