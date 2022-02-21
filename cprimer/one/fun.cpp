@@ -247,7 +247,7 @@ int RunPrint_MonthFN (int argc,char *argv[])
             cout<<"please a month(1-12,0=exit)"<<endl;
             cin>>ichoice;
             cin.clear();
-            if(ichoice==0)
+            if(ichoice==0||ichoice>12)
                 {
                     break;
                 }

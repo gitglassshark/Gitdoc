@@ -16,7 +16,7 @@ OBJS  := $(patsubst %.cpp,%.o,$(SRCS))
 
 
 all: $(TAGET)
-.PHONY: all gcc gccdebug t debugrun rebuild debug indent linux gnu bsd google asm test testvar clean 
+.PHONY: all gccdebug t debugrun rebuild debug indent linux gnu bsd google asm test testvar clean 
 
 
 gccdebug:CC=g++
