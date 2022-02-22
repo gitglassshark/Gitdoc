@@ -754,7 +754,7 @@ int runrecursion(int i)
 
 int runrecursiontest()
 {
-    std::cout << "Hello world" << std::endl;
+    std::cout << "Hello world!" << std::endl;
     runrecursion(10);
     return 0;
 }
@@ -907,9 +907,37 @@ int funpointtest(int argc,char * argv[] )
 int RunBitSetTest(int argc,char * argv[] )
 {
     int i=200;
-
     star();
     cout<<bitset<64>(i)<<endl;
+    return 0;
+}
+
+int RunTempTest(int argc,char * argv[] )
+{
+    vector<string> VectorstrName(10);
+    string strName="first name";
+    VectorstrName.push_back(strName);
+    star("start",'-');
+    cout<<strName<<endl;
+    cout<<VectorstrName[0]<<endl;
+    VectorstrName[0]="second name";
+    star('-');
+    cout<<strName<<endl;
+    cout<<VectorstrName[0]<<endl;
+    star('-',"end");
+    return 0;
+}
+
+int RunLocalVarTest(int argc,char * argv[] )
+{
+    int i=200;
+    star();
+    cout<<i<<endl;
+    {
+        int i=100;
+        star();
+        cout<<i<<endl;
+    }
     return 0;
 }
 
@@ -920,10 +948,14 @@ int RunMyTestFN(int argc, char *argv[])
     string strMenuTitle="Please choice a Menu command No to run a command,choice 0 = exit...";
     Menu.push_back(strMenuTitle);
     Command.push_back(nullptr);
-    string strMenuName="RunBitSetTest";
-
+    string strMenuName;
+    strMenuName="RunTempTest";
     Menu.push_back(strMenuName);
-    Command.push_back(RunBitSetTest);
+    Command.push_back( RunTempTest);
+
+    strMenuName="RunLocalVarTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(RunLocalVarTest);
 
     Menu.push_back("Run Binary Number Print Module");
     Command.push_back(RunBinaryTestFN);
@@ -941,7 +973,6 @@ int RunMyTestFN(int argc, char *argv[])
 
     return 0;
 }
-
 
 int xx(int argc,char * argv[] )
 {

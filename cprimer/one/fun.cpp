@@ -126,7 +126,6 @@ start:
             cout << "\n超过循环次数，退出....\n";
             goto get;
         }
-neverget:
     cout << "跳转从来不会到达的地方......\n";
 get:
     cout << "模块结束......\n";
@@ -135,7 +134,7 @@ get:
 
 int RunTestArraySizeofFN(int argc, char *argv[])
 {
-    int arraya[x][y][z]= {(0,0,0)};
+    int arraya[x][y][z]= {0,0,0};
     cout<<"数组尺寸大小是： "<<sizeof(arraya)<<endl;
     InitalArrayL(arraya, atoi(argv[1]));
     cout<<"测试对象尺寸模块结束.....\n";
@@ -147,7 +146,7 @@ int InitalArrayL(int arrayb[x][y][z], int argc1)
     long unsigned int a=0;
     long unsigned int b=0;
     long unsigned int c=0;
-    cout<<"数组尺寸大小是:  "<<sizeof(arrayb)<<endl;
+    cout<<"数组pointer sizeof 是:  "<<sizeof(int (*)[5][5])<<endl;
     for(a=0; a<x; a++)
         {
             for(b=0; b<y; b++)
@@ -263,13 +262,9 @@ int RunPrint_MonthFN (int argc,char *argv[])
 int RunPickInitalFN (int argc, char *argv[])
 {
     int icp=8;
-    int ic=8;
-    int il=8;
     if(argc>4)
         {
             icp=atoi(argv[1]);
-            ic=atoi(argv[2]);
-            il=atoi(argv[3]);
         }
     Init_MartixL (martix, icp);
     PickUpBigL (martix, icp);
