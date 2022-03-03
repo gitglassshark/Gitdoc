@@ -6,10 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "mylib.hpp"
+#include "class.hpp"
 #include "menu.hpp"
 using namespace std;
-
-
 char t='\t';
 char e='\n';
 int PrintLongSizeL(int argc, char *argv[])
@@ -941,6 +940,33 @@ int RunLocalVarTest(int argc,char * argv[] )
     return 0;
 }
 
+int CreateClassTest(int argc,char * argv[] )
+{
+    cin.clear();
+    star('#');
+    Fish *pfish=nullptr;
+    Fish *pfish2=nullptr;
+    Fish smallfish;
+    smallfish.name();
+    smallfish.baby();
+    star('#');
+    star("whole",'#');
+    Whole BigWhole;
+    BigWhole.name();
+    BigWhole.baby();
+    star('#');
+    pfish=&smallfish;
+    pfish2=&BigWhole;
+    pfish->baby();
+    pfish2->baby();
+    ++BigWhole;
+    BigWhole++;
+    star('#');
+    getchar();
+    getchar();
+    return 0;
+}
+
 int RunMyTestFN(int argc, char *argv[])
 {
     vector<string>Menu;
@@ -949,9 +975,9 @@ int RunMyTestFN(int argc, char *argv[])
     Menu.push_back(strMenuTitle);
     Command.push_back(nullptr);
     string strMenuName;
-    strMenuName="RunTempTest";
+    strMenuName="CreateClassTest";
     Menu.push_back(strMenuName);
-    Command.push_back( RunTempTest);
+    Command.push_back( CreateClassTest);
 
     strMenuName="RunLocalVarTest";
     Menu.push_back(strMenuName);
