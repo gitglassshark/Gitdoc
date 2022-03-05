@@ -962,6 +962,35 @@ int CreateClassTest(int argc,char * argv[] )
     ++BigWhole;
     BigWhole++;
     star('#');
+    Fish One(50);
+    Fish Two(One);
+    One.name("one");
+    cout<<One.getsize()<<endl;
+    Two.name("Two");
+    cout<<Two.getsize()<<endl;
+    One.setsize(40);
+    cout<<One.getsize()<<endl;
+    cout<<"Two=One"<<endl;
+    star('#');
+    Two=One;
+    cout<<Two.getsize()<<endl;
+    Fish Three=Two;
+    cout<<Three.getsize()<<endl;
+    star('#');
+    Fish four(2,4);
+    cout<<four.getsize()<<t<<four.getweight()<<endl;
+    getchar();
+    getchar();
+    return 0;
+}
+
+int ClassTestTwo(int argc,char * argv[] )
+{
+    cin.clear();
+    star('#');
+    Fish four(8,9);
+    cout<<four.getsize()<<t<<four.getweight()<<endl;
+    star('#');
     getchar();
     getchar();
     return 0;
@@ -975,6 +1004,10 @@ int RunMyTestFN(int argc, char *argv[])
     Menu.push_back(strMenuTitle);
     Command.push_back(nullptr);
     string strMenuName;
+    strMenuName="ClassTestTwo";
+    Menu.push_back(strMenuName);
+    Command.push_back( ClassTestTwo);
+
     strMenuName="CreateClassTest";
     Menu.push_back(strMenuName);
     Command.push_back( CreateClassTest);

@@ -1,4 +1,4 @@
- #include <iostream>
+#include <iostream>
 using namespace std;
 // class declare
 //
@@ -6,15 +6,37 @@ class Fish
 {
 protected:
     int size;
+    int * weight;
 public:
-    Fish():size(20)
+    Fish():size(20),weight(nullptr)
     {
+        weight=new int(size*4);
         cout<<"+Fish is borning ...,size is "<<size<<__func__<<endl;
     };
-    Fish(int bornsize):size(bornsize)
+    Fish(int nsize,int nweight):size(nsize),weight(nullptr)
+    {
+        weight=new int(nweight);
+        cout<<"+Fish is borning ...,size is "<<size<<__func__<<endl;
+    };
+    Fish(int bornsize):size(bornsize),weight(nullptr)
     {
         size=bornsize;
+        weight=new int(size*4);
         cout<<"+Fish is borning ...,size is "<<size<<__func__<<endl;
+    };
+    Fish(Fish &r)
+    {
+        size=r.getsize();
+        weight=new int(*r.weight);
+        cout<<"+Fish is borning copy ...,size is "<<size<<__func__<<endl;
+    };
+    Fish &operator =(Fish &r)
+    {
+        size=r.getsize();
+        if(weight)
+            weight=new int(*r.weight);
+        cout<<"+Fish is = ...,size is "<<size<<__func__<<endl;
+        return *this;
     };
     virtual void baby()
     {
@@ -22,7 +44,13 @@ public:
     };
     ~Fish()
     {
+        delete weight;
+        weight=NULL;
         cout<<"~Fish is dying...,size is "<<size<<endl;
+    };
+    int getweight()
+    {
+        return *weight;
     };
     int getsize()
     {
@@ -49,11 +77,13 @@ public:
         size=100;
         cout<<"+whole is borning......,size is "<<size<<__func__<<endl;
     };
-    Whole& operator ++(){
+    Whole& operator ++()
+    {
         cout<<"in ++Whole"<<endl;
         return *this;
     }
-    Whole & operator ++(int a){
+    Whole & operator ++(int a)
+    {
         cout<<"in Whole++"<<endl;
         return *this;
     }
