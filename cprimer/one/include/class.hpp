@@ -71,10 +71,17 @@ public:
 };
 class Whole:public Fish
 {
+protected:
+    Fish smallfish;
 public:
-    Whole():Fish()
+    Whole():Fish(100),smallfish(100)
     {
         size=100;
+        cout<<"+whole is borning......,size is "<<size<<__func__<<endl;
+    };
+    Whole(int nsize):Fish(nsize),smallfish(nsize*2)
+    {
+        size=nsize;
         cout<<"+whole is borning......,size is "<<size<<__func__<<endl;
     };
     Whole& operator ++()

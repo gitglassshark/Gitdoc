@@ -5,12 +5,15 @@
 #include <vector>
 #include <stdio.h>
 #include <stdlib.h>
+#include <typeinfo>
 #include "mylib.hpp"
 #include "class.hpp"
 #include "menu.hpp"
+
 using namespace std;
 char t='\t';
 char e='\n';
+
 int PrintLongSizeL(int argc, char *argv[])
 {
     cout<<"long long sizeof is "<<sizeof(long)<<endl;
@@ -984,15 +987,287 @@ int CreateClassTest(int argc,char * argv[] )
     return 0;
 }
 
+class pclass
+{
+public:
+    int m_n=0;
+    static int m_m;
+    void say()const
+    {
+        cout<<"say is  "<<this->m_n<<e;
+        cout<<"say is  "<<this->m_n<<e;
+    }
+    void see()
+    {
+        cout<<"see is  "<<++this->m_n<<e;
+        cout<<"see is  "<<this->m_n++<<e;
+        this->say();
+    }
+};
+int pclass::m_m=0;
 int ClassTestTwo(int argc,char * argv[] )
 {
     cin.clear();
     star('#');
-    Fish four(8,9);
-    cout<<four.getsize()<<t<<four.getweight()<<endl;
+    pclass p1;
+    cout<<sizeof(pclass)<<e;
+    cout<<sizeof(p1)<<e;
+    p1.see();
+    star('#');
+    Whole four(50);
+    const std::type_info &r1=typeid(p1);
+    cout<<r1.name()<<endl;
+    cout<<typeid(four).name()<<endl;
+    star('#');
+    short i=32768;
+    cout<<i<<e;
+    i*=i;
+    cout<<i<<e;
+    star("double",'#');
+    double a=1;
+    double b=3;
+    double c=a/b;
+    cout<<c<<e;
+    cout<<typeid(c).name()<<e;
     star('#');
     getchar();
     getchar();
+    return 0;
+}
+
+int AsciiTest(int argc,char * argv[] )
+{
+    cout<<"Start print assiitable...\n";
+    star('#');
+    char c=0;
+    for(int i=0; i<255; i++)
+        {
+            cout<<i<<':'<<(char)i<<t;
+            if((i%10==0)&&(i!=0))
+                cout<<e;
+        }
+    cout<<endl;
+    star('#');
+    getchar();
+    getchar();
+    return 0;
+}
+
+int DataTypeTest(int argc,char * argv[] )
+{
+    char c=97;
+    cout<<c<<endl;
+    cout<<typeid(c).name()<<endl;
+    int a=0;
+    cout<<a<<endl;
+    cout<<typeid(a).name()<<endl;
+    short s=2;
+    cout<<s<<endl;
+    cout<<typeid(s).name()<<endl;
+    string str="name";
+    cout<<str<<endl;
+    cout<<typeid(str).name()<<endl;
+    double d=2.2;
+    cout<<d<<endl;
+    cout<<typeid(d).name()<<endl;
+    float f=2.44;
+    cout<<f<<endl;
+    cout<<typeid(f).name()<<endl;
+    int i=0;
+    cout<<i++<<t<<i<<e;
+    cout<<++i<<t<<i<<e;
+    if(4==4)
+        cout<<"4==4"<<endl;
+    if(4!=3)
+        cout<<"4!=3"<<endl;
+    if(4>=3)
+        cout<<"4>=3"<<endl;
+    else
+        cout<<"4<3"<<endl;
+    if(5<3)
+        cout<<"5<3"<<endl;
+    else
+        cout<<"3<5"<<endl;
+    star();
+    bool ib=true;
+    bool ia=false;
+    bool ic=true;
+    if(ib)
+        cout<<"ib is true"<<endl;
+    if(!ib==false)
+        cout<<"!ib is false"<<endl;
+    if(ib&&ic)
+        cout<<"ic&&ib is true"<<endl;
+    else
+        cout<<"ic&&ib is false"<<endl;
+    if(ia&&ib)
+        cout<<"ia&&ib is true"<<endl;
+    else
+        cout<<"ia&&ib is false"<<endl;
+    return 0;
+}
+
+int IfTest(int argc,char * argv[] )
+{
+    bool itest=false;
+    cout<<"Please a number:"<<endl;
+    int number=0;
+    cin>>number;
+    if(number>600)
+        itest=true;
+    else
+        itest=false;
+    if(itest)
+        cout<<"is ok"<<endl;
+    else
+        cout<<"is terrible"<<endl;
+    return 0;
+}
+
+
+int SwitchTest(int argc,char * argv[] )
+{
+    cout<<"Please a number:"<<endl;
+    int nchoice=0;
+    cin>>nchoice;
+    switch (nchoice)
+        {
+        case 1:
+            cout<<nchoice<<endl;
+            break;
+        case 2:
+            cout<<nchoice<<endl;
+            break;
+        case 3:
+            cout<<nchoice<<endl;
+            break;
+        default:
+            cout<<"default:"<<nchoice<<endl;
+            break;
+        }
+    return 0;
+}
+
+int ForTest(int argc,char * argv[] )
+{
+    for(int i=0; i<10; ++i)
+        {
+            for(int j=0; j<10; ++j)
+                if((j%2))
+                    cout<<'#';
+                else
+                    cout<<'*';
+            cout<<e;
+        }
+    int narra[20];
+    for(int i=0; i<20; i++)
+        {
+            cout<<"#:"<<&narra[i]<<t;
+            if((i+1)%3==0)
+                cout<<endl;
+        }
+    cout<<endl;
+    int narrb[]= {1,2,3,4,5,6,7,8,9,0};
+    star();
+    cout<<sizeof(narra)<<endl;
+    cout<<(narra)<<endl;
+    cout<<sizeof(narrb)<<endl;
+    cout<<(narrb)<<endl;
+    star();
+    cout<<"Print plus table"<<endl;
+    for(int i=1; i<10; ++i)
+        {
+            for(int j=1; j<=i; ++j)
+                cout<<j<<"*"<<i<<"="<<i*j<<t;
+            cout<<e;
+        }
+    return 0;
+}
+
+int FindArrayMaxTest(int argc, char *argv[])
+{
+    int arraya[]= {3333,488,3,7,899,0,4,28,1333,88,99,32,48,5555};
+    int max=0;
+    for(int i=0; i<sizeof(arraya)/sizeof(arraya[0]); ++i)
+        if(max<arraya[i])
+            max=arraya[i];
+    cout<<"Max value of array is : "<<max<<endl;
+    int start=0;
+    int end=sizeof(arraya)/sizeof(arraya[0])-1;
+    auto tmp=arraya[0];
+    star();
+    for(int i=0; i<sizeof(arraya)/sizeof(arraya[0]); ++i)
+        cout<<arraya[i]<<' ';
+    cout<<endl;
+    for(; start<end; ++start,--end)
+        {
+            tmp=arraya[start];
+            arraya[start]=arraya[end];
+            arraya[end]=tmp;
+        }
+    cout<<"Resort Array"<<endl;
+    star();
+    for(int i=0; i<sizeof(arraya)/sizeof(arraya[0]); ++i)
+        cout<<arraya[i]<<' ';
+    cout<<endl;
+    return 0;
+}
+
+struct student
+{
+    int age;
+    string  name;
+};
+
+struct teacher
+{
+    string  name;
+    int age;
+    struct student OneStudent;
+};
+
+
+int BubleSortTest(int argc,char * argv[] )
+{
+    int arraya[]= {3333,488,3,7,899,0,4,28,1333,88,99,32,48,5555};
+    int nMax=sizeof(arraya)/sizeof(arraya[0]);
+    auto itemp=arraya[0];
+    cout<<endl;
+    star();
+    cout<<"Pointer size is "<<sizeof(int *)<<endl;
+    star();
+    cout<<"arraya size is "<<sizeof(arraya)<<endl;
+    star();
+    for(auto i:arraya)
+        cout<<i<<' ';
+    cout<<endl;
+    star();
+    student Astudent= {18,"jack"};
+    teacher Ateacher= {"Smith",20,Astudent};
+    cout<<Astudent.age<<t<<Astudent.name<<endl;
+    cout<<Ateacher.age<<t<<Ateacher.name<<t<<Ateacher.OneStudent.name<<endl;
+    star();
+    //    system("ps");
+    //    system("ls");
+    //    system("free");
+    //    system("uname");
+    return 0;
+}
+
+int MenuAddTest(int argc,char * argv[] )
+{
+    vector<string>Menu;
+    vector<PFp>Command;
+    string strMenuTitle="New Menu to run a command,choice 0 = exit...";
+    Menu.push_back(strMenuTitle);
+    Command.push_back(nullptr);
+    string strMenuName;
+
+    strMenuName="BubleSortTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(BubleSortTest);
+
+    RunMenuMU(argc, argv,Menu,Command);
     return 0;
 }
 
@@ -1004,9 +1279,34 @@ int RunMyTestFN(int argc, char *argv[])
     Menu.push_back(strMenuTitle);
     Command.push_back(nullptr);
     string strMenuName;
-    strMenuName="ClassTestTwo";
+
+    strMenuName="MenuAddTest";
     Menu.push_back(strMenuName);
-    Command.push_back( ClassTestTwo);
+    Command.push_back(MenuAddTest);
+
+    strMenuName="FindArrayMaxTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(FindArrayMaxTest);
+
+    strMenuName="ForTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(ForTest);
+
+    strMenuName="SwitchTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(SwitchTest);
+
+    strMenuName="IfTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(IfTest);
+
+    strMenuName="DataTypeTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(DataTypeTest);
+
+    strMenuName="AsciiTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(AsciiTest);
 
     strMenuName="CreateClassTest";
     Menu.push_back(strMenuName);
@@ -1033,7 +1333,7 @@ int RunMyTestFN(int argc, char *argv[])
     return 0;
 }
 
-int xx(int argc,char * argv[] )
+int Test(int argc,char * argv[] )
 {
     return 0;
 }

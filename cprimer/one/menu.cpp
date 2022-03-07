@@ -11,25 +11,26 @@ vector<fPF>vectCommand4;
 vector<ffP*>vectCommand5;
 int RunMenuMU(int argc, char *argv[],vector<string>&vectMenu,vector<PFp>&vectCommand)
 {
-    int  iChoiceMenu=1;
+    int  iChoiceMenu='r';
     const int  ciMaxChoiceMenu=vectMenu.size()-1;
     while(iChoiceMenu)
         {
             int  iNumberMenu=0;
-            for(auto i:vectMenu)
-                {
-                    star();
-                    if(iNumberMenu==0)
-                        {
-                            cout<<"***";
-                        }
-                    else
-                        {
-                            cout<<"No."<<iNumberMenu<<' ';
-                        }
-                    cout<<i<<endl;
-                    ++iNumberMenu;
-                }
+            if(iChoiceMenu=='r')
+                for(auto i:vectMenu)
+                    {
+                        star();
+                        if(iNumberMenu==0)
+                            {
+                                cout<<"***";
+                            }
+                        else
+                            {
+                                cout<<"No."<<iNumberMenu<<' ';
+                            }
+                        cout<<i<<endl;
+                        ++iNumberMenu;
+                    }
             cout<<"Please input a number:>";
             cin>>iChoiceMenu;
             cin.clear();
