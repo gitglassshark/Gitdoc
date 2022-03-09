@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <bitset>
 #include <string>
 #include <cstring>
@@ -7,12 +8,14 @@
 #include <stdlib.h>
 #include <typeinfo>
 #include "mylib.hpp"
+#include "temptest.hpp"
 #include "class.hpp"
 #include "menu.hpp"
 
 using namespace std;
 char t='\t';
 char e='\n';
+int TestGround(int argc,char * argv[] );
 
 int PrintLongSizeL(int argc, char *argv[])
 {
@@ -1040,10 +1043,11 @@ int AsciiTest(int argc,char * argv[] )
     cout<<"Start print assiitable...\n";
     star('#');
     char c=0;
-    for(int i=0; i<255; i++)
+    int n=1;
+    for(int i=33; i<127; ++i,++n)
         {
             cout<<i<<':'<<(char)i<<t;
-            if((i%10==0)&&(i!=0))
+            if(n%10==0)
                 cout<<e;
         }
     cout<<endl;
@@ -1222,7 +1226,7 @@ struct student
 struct teacher
 {
     string  name;
-    int age;
+    int age=0;
     struct student OneStudent;
 };
 
@@ -1247,10 +1251,170 @@ int BubleSortTest(int argc,char * argv[] )
     cout<<Astudent.age<<t<<Astudent.name<<endl;
     cout<<Ateacher.age<<t<<Ateacher.name<<t<<Ateacher.OneStudent.name<<endl;
     star();
-    //    system("ps");
-    //    system("ls");
-    //    system("free");
-    //    system("uname");
+    return 0;
+}
+
+class Run
+{
+public:
+    virtual void One() {};
+//    virtual void ne(){};
+//    virtual void ine(){};
+//    virtual void xne(){};
+    void operator ()(string name,int age)
+    {
+        cout<<name<<":"<<age<<endl;
+    };
+    void operator ()(string name)
+    {
+        cout<<name<<endl;
+    };
+    void operator ()(int a,int b)
+    {
+        cout<<a<<t<<b<<endl;
+    };
+};
+
+class RunCommandSecond:public Run
+{
+public:
+    virtual void One()
+    {
+        cout<<"RuncommandSecond vitural One"<<endl;
+    };
+};
+
+class RunCommand:public Run
+{
+public:
+    virtual void One()
+    {
+        cout<<"Runcommand vitural One"<<endl;
+    };
+};
+
+class cell
+{
+public:
+    int size;
+    cell()
+    {
+        cout<<"cell "<<endl;
+        size=0;
+    };
+    virtual ~cell()
+    {
+        cout<<"~cell "<<endl;
+        size=0;
+    };
+    void lsize()
+    {
+        cout<<"My size is : "<<sizeof(*this)<<endl;
+    };
+    void say()
+    {
+        cout<<"Cell One is say..."<<endl;
+    };
+};
+
+class live:public  cell
+{
+public:
+    int age;
+    live()
+    {
+        cout<<"live"<<endl;
+    }
+    ~live()
+    {
+        cout<<"~live"<<endl;
+    }
+};
+class man:public live
+{
+public:
+    int lage;
+    man()
+    {
+        cout<<"man"<<endl;
+    }
+    ~man()
+    {
+        cout<<"~man"<<endl;
+    }
+};
+
+class animal:public virtual cell
+{
+public:
+    int speed;
+    animal()
+    {
+        cout<<"animal"<<endl;
+    }
+    virtual ~animal()
+    {
+        cout<<"~animal"<<endl;
+    }
+};
+
+class planet:public virtual cell
+{
+public:
+    int hight;
+    planet()
+    {
+        cout<<"planet"<<endl;
+    }
+    virtual ~planet()
+    {
+        cout<<"~planet"<<endl;
+    }
+};
+
+class tiger:virtual public animal,virtual public planet
+{
+public:
+    int tail;
+    tiger()
+    {
+        cout<<"tiger"<<endl;
+    }
+    ~tiger()
+    {
+        cout<<"~tiger"<<endl;
+    }
+};
+
+int SystemCommandTest(int argc,char * argv[] )
+{
+    system("clear");
+    /*    Run One;
+    //    One("good",200);
+    //    One("One");
+    //    One(2,4);
+        cout<<"ONE size of is : "<<sizeof(One)<<endl;
+        RunCommandSecond two;
+        RunCommand wo;
+        Run *p=&two;
+        p->One();
+        p=&wo;
+        p->One();
+        star("oh");
+        cell ok;
+        ok.say();
+        cout<<"OK size is : "<<sizeof(ok)<<endl;
+        ok.lsize();
+        star("ok");
+        star("tiger");*/
+//    system("free -h");
+    cell * PCell=new planet;
+    PCell->lsize();
+    cout<<"Small size is : "<<sizeof(*PCell)<<endl;
+    delete PCell;
+    star("ok");
+    live * Pman=new man;
+    delete Pman;
     return 0;
 }
 
@@ -1263,11 +1427,106 @@ int MenuAddTest(int argc,char * argv[] )
     Command.push_back(nullptr);
     string strMenuName;
 
+    strMenuName="SystemCommandTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(SystemCommandTest);
+
     strMenuName="BubleSortTest";
     Menu.push_back(strMenuName);
     Command.push_back(BubleSortTest);
-
     RunMenuMU(argc, argv,Menu,Command);
+    return 0;
+}
+int OpenBinaryFileTest(int argc,char * argv[] )
+{
+    ofstream of;
+    ifstream in;
+    float nnumber=3.4;
+    float xnumber=0.4;
+    of.open("recode",ios::binary|ios::out);
+    char *firstline="name is open file open.txt\t\n";
+    of.write(firstline,strlen(firstline));
+    char *secondline="second line txt in\n";
+    of.write(secondline,strlen(secondline));
+    of<<nnumber;
+    of.close();
+    in.open("recode",ios::binary|ios::out);
+    char *buf=new char[1024];
+    while(in>>buf)
+        {
+            cout<<buf<<endl;
+        }
+    cout<<endl;
+    in.close();
+    star("getline buf");
+    in.open("recode",ios::binary|ios::out);
+    in.getline(buf,sizeof(buf));
+    cout<<buf<<endl;
+    in.getline(buf,sizeof(buf));
+    cout<<buf<<endl;
+    in>>xnumber;
+    cout<<xnumber;
+    in.close();
+    star();
+    delete []buf;
+    return 0;
+}
+
+int OpenFileTest(int argc,char * argv[] )
+{
+    ofstream of;
+    float nnumber=3.4;
+    float xnumber=0.4;
+    of.open("open.txt",ios::binary|ios::out);
+    of<<"name is open file open.txt\t\n";
+    of<<"second line txt in\n";
+    of<<nnumber;
+    of.close();
+    star("getline");
+    ifstream in;
+    in.open("open.txt",ios::binary|ios::in);
+    string getl;
+//    in>>getl;
+    getline(in,getl);
+    cout<<getl<<endl;
+    getline(in,getl);
+    cout<<getl<<endl;
+    in>>xnumber;
+    cout<<xnumber<<endl;
+    in.close();
+    star("bufwhile");
+    in.open("open.txt",ios::binary|ios::in);
+    char *buf=new char[1024];
+    while(in>>buf)
+        {
+            cout<<buf<<endl;
+        }
+    cout<<endl;
+    in.close();
+    star("getline buf");
+    in.open("open.txt",ios::binary|ios::in);
+    in.getline(buf,sizeof(buf));
+    cout<<buf<<endl;
+    in.getline(buf,sizeof(buf));
+    cout<<buf<<endl;
+    in>>xnumber;
+    cout<<xnumber;
+    in.close();
+    star();
+    delete []buf;
+    return 0;
+}
+
+int TempAddTest(int argc,char * argv[] )
+{
+    cout<<tadd(100,200)<<endl;
+    cout<<add<int>(100,200)<<endl;
+    cout<<add(100,200)<<endl;
+    cout<<tadd(100.2,200.4)<<endl;
+    cout<<add<float>(100.2,200.4)<<endl;
+    cout<<tadd(0.2,0.4)<<endl;
+    cout<<add<double>(0.2,0.4)<<endl;
+    cout<<sub<double,int >(10.2,4)<<endl;
     return 0;
 }
 
@@ -1280,9 +1539,21 @@ int RunMyTestFN(int argc, char *argv[])
     Command.push_back(nullptr);
     string strMenuName;
 
+    strMenuName="TestGround";
+    Menu.push_back(strMenuName);
+    Command.push_back(TestGround);
+
+    strMenuName="TempAddTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(TempAddTest);
+
     strMenuName="MenuAddTest";
     Menu.push_back(strMenuName);
     Command.push_back(MenuAddTest);
+
+    strMenuName="OpenFileTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(OpenFileTest);
 
     strMenuName="FindArrayMaxTest";
     Menu.push_back(strMenuName);
@@ -1330,6 +1601,17 @@ int RunMyTestFN(int argc, char *argv[])
 
     RunMenuMU(argc, argv,Menu,Command);
 
+    return 0;
+}
+
+int TestGround(int argc,char * argv[] )
+{
+    string *pname=new string("Mark.Smith Mrs");
+    int ntest;
+    cout<<*pname<<endl;
+    cout<<typeid(*pname).name()<<endl;
+    cout<<typeid(pname).name()<<endl;
+    cout<<typeid(ntest).name()<<endl;
     return 0;
 }
 
