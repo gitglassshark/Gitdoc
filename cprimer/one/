@@ -48,16 +48,16 @@ int none()
     cout<<key<<endl;
     int i=22;
     for(int i=0; i<9; i++)
+    {
+        if(i==8)
         {
-            if(i==8)
-                {
-                    cout<<"in if, i=8"<<i<<endl;
-                }
-            if(i==9)
-                {
-                    cout<<i<<endl;
-                }
+            cout<<"in if, i=8"<<i<<endl;
         }
+        if(i==9)
+        {
+            cout<<i<<endl;
+        }
+    }
     cout<<i<<endl;
     return 0;
 }
@@ -75,10 +75,10 @@ int three( int argc, char *argv[])
     int iArgcTotalL=0;
     cout<<"打印参数列表："<<endl;
     for(int i=0; i<argc; i++)
-        {
-            iArgcTotalL+=atoi(argv[i]);
-            cout<<argv[i]<<endl;
-        }
+    {
+        iArgcTotalL+=atoi(argv[i]);
+        cout<<argv[i]<<endl;
+    }
     cout<<iArgcTotalL<<endl;
     return 0;
 }
@@ -144,10 +144,10 @@ int seven(int argc,char * argv[] )
     cout<<strline<<endl;
     newline();
     for(char &a:strline)
-        {
-            if(ispunct(a))
-                a=' ';
-        }
+    {
+        if(ispunct(a))
+            a=' ';
+    }
     cout<<strline<<endl;
     cout<<endl;
     return 0;
@@ -291,34 +291,34 @@ int pointerandrefence(int argc,char * argv[] )
     int iarray[50];
     int (&rarray)[50]=iarray;
     for(auto &i:iarray)
-        {
-            i=2;
-        }
+    {
+        i=2;
+    }
     star();
     for(auto &i:iarray)
-        {
-            cout<<i<<t;
-        }
+    {
+        cout<<i<<t;
+    }
     cout<<e;
     star();
 
     cout<<"print reference rarray value:\n";
     for(auto &i:rarray)
-        {
-            i=3;
-        }
+    {
+        i=3;
+    }
     star();
     for(auto &i:rarray)
-        {
-            cout<<i<<t;
-        }
+    {
+        cout<<i<<t;
+    }
     cout<<e;
     cout<<"print reference iarray value:\n";
     star();
     for(auto &i:iarray)
-        {
-            cout<<i<<t;
-        }
+    {
+        cout<<i<<t;
+    }
     cout<<e;
     star(8);
     int *pb=begin(rarray);
@@ -524,29 +524,29 @@ int switchtest(int argc,char * argv[] )
     bool icon=true;
     //    while(icon==true)
     while(i)
+    {
+        cout<<"Please input a number:(1-3,0 is exit) \t";
+        cin>>i;
+        cin.clear();
+        switch(i)
         {
-            cout<<"Please input a number:(1-3,0 is exit) \t";
-            cin>>i;
-            cin.clear();
-            switch(i)
-                {
-                case 1:
-                    cout<<"This is one condition..."<<e;
-                    break;
-                case 2:
-                    cout<<"This is two condition..."<<e;
-                    break;
-                case 3:
-                    cout<<"This is three condition..."<<e;
-                    break;
-                case 0:
-                    icon=false;
-                    break;
-                default:
-                    cout<<"This is default condition..."<<e;
-                }
-            cout<<"end"<<e;
+        case 1:
+            cout<<"This is one condition..."<<e;
+            break;
+        case 2:
+            cout<<"This is two condition..."<<e;
+            break;
+        case 3:
+            cout<<"This is three condition..."<<e;
+            break;
+        case 0:
+            icon=false;
+            break;
+        default:
+            cout<<"This is default condition..."<<e;
         }
+        cout<<"end"<<e;
+    }
     return 0;
 }
 
@@ -556,28 +556,28 @@ int dowhiletest(int argc,char * argv[] )
     int i=0;
     bool icon=true;
     do
+    {
+        cout<<"Please input a number:(1-3 to choice ,0 is exit)\t";
+        cin>>i;
+        cin.clear();
+        switch(i)
         {
-            cout<<"Please input a number:(1-3 to choice ,0 is exit)\t";
-            cin>>i;
-            cin.clear();
-            switch(i)
-                {
-                case 1:
-                    cout<<"This is one condition..."<<e;
-                    break;
-                case 2:
-                    cout<<"This is two condition..."<<e;
-                    break;
-                case 3:
-                    cout<<"This is three condition..."<<e;
-                    break;
-                case 0:
-                    icon=false;
-                    break;
-                default:
-                    cout<<"This is default condition..."<<e;
-                }
+        case 1:
+            cout<<"This is one condition..."<<e;
+            break;
+        case 2:
+            cout<<"This is two condition..."<<e;
+            break;
+        case 3:
+            cout<<"This is three condition..."<<e;
+            break;
+        case 0:
+            icon=false;
+            break;
+        default:
+            cout<<"This is default condition..."<<e;
         }
+    }
     while(i!=0);
     return 0;
 }
@@ -588,37 +588,37 @@ int breaktest(int argc,char * argv[] )
     int i=0;
     bool icon=true;
     do
+    {
+        cout<<"Please input a number:(1-3 to choice ,0 is exit)\n""1.This is break condition...\n""2.This is continue condition...\n""3.This is return condition...\n";
+        cin>>i;
+        cin.clear();
+        switch(i)
         {
-            cout<<"Please input a number:(1-3 to choice ,0 is exit)\n""1.This is break condition...\n""2.This is continue condition...\n""3.This is return condition...\n";
-            cin>>i;
-            cin.clear();
-            switch(i)
-                {
-                case 1:
-                    bbreak=true;
-                    goto tagbreak;
-                    break;
-                case 2:
-                    bcontinue=true;
-                    goto tagcontinue;
-                    break;
-                case 3:
-                    breturn=true;
-                    goto tagreturn;
-                    break;
-                case 0:
-                default:
-                    icon=false;
-                    cout<<"This is default condition..."<<e;
-                }
-tagbreak:
+        case 1:
+            bbreak=true;
+            goto tagbreak;
             break;
-tagcontinue:
-            continue;
-tagreturn:
-            return 0;
-            cout<<"This is innter dowhile end\n";
+        case 2:
+            bcontinue=true;
+            goto tagcontinue;
+            break;
+        case 3:
+            breturn=true;
+            goto tagreturn;
+            break;
+        case 0:
+        default:
+            icon=false;
+            cout<<"This is default condition..."<<e;
         }
+tagbreak:
+        break;
+tagcontinue:
+        continue;
+tagreturn:
+        return 0;
+        cout<<"This is innter dowhile end\n";
+    }
     while(i!=0);
     cout<<"This is outside of while.\n";
     return 0;
@@ -628,9 +628,9 @@ long fact(int n,int m)
 {
     long l=1;
     for(int i=n<m?n:m; i<=(n<m?m:n); ++i)
-        {
-            l*=i;
-        }
+    {
+        l*=i;
+    }
     return l;
 }
 
@@ -638,21 +638,21 @@ long fact(int n)
 {
     long l=1;
     for(int i=1; i<=n; ++i)
-        {
-            l*=i;
-        }
+    {
+        l*=i;
+    }
     return l;
 }
 
 int RunFactTestFn(int argc,char * argv[] )
 {
     if(argc<4)
-        {
-            star();
-            star(6);
-            star(8);
-            return 0;
-        }
+    {
+        star();
+        star(6);
+        star(8);
+        return 0;
+    }
     int in=atoi(argv[2]);
     int im=atoi(argv[3]);
     starn();
@@ -722,11 +722,11 @@ constexpr int windowswid(const int wid,const int len)
 int runrecursion(int i)
 {
     if (i>0)
-        {
-            std::cout << "The variable i is " <<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
-            runrecursion(i-1);
-            std::cout << "The variable i address is :"<<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
-        }
+    {
+        std::cout << "The variable i is " <<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
+        runrecursion(i-1);
+        std::cout << "The variable i address is :"<<dec<<i<<" address is :"<<hex<<(long long int)&i <<"  and the function runrecukrsion address is "<<hex<<(long long int)&runrecursion<< std::endl;
+    }
     return 0;
 }
 
@@ -761,19 +761,19 @@ int RunFactTestFn (int imin, int imax)
     isave = imin;
     cout << imin;
     while (imin < imax || imax < imin)
+    {
+        if (imin < imax)
         {
-            if (imin < imax)
-                {
-                    imin++;
-                    isave = isave * imin;
-                }
-            else
-                {
-                    imin--;
-                    isave = isave * imin;
-                }
-            cout << "*" << imin;
+            imin++;
+            isave = isave * imin;
         }
+        else
+        {
+            imin--;
+            isave = isave * imin;
+        }
+        cout << "*" << imin;
+    }
     cout << "=";
     return isave;
 }
@@ -820,9 +820,9 @@ int printarrarytest ()
     const int x = 6;
     int price[x] = { 4, 5, 6, 7, 9, 10 };
     for (y = 0; y < x; y++)
-        {
-            cout << price[y] << " ";
-        }
+    {
+        cout << price[y] << " ";
+    }
     cout << endl;
 
     return 0;
@@ -834,25 +834,25 @@ int print_binary (int i)
     int len =  sizeof (int) * 8 ;
     char cbinary[len];
     for(auto &element:cbinary)
-        {
-            element='0';
-        }
+    {
+        element='0';
+    }
     --len;
     while (i > 0&&len>0)
+    {
+        x = i % 2;
+        if(x==1)
         {
-            x = i % 2;
-            if(x==1)
-                {
-                    cbinary[len]='1';
-                }
-            i = i / 2;
-            --len;
+            cbinary[len]='1';
         }
+        i = i / 2;
+        --len;
+    }
     cout <<y<<"的二进制： ";
     for(auto &element:cbinary)
-        {
-            cout<<element;
-        }
+    {
+        cout<<element;
+    }
     cout<<endl;
     return 0;
 }
@@ -862,15 +862,15 @@ int RunBinaryTestFN (int argc,char * argv[] )
     //input your program:
     int binx = 1;
     while(binx)
-        {
-            cout<<"Please input a number coversion to binary:(0=exit)";
-            cin>>binx;
-            print_binary (binx);
-            star();
-            cout <<binx<<"的二进制： " << bitset < sizeof (binx) * 8 > (binx) << endl;
-            star();
-            cin.clear();
-        }
+    {
+        cout<<"Please input a number coversion to binary:(0=exit)";
+        cin>>binx;
+        print_binary (binx);
+        star();
+        cout <<binx<<"的二进制： " << bitset < sizeof (binx) * 8 > (binx) << endl;
+        star();
+        cin.clear();
+    }
     return 0;
 }
 
@@ -1090,41 +1090,41 @@ int SwitchTest(int argc,char * argv[] )
     int nchoice=0;
     cin>>nchoice;
     switch (nchoice)
-        {
-        case 1:
-            cout<<nchoice<<endl;
-            break;
-        case 2:
-            cout<<nchoice<<endl;
-            break;
-        case 3:
-            cout<<nchoice<<endl;
-            break;
-        default:
-            cout<<"default:"<<nchoice<<endl;
-            break;
-        }
+    {
+    case 1:
+        cout<<nchoice<<endl;
+        break;
+    case 2:
+        cout<<nchoice<<endl;
+        break;
+    case 3:
+        cout<<nchoice<<endl;
+        break;
+    default:
+        cout<<"default:"<<nchoice<<endl;
+        break;
+    }
     return 0;
 }
 
 int ForTest(int argc,char * argv[] )
 {
     for(int i=0; i<10; ++i)
-        {
-            for(int j=0; j<10; ++j)
-                if((j%2))
-                    cout<<'#';
-                else
-                    cout<<'*';
-            cout<<e;
-        }
+    {
+        for(int j=0; j<10; ++j)
+            if((j%2))
+                cout<<'#';
+            else
+                cout<<'*';
+        cout<<e;
+    }
     int narra[20];
     for(int i=0; i<20; i++)
-        {
-            cout<<"#:"<<&narra[i]<<t;
-            if((i+1)%3==0)
-                cout<<endl;
-        }
+    {
+        cout<<"#:"<<&narra[i]<<t;
+        if((i+1)%3==0)
+            cout<<endl;
+    }
     cout<<endl;
     int narrb[]= {1,2,3,4,5,6,7,8,9,0};
     star();
@@ -1135,11 +1135,11 @@ int ForTest(int argc,char * argv[] )
     star();
     cout<<"Print plus table"<<endl;
     for(int i=1; i<10; ++i)
-        {
-            for(int j=1; j<=i; ++j)
-                cout<<j<<"*"<<i<<"="<<i*j<<t;
-            cout<<e;
-        }
+    {
+        for(int j=1; j<=i; ++j)
+            cout<<j<<"*"<<i<<"="<<i*j<<t;
+        cout<<e;
+    }
     return 0;
 }
 
@@ -1159,11 +1159,11 @@ int FindArrayMaxTest(int argc, char *argv[])
         cout<<arraya[i]<<' ';
     cout<<endl;
     for(; start<end; ++start,--end)
-        {
-            tmp=arraya[start];
-            arraya[start]=arraya[end];
-            arraya[end]=tmp;
-        }
+    {
+        tmp=arraya[start];
+        arraya[start]=arraya[end];
+        arraya[end]=tmp;
+    }
     cout<<"Resort Array"<<endl;
     star();
     for(int i=0; i<sizeof(arraya)/sizeof(arraya[0]); ++i)
@@ -1427,9 +1427,9 @@ int OpenBinaryFileTest(int argc,char * argv[] )
     in.open("recode",ios::binary|ios::out);
     char *buf=new char[1024];
     while(in>>buf)
-        {
-            cout<<buf<<endl;
-        }
+    {
+        cout<<buf<<endl;
+    }
     cout<<endl;
     in.close();
     star("getline buf");
@@ -1472,9 +1472,9 @@ int OpenFileTest(int argc,char * argv[] )
     in.open("open.txt",ios::binary|ios::in);
     char *buf=new char[1024];
     while(in>>buf)
-        {
-            cout<<buf<<endl;
-        }
+    {
+        cout<<buf<<endl;
+    }
     cout<<endl;
     in.close();
     star("getline buf");
@@ -1530,21 +1530,21 @@ int TempClassTest(int argc, char *argv[])
     return 0;
 }
 
-template <class T>
+    template <class T>
 int listvector(const vector<T>&r)
 {
     int il=0;
     star('_');
     cout<<"vector capacity is "<<r.capacity()<<endl;
     for(auto i:r)
-        {
-            cout<<i;
-            //            if((ic++%10)==9)
-            if(++il%10==0)
-                cout<<e;
-            else
-                cout<<"\t";
-        }
+    {
+        cout<<i;
+        //            if((ic++%10)==9)
+        if(++il%10==0)
+            cout<<e;
+        else
+            cout<<"\t";
+    }
     cout<<endl;
     star('_');
     return 0;
@@ -1556,27 +1556,27 @@ int VectorTest(int argc,char * argv[] )
     star('_');
     star("start");
     for(auto &i:i_vector_one)
-        {
-            cout<<i<<t;
-        }
+    {
+        cout<<i<<t;
+    }
     cout<<e;
     star(1);
 
     decltype(i_vector_one.size()) j=0;
     for(auto i=i_vector_one.size(),j=i_vector_one.size()-i_vector_one.size(); i>0; --i,++j)
-        {
-            i_vector_one.push_back(j);
-            cout<<"i is: "<<i<<" --i "<<"plug in j: "<<j<<" ++j"<<endl;
-        }
+    {
+        i_vector_one.push_back(j);
+        cout<<"i is: "<<i<<" --i "<<"plug in j: "<<j<<" ++j"<<endl;
+    }
     int il=0;
     for(auto i:i_vector_one)
-        {
-            //            if((ic++%10)==9)
-            if(++il%10==0)
-                cout<<i<<e;
-            else
-                cout<<i<<t;
-        }
+    {
+        //            if((ic++%10)==9)
+        if(++il%10==0)
+            cout<<i<<e;
+        else
+            cout<<i<<t;
+    }
     cout<<e;
     star('_');
     vector<int>v4;
@@ -1603,19 +1603,19 @@ int VectorTest(int argc,char * argv[] )
     int ipcc=0;
     int icc=0;
     for(int i=0; i<10'000; ++i)
+    {
+        v4.push_back(i*3);
+        if(ic!=v4.capacity())
         {
-            v4.push_back(i*3);
-            if(ic!=v4.capacity())
-                {
-                    ic=v4.capacity();
-                    ++icc;
-                }
-            if(ipc!=&v4[0])
-                {
-                    ipc=&v4[0];
-                    ++ipcc;
-                }
+            ic=v4.capacity();
+            ++icc;
         }
+        if(ipc!=&v4[0])
+        {
+            ipc=&v4[0];
+            ++ipcc;
+        }
+    }
     cout<<"resize capactity is "<<icc<<endl;
     cout<<"V4 capicaty is "<<v4.capacity()<<endl;
     star('_');
@@ -1644,17 +1644,17 @@ int AsciiTest(int argc,char * argv[] )
     cout<<"Start print assiitable...\n";
     vector <char>AsciiTable;
     for(int i=33; i<127; ++i,++n)
-        {
-            AsciiTable.push_back(i);
-        }
+    {
+        AsciiTable.push_back(i);
+    }
     star('#');
     int ic=0;
     for(auto i:AsciiTable)
-        {
-            if(++ic%10==0)
-                cout<<e;
-            cout<<(int)i<<':'<<(char)i<<t;
-        }
+    {
+        if(++ic%10==0)
+            cout<<e;
+        cout<<(int)i<<':'<<(char)i<<t;
+    }
     cout<<endl;
     star('#');
     cout<<AsciiTable.size()<<endl;
@@ -1667,26 +1667,26 @@ int AsciiTest(int argc,char * argv[] )
     return 0;
 }
 
-template <class T>
+    template <class T>
 int listdeque(const deque<T>&r)
 {
     int il=0;
     star('_');
     for(auto i:r)
-        {
-            cout<<i;
-            //            if((ic++%10)==9)
-            if(++il%10==0)
-                cout<<e;
-            else
-                cout<<"\t";
-        }
+    {
+        cout<<i;
+        //            if((ic++%10)==9)
+        if(++il%10==0)
+            cout<<e;
+        else
+            cout<<"\t";
+    }
     if(il%10!=0)
         cout<<endl;
     return 0;
 }
 
-template <class T>
+    template <class T>
 int makedeque(deque<T>&r,int nsize,int mod)
 {
     for(int i=0; i<nsize; ++i)
@@ -1731,10 +1731,10 @@ int DequeTest(int argc, char *argv[])
     star('_');
     int ii=0;
     for(auto &i:ade)
-        {
-            i=++ii;
-            cout<<i<<t;
-        }
+    {
+        i=++ii;
+        cout<<i<<t;
+    }
     cout<<endl;
     star('_');
     ade.pop_back();
@@ -1770,28 +1770,28 @@ int DequeTestTwo(int argc,char * argv[] )
     deque<int>dman;
     int score;
     for(int i=0; i<10; ++i)
+    {
+        score=0;
+        for(int i=0; i<10; ++i)
         {
-            score=0;
-            for(int i=0; i<10; ++i)
-                {
-                    score=rand()%41+60;
-                    dscore.push_back(score);
-                }
-            sort(dscore.begin(),dscore.end());
-            cout<<i<<"# man score is "<<endl;
-            listdeque<int>(dscore);
-            dscore.pop_back();
-            dscore.pop_front();
-            cout<<i<<"# man resort clean score is "<<endl;
-            listdeque<int>(dscore);
-            score=0;
-            for(auto i:dscore)
-                score+=i;
-            score/=dscore.size();
-            cout<<i<<"# man Avg score is : "<<score<<endl;
-            dman.push_back(score);
-            dscore.clear();
+            score=rand()%41+60;
+            dscore.push_back(score);
         }
+        sort(dscore.begin(),dscore.end());
+        cout<<i<<"# man score is "<<endl;
+        listdeque<int>(dscore);
+        dscore.pop_back();
+        dscore.pop_front();
+        cout<<i<<"# man resort clean score is "<<endl;
+        listdeque<int>(dscore);
+        score=0;
+        for(auto i:dscore)
+            score+=i;
+        score/=dscore.size();
+        cout<<i<<"# man Avg score is : "<<score<<endl;
+        dman.push_back(score);
+        dscore.clear();
+    }
     star();
     cout<<"all man avg is :"<<endl;
     listdeque<int>(dman);
@@ -1799,7 +1799,7 @@ int DequeTestTwo(int argc,char * argv[] )
     return 0;
 }
 
-template <class T>
+    template <class T>
 int MakeStack(stack<T>&r,int num,int mod)
 {
     for(int i=0; i<num; ++i)
@@ -1837,11 +1837,11 @@ int QueueTest(int argc,char * argv[] )
     int mod=1000;
     int em;
     for(int i=0; i<10; ++i)
-        {
-            em=random()%mod;
-            cout<<em<<t;
-            dinerqueue.push(em);
-        }
+    {
+        em=random()%mod;
+        cout<<em<<t;
+        dinerqueue.push(em);
+    }
     cout<<endl;
     star();
     cout<<dinerqueue.front()<<endl;
@@ -1858,27 +1858,27 @@ int QueueTest(int argc,char * argv[] )
     cout<<queueb.size()<<endl;
     return 0;
 }
-template <class T>
+    template <class T>
 int listlist(const list<T>&r)
 {
     int il=0;
     star('_');
     for(auto i:r)
-        {
-            cout<<i;
-            //            if((ic++%10)==9)
-            if(++il%10==0)
-                cout<<e;
-            else
-                cout<<"\t";
-        }
+    {
+        cout<<i;
+        //            if((ic++%10)==9)
+        if(++il%10==0)
+            cout<<e;
+        else
+            cout<<"\t";
+    }
     if(il%10!=0)
         cout<<endl;
     return 0;
 }
 
 
-template <class T>
+    template <class T>
 int MakeList(list<T>&r,int mod)
 {
     for(auto &i:r)
@@ -1886,30 +1886,30 @@ int MakeList(list<T>&r,int mod)
     return 0;
 }
 
-template <typename T>
+    template <typename T>
 int printList(list<T>&r)
 {
     int il=0;
     for(typename list<T>::iterator it=r.begin(); it!=r.end(); ++it)
-        {
-            cout<<*it;
-            if(++il%10==0)
-                cout<<e;
-            else
-                cout<<"\t";
-        }
+    {
+        cout<<*it;
+        if(++il%10==0)
+            cout<<e;
+        else
+            cout<<"\t";
+    }
     if(il%10!=0)
         cout<<endl;
     return 0;
 }
 
-template<typename T>
+    template<typename T>
 bool rcmp(T a,T b)
 {
     return a<b;
 }
 
-template<typename T>
+    template<typename T>
 bool cmp(T a,T b)
 {
     return a>b;
@@ -1995,10 +1995,6 @@ int RunMyTestFN(int argc, char *argv[])
     Command.push_back(nullptr);
     string strMenuName;
 
-    strMenuName="TestGround";
-    Menu.push_back(strMenuName);
-    Command.push_back(TestGround);
-
     strMenuName="ListTest";
     Menu.push_back(strMenuName);
     Command.push_back(ListTest);
@@ -2018,6 +2014,10 @@ int RunMyTestFN(int argc, char *argv[])
     strMenuName="DequeTest";
     Menu.push_back(strMenuName);
     Command.push_back(DequeTest);
+
+    strMenuName="TestGround";
+    Menu.push_back(strMenuName);
+    Command.push_back(TestGround);
 
     strMenuName="OpenFileTest";
     Menu.push_back(strMenuName);
@@ -2067,26 +2067,27 @@ int RunMyTestFN(int argc, char *argv[])
     return 0;
 }
 
-template<typename T>
+    template<typename T>
 int MakeDisplaySet(set<T>&r)
 {
     int ic=0;
     for(auto i:r)
-        {
-            cout<<i;
-            if(++ic%10==0)
-                cout<<endl;
-            else
-                cout<<'\t';
-        }
-    cout<<endl;
+    {
+        cout<<i;
+        if(++ic%10==0)
+            cout<<endl;
+        else
+            cout<<'\t';
+    }
+    if(ic%10==0)
+        cout<<endl;
     return 0;
 }
 
-template<typename T>
+    template<typename T>
 int MakeRandomSet(set<T>&r,int num,int mod)
 {
-    for(int i=0; i<num; ++i)
+    for(int i=0;i<num;++i)
         r.insert(random()%mod);
     return 0;
 }
@@ -2095,20 +2096,10 @@ int TestGround(int argc,char * argv[] )
 {
     set<int>iset;
     MakeRandomSet<int>(iset,20,1000);
-    star("iset");
-    MakeDisplaySet(iset);
-    set<int>iset2;
-    MakeRandomSet<int>(iset2,10,100);
-    star("iset2");
-    MakeDisplaySet(iset2);
-    iset2.swap(iset);
-    star("swaped iset");
-    MakeDisplaySet(iset);
-    star("iset2");
-    MakeDisplaySet(iset2);
+
+
     return 0;
 }
-
 int Test(int argc,char * argv[] )
 {
     return 0;

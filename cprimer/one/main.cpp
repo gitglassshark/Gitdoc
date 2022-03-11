@@ -17,6 +17,7 @@ int RunMainL(int argc,int Argc1,int nArgc2,int nArgc3,char *argv[],int nMenuSign
 int main (int argc, char *argv[])
 {
     //input your program:
+    srand(time(NULL));
     enum enArgNumStatus {enStatusExit=1,enStatusTest=2,enStatusOK=4,enStatusTooMuch,enStatusEtc};
     enArgNumStatus enStatus=enStatusExit;
     switch(argc)

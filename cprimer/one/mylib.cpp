@@ -3,6 +3,8 @@
 #include <stdio.h>
 using namespace std;
 
+extern char t='\t';
+extern char e='\n';
 const int linelen=80;
 
 int newline()
@@ -17,19 +19,20 @@ int blankline()
     return 0;
 }
 
-
 int star(const char *p,const char c)
 {
     string strStarLine=string(linelen-strlen(p)-1,c);
     cout<<p<<':'<<strStarLine<<endl;
     return 0;
 }
+
 int star(const char c,const char *p)
 {
     string strStarLine=string(linelen-strlen(p)-1,c);
     cout<<p<<':'<<strStarLine<<endl;
     return 0;
 }
+
 int star(const char c,const int n)
 {
     string strStarLine=string(n,c);
@@ -82,6 +85,7 @@ int star(const int &n=0)
         }
     return 0;
 }
+
 int PrintSx (char const *const cmessage)
 {
     cout << cmessage;
@@ -160,7 +164,6 @@ int FCopyFileDelteNCharFN(char *pcFormFile,char *pcDestFile,char cCharIsNDelete)
     fclose(fOut);
     return 0;
 }
-
 
 int starline(int nStartLen=60)
 {

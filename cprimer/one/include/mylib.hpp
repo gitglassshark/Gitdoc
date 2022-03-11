@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 
+extern char t;
+extern char e;
 int MenuCM(int argc, char *argv[]);
 typedef decltype(MenuCM) *PFp;
 typedef decltype(MenuCM) PF;
@@ -30,24 +32,28 @@ inline const char * datenow(int i=1)
         cout<<__DATE__<<endl;
     return __DATE__;
 }
+
 inline const char * timenow(int i=1)
 {
     if(i==1)
         cout<<__TIME__<<endl;
     return __TIME__;
 }
+
 inline const int  line(int i=1)
 {
     if(i==1)
         cout<<__LINE__<<endl;
     return __LINE__;
 }
+
 inline const char * filename(int i=1)
 {
     if(i==1)
         cout<<__FILE__<<endl;
     return __FILE__;
 }
+
 inline const char * funname(int i=1)
 {
     if(i==1)
