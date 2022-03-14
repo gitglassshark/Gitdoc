@@ -1,0 +1,5 @@
+Compare random number's arrary 0.10
+Copyleft (C) 2022 Free Software gitglassshark@Nothing, INC:bbc@sina.com.
+This is free software;see the source for copying conditions.There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Usage: cparray  [colmun]  [cow]  [compare number]
+-[colmun] The arrary line. -[cow] The arrary cow. -[compare number] The compare number.
