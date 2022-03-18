@@ -3,4 +3,3 @@
 	find . -name "*~" -exec rm -f {} \;
 	find . -name "*.o" -exec rm -f {} \;
 	find . -name "*.s" -exec rm -f {} \;
-	find . -name "main" -exec rm -f {} \;

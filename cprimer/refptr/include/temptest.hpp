@@ -1,12 +1,80 @@
-/*******************************************
- **
- **********************************************/
+/******************************************* ** **********************************************/
 #pragma once
 
 #include <typeinfo>
 #include <cstdlib>
 #include "mylib.hpp"
+#include <iostream>
 
+
+template <typename T>
+T* arrayset(T *const ar,const size_t size,const T x)
+{
+    for(size_t i=0; i<size; ++i)
+        ar[i]=x;
+    return ar;
+}
+
+template <typename T>
+void arrayprintadress(T *ar,size_t size)
+{
+    for(size_t i=0; i<size; ++i)
+        {
+            cout<<"ar[i] adress is "<<&ar[i]<<'\t'<<"value is "<<ar[i]<<endl;
+            cout<<"ar+i adress is "<<ar+i<<'\t'<<"value is "<<*(ar+i)<<endl;
+        }
+}
+
+template <typename T>
+void arrayprint(T *ar,size_t size,int lc=10)
+{
+    int l=0;
+    if(ar==nullptr)
+        return;
+    for(size_t i=0; i<size; ++i)
+    {
+        cout<<ar[i]<<'\t';
+        if(++l%lc==0)
+            cout<<endl;
+    }
+    cout<<endl;
+}
+
+template <typename T>
+void *printptr(T *r)
+{
+    cout<<"point adress is "<<r<<" pointer size is "<<sizeof(T*)<<endl;
+    return (void*)r;
+}
+
+template <typename T>
+void *printadress(T &r)
+{
+    cout<<&r<<endl;
+    return (void*)&r;
+}
+
+template <typename T>
+T*  safemalloc(size_t memsize, size_t elesize=1)
+{
+    void *p=nullptr;
+    p=malloc(memsize*elesize);
+    if(!p)
+        cout<<"malloc fail..."<<endl;
+    else
+        cout<<"in adress: "<<p<<" malloc "<<memsize*elesize<<"  byte memory in "<<__func__<<" T size is "<<sizeof(T)<<endl;
+    return (T*)p;
+}
+
+template <typename T>
+T* & safefree(T* &p)
+{
+    cout<<"safefree "<<p<<__func__<<endl;
+    if(p)
+        free(p);
+    p=nullptr;
+    return p;
+}
 
 template <typename T>
 bool negate_1(T r)

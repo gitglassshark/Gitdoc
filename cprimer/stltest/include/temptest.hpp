@@ -68,6 +68,98 @@ void MakeSingleEleRandom(T&r,const int mod)
 {
     r=random()%mod;
 }
+template <class T>
+int makedeque(deque<T>&r,int nsize,int mod)
+{
+    for(int i=0; i<nsize; ++i)
+        r.push_back(rand()%mod);
+    return 0;
+}
+
+template <class T>
+int listlist(const list<T>&r)
+{
+    int il=0;
+    star('_');
+    for(auto i:r)
+        {
+            cout<<i;
+            //            if((ic++%10)==9)
+            if(++il%10==0)
+                cout<<e;
+            else
+                cout<<"\t";
+        }
+    if(il%10!=0)
+        cout<<endl;
+    return 0;
+}
+
+
+template <class T>
+int MakeList(list<T>&r,int mod)
+{
+    for(auto &i:r)
+        i=random()%mod;
+    return 0;
+}
+
+template <typename T>
+int printList(list<T>&r)
+{
+    int il=0;
+    for(typename list<T>::iterator it=r.begin(); it!=r.end(); ++it)
+        {
+            cout<<*it;
+            if(++il%10==0)
+                cout<<e;
+            else
+                cout<<"\t";
+        }
+    if(il%10!=0)
+        cout<<endl;
+    return 0;
+}
+
+template<typename T>
+bool rcmp(T a,T b)
+{
+    return a<b;
+}
+
+template<typename T>
+bool cmp(T a,T b)
+{
+    return a>b;
+}
+
+template <class T>
+int MakeStack(stack<T>&r,int num,int mod)
+{
+    for(int i=0; i<num; ++i)
+        r.push(random()%mod);
+    return 0;
+}
+
+
+template <class T>
+int listdeque(const deque<T>&r)
+{
+    int il=0;
+    star('_');
+    for(auto i:r)
+        {
+            cout<<i;
+            //            if((ic++%10)==9)
+            if(++il%10==0)
+                cout<<e;
+            else
+                cout<<"\t";
+        }
+    if(il%10!=0)
+        cout<<endl;
+    return 0;
+}
 
 template <typename T>
 bool MakeEleRandom(T&r,const int mod)
@@ -79,6 +171,56 @@ bool MakeEleRandom(T&r,const int mod)
     return true;
 }
 
+template<typename T>
+int MakeDisplaySet(T &r)
+{
+    int ic=0;
+    for(auto i:r)
+        {
+            cout<<i;
+            if(++ic%10==0)
+                cout<<endl;
+            else
+                cout<<'\t';
+        }
+    cout<<endl;
+    return 0;
+}
+
+template<typename T>
+int MakeRandomSet(T &r,const int num,const int mod)
+{
+    for(int i=0; i<num; ++i)
+        r.insert(random()%(mod?mod:1));
+    return 0;
+}
+
+template<typename T>
+auto FindMaxInSet(const T &r)
+{
+//    typename T::iterator itmax=r.begin();
+    auto itmax=r.begin();
+    if(r.begin()==r.end())
+        return itmax;
+    for(auto it=r.begin(); it!=r.end(); ++it)
+        {
+            if(*itmax<*it)
+                itmax=it;
+        }
+    return itmax;
+}
+
+//template <typename T,typename S>
+//typename T::iterator DeleteSelementInSet(T &r,S &s)
+
+
+template<typename T,typename X>
+int TransferSet(T &s,X&d)
+{
+    for(auto &i:s)
+        d.insert(i);
+    return 0;
+}
 template <class T>
 int listvector(const vector<T>&r)
 {
