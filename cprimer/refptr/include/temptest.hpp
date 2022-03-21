@@ -1,4 +1,3 @@
-/******************************************* ** **********************************************/
 #pragma once
 
 #include <typeinfo>
@@ -32,11 +31,11 @@ void arrayprint(T *ar,size_t size,int lc=10)
     if(ar==nullptr)
         return;
     for(size_t i=0; i<size; ++i)
-    {
-        cout<<ar[i]<<'\t';
-        if(++l%lc==0)
-            cout<<endl;
-    }
+        {
+            cout<<ar[i]<<'\t';
+            if(++l%lc==0)
+                cout<<endl;
+        }
     cout<<endl;
 }
 
@@ -98,18 +97,28 @@ bool disp(T r)
 }
 
 template <typename T>
-T foreach(T b,T e,bool (*Fun)(T r))
+T foreach(T *b,T *e,bool (*Fun)(T *r))
     {
         for(auto i=b; i!=e; ++i)
             Fun(i);
-        return b;
+        return *b;
     }
 
 template <typename T>
-void PrintSingleEle(const T&r)
+bool Print(T * r)
 {
-    cout<<r<<t;
+    cout<<*r<<t;
+    return true;
 }
+
+template <typename T>
+bool PrintSingleEle(T& r)
+{
+    cout << r << t;
+    return true;
+}
+
+
 
 template <typename T>
 bool PrintEle(const T&r)
@@ -134,7 +143,7 @@ bool PrintEle(const T&r)
 template <typename T>
 void MakeSingleEleRandom(T&r,const int mod)
 {
-    r=random()%mod;
+    r=rand()%mod;
 }
 
 template <typename T>
@@ -386,7 +395,7 @@ public:
         if(memsize!=0)
             {
                 for(int i=0; i<memsize; ++i)
-                    h_ArrayMem[i]=random()%1000;
+                    h_ArrayMem[i]=rand()%1000;
                 isscusses=true;
             }
         return isscusses;
@@ -419,4 +428,5 @@ protected:
 private:
 
 };
+
 

@@ -25,6 +25,8 @@
 
 using namespace std;
 int TestGround(int argc,char * argv[] );
+int Test(int argc,char * argv[] );
+
 class cre
 {
 public:
@@ -103,12 +105,12 @@ public:
         name="  null";
         cout<<"start mfun ......"<<__func__<<name<<endl;
     }
-    Spk(int m):mcint(m)
+    Spk(int m):mcint(m),mint(m)
     {
         name="  null";
-        cout<<"start  mfun ......"<<__func__<<"(int m)"<<name<<endl;
+        cout<<"start  mfun ......"<<__func__<<"(int m)"<<name<<"#"<<mint<< endl;
     }
-    Spk(string  nm):mcint(1),name(nm)
+    Spk(string  nm):mcint(0),name(nm),mint(0)
     {
         cout<<"start mfun ......"<<__func__<<"(name)"<<name<<endl;
     }
@@ -135,12 +137,17 @@ public:
     };
     void speak(string str)
     {
-        cout<<str<<"  start mfun ......"<<__func__<<" adress is "<<this<<name<<endl;
+        cout<<str<<"  start mfun ......"<<__func__<<" adress is "<<this<<name<<" #"<<mint << endl;
     };
     void setname(string nm)
     {
         name=nm;
         cout<<"start mfun ......"<<__func__<<name<<endl;
+    }
+    void setm(int n)
+    {
+        mint= n;
+        //cout << "start mfun ......" << __func__ << name << " #"<<mint << endl;
     }
 public:
     int mint;
@@ -151,56 +158,6 @@ public:
     vector<Fmp> me;
 };
 
-int Test3(int argc,char * argv[] )
-{
-    unique_ptr<Spk> pSpk(new Spk);
-    pSpk->setname("  pSpk #1");
-    pSpk->one();
-    unique_ptr<Spk> pSpka(new Spk(2));
-    pSpka->setname("  pSpka #2");
-    pSpka->one();
-    shared_ptr<Spk> pshSpka(new Spk("#3"));
-    cout<<&pSpka<<endl;
-    cout<<&Spk::one<<endl;
-    cout<<&Spk::two<<endl;
-    auto p1=pshSpka;
-    auto p2=pshSpka;
-    auto p3=p2;
-    pshSpka->one();
-    p3->one();
-    shared_ptr<Spk> pSpknull;
-    pSpknull =move(pSpk);
-    pSpknull->speak("pSpknull speak");
-    cout<<pshSpka.use_count()<<endl;
-    auto_ptr<Spk>pnt(new Spk("\t  Make to auto_ptr"));
-    auto_ptr<Spk>pnt2;
-    pnt2=pnt;
-    if(pnt.get()==NULL)
-        cout<<"pnt is empty"<<endl;
-    return 0;
-}
-
-int RunMyTestFN(int argc, char *argv[])
-{
-    vector<string>Menu;
-    vector<pPF>Command;
-    string strMenuTitle="Please choice a Menu command No to run a command,choice 0 = exit...";
-    Menu.push_back(strMenuTitle);
-    Command.push_back(nullptr);
-    string strMenuName;
-
-    strMenuName="ReferenceTest";
-    Menu.push_back(strMenuName);
-    Command.push_back(ReferenceTest);
-
-    strMenuName="TestGround";
-    Menu.push_back(strMenuName);
-    Command.push_back(&TestGround);
-
-    RunMenuMU(argc, argv,Menu,Command);
-    cout<<__func__<<"#"<<__LINE__<<endl;
-    return 0;
-}
 
 void tranarray(int ar[])
 {
@@ -219,9 +176,10 @@ void arrayaddself(int *ar,size_t size)
         ar[i]+=ar[i];
 }
 
-void arraydynm(size_t size)
+void arraydynm(int size = 10)
 {
-    int arr[size];
+    size = 10;
+    int arr[10];
     for(int i=0; i<size; ++i)
         {
             arr[i]=i;
@@ -232,7 +190,7 @@ void arraydynm(size_t size)
 
 int  gai=0;
 
-int Test2(int argc,char * argv[] )
+int TestPrintAdd(int argc,char * argv[] )
 {
 
     const size_t size=10;
@@ -294,7 +252,7 @@ T& selfadd(T &r,T &l)
 typedef  int& (*fptr)(int &r,int &l);
 typedef  int& (**pfptr)(int &r,int &l);
 
-int Test1(int argc,char * argv[] )
+int TestMalloc(int argc,char * argv[] )
 {
     int a=4;
     int a1=5;
@@ -355,7 +313,7 @@ int Test1(int argc,char * argv[] )
 Spk ga("ga");
 static Spk gsa("gsa");
 
-int Testsub2(int argc,char * argv[] )
+int TestSubClass(int argc,char * argv[] )
 {
     cout<<__func__<<"#"<<__LINE__<<endl;
     static Spk sa("sa");
@@ -369,63 +327,256 @@ int Testsub2(int argc,char * argv[] )
     cout<<__func__<<"#"<<__LINE__<<endl;
     return 0;
 }
-int Testsub(int argc,char * argv[] )
-{
-    cout<<__func__<<"#"<<__LINE__<<endl;
-    static Spk sa("sa");
-    static Spk sb("sb");
-    sa.speak("sa is speak");
-    sb.speak("sb is speak");
-    ga.speak("ga is speak");
-    gsa.speak("gsa is speak");
-    Testsub2(argc, argv);
-    cout<<__func__<<"#"<<__LINE__<<endl;
-    return 0;
-}
-int Test4(int argc,char * argv[] )
-{
-    cout<<__func__<<"#"<<__LINE__<<endl;
-    static Spk sa("sa");
-    static Spk sb("sb");
-    sa.speak("sa is speak");
-    sb.speak("sb is speak");
-    ga.speak("ga is speak");
-    gsa.speak("gsa is speak");
-    Testsub(argc, argv);
 
+int TestSubTwo(int argc,char * argv[] )
+{
+    cout<<__func__<<"#"<<__LINE__<<endl;
+    static Spk sa("sa");
+    static Spk sb("sb");
+    sa.speak("sa is speak");
+    sb.speak("sb is speak");
+    ga.speak("ga is speak");
+    gsa.speak("gsa is speak");
+    TestSubClass(argc, argv);
     cout<<__func__<<"#"<<__LINE__<<endl;
     return 0;
 }
-//
+
+
+int TestArrayMalloc(int argc, char* argv[])
+{
+    cout << __func__ << "#" << __LINE__ << endl;
+    size_t l = 10;
+    size_t c = 10;
+    size_t size = l * sizeof(int*) + l * c * sizeof(int);
+    cout << size << endl;
+    int* p = safemalloc<int>(size);
+    const int initval = 20;
+    int** pint = (int**)p;
+    char* pc = (char*)p;
+    pint += l;
+    pc += l * sizeof(int*);
+    cout << pc << endl;
+    cout << sizeof(int**) << '\t' << sizeof(int*) << '\t' << sizeof(int) << endl;
+    int* pu = (int*)pint;
+    star();
+    cout << dec << "p is " << p << '\t' << "pint is  " << pint << '\t' << "ps is " << (long)pc << '\t' << pu << endl;
+
+    arrayset(pu, l * c, initval);
+    arrayprint(pu, l * c);
+    foreach<int>(pu, pu + l * c, disp<int*>);
+    safefree(p);
+    cout << __func__ << "#" << __LINE__ << endl;
+    return 0;
+}
+
+template <typename T>
+bool add(T *e)
+{
+    ++*e;
+    return true;
+}
+void phello()
+{
+    cout << "hello" << endl;
+}
+
 int TestGround(int argc,char * argv[] )
+{
+    cout<<"start test ......"<<endl;
+    Spk one;
+    one.setm(1);
+    one.speak("One");
+    Spk *pOne=new Spk(" in heap new Spk");
+    pOne->setm(2);
+    pOne->speak("pOne");
+    cout << TestGround << endl;
+    using funp = void(*)();
+    funp fx = phello;
+    fx();
+    (* fx)();
+    auto e = argv[0];
+    for (int i=0; i<argc; e=argv[++i])
+        cout << e << endl;
+    delete pOne;
+    return 0;
+}
+
+int TestArrayMallocPoint(int argc,char * argv[] )
 {
     cout<<__func__<<"#"<<__LINE__<<endl;
     size_t l=10;
     size_t c=10;
     size_t size=l*sizeof(int*)+l*c*sizeof(int);
-    cout<<size<<endl;
     int *p=safemalloc<int>(size);
-    const int initval=30;
-    int **pint=(int **)p;
-    char *pc=(char*)p;
-    pint+=l;
-    pc+=l*sizeof(int*);
-    cout<<pc<<endl;
-    cout<<sizeof(int **)<<'\t'<<sizeof(int*)<<'\t'<<sizeof(int)<<endl;
-    int *pu=(int*)pint;
-    star();
-    cout<<"p is "<<p<<'\t'<<"pint is  "<<pint<<'\t'<<"ps is "<<hex<<(long)pc<<'\t'<<pu<<dec<<endl;
-    arrayset(pu,l*c,initval);
-    arrayprint(pu,l*c);
+    const int initval = 20;
+    int** pint = (int**)p;
+    pint += l;
+    int* pu = (int*)pint;
 
+    arrayset(pu, l * c, initval);
+    for (int i = 0; i < l; ++i)
+        for (int j = 0; j < c; ++j)
+            *(pu + i*c + j)=(i+1)*(1+j);
+
+
+    arrayprint(pu, l * c);
+    Spk* pspk =(Spk*) new Spk[l*c];
+    for (int i = 0; i < l; ++i)
+        for (int j = 0; j < c; ++j)
+            (* (pspk + i * c + j)).setm(i*c+j+1);
+    for (int i = 0; i < l; ++i)
+        for (int j = 0; j < c; ++j)
+            (pspk + i * c + j)->speak("ls");
+    pspk[98].speak("ok");
+    cout << sizeof(Spk) << endl;
+    cout << typeid(Spk).name() << endl;
+
+    cout << boolalpha << true << endl;
+    cout << boolalpha << true << endl;
+    system("pause");
+
+    delete[]pspk;
     safefree(p);
     cout<<__func__<<"#"<<__LINE__<<endl;
     return 0;
 }
 
 
+class NewMan;
+
+class NewMan
+{
+
+public:
+    NewMan(int age) :meage(age)
+    {
+
+    }
+    static int sayage(class NewMan* me)
+    {
+        cout<<me->meage<<endl;
+        return me->meage;
+    }
+    void say()
+    {
+        sayage(this);
+    }
+
+private:
+    int meage;
+};
+
 int Test(int argc,char * argv[] )
 {
+    unsigned long int max=1;
+    int ic=sizeof(max)*8;
+    for(int i=0; i<ic-1; ++i)
+        max*=2;
+    cout<<ic<<endl;
+    cout<<" max * 63^ is "<<max<<endl;
+    cout<<" max * 63^ *2 is "<<max*2<<endl;
+    NewMan one(18),two(20);
+    one.say();
+    two.say();
+    NewMan::sayage(&one);
+    NewMan::sayage(&two);
+    one.sayage(&two);
+    one.sayage(&one);
+    one.sayage(&two);
+    two.sayage(&two);
+
     return 0;
 }
 
+
+int TestSmartPtr(int argc,char * argv[] )
+{
+// create nonoyus object pointer
+//    unique_ptr<Spk> pSpk1(new Spk);
+//    pSpk1->setname("  pSpk1 #1");
+//    pSpk1->one();
+
+    shared_ptr<Spk> pSpk2(new Spk);
+    pSpk2->setname("  pSpk2 #2");
+//    cout<<&Spk::one<<endl;
+//    cout<<&Spk::two<<endl;
+
+    unique_ptr<Spk> pSpk3=make_unique<Spk>("pSpk3 #3 unique ptr object");
+    auto pSpk4=pSpk2;
+    pSpk4->speak("pSpk4 is speak");
+    pSpk2->speak("pSpk2 is speak");
+    pSpk4->setname ("lisa");
+    pSpk2->speak("pSpk2 is speak");
+    cout<<pSpk2.use_count()<<endl;
+    cout<<pSpk4.use_count()<<endl;
+    auto pSpk5=pSpk2;
+    cout<<pSpk5.use_count()<<endl;
+    cout<<pSpk4.use_count()<<endl;
+
+    pSpk3.release();
+
+
+
+
+
+//inital assigend = to uniqueptr through make_unique
+    /*    unique_ptr<Spk> pSpk2=make_unique<Spk>();
+        pSpk2->setname("  pSpk2 #2");
+
+        unique_ptr<Spk> pSpk3(new Spk(3));
+        pSpk3->setname("  pSpk3 #3");
+        pSpk3->one();
+        shared_ptr<Spk> pSpk4(new Spk("shared_ptr pSpk4 #4"));
+        cout<<"pSpk3 adress is "<<&pSpk3<<endl;
+        cout<<"pSpk4 adress is "<<&pSpk4<<endl;
+        cout<<&Spk::two<<endl;
+        auto p1=pSpk4;
+        cout<<pSpk4.use_count()<<endl;
+        auto p2=pSpk4;
+        auto p3=p2;
+        pSpk4->one();
+        p3->one();
+        cout<<pSpk4.use_count()<<endl;
+
+        shared_ptr<Spk> pSpk5;
+        auto pSpk6=move(pSpk4);
+        pSpk6->speak("pSpk6 speak");
+        auto_ptr<Spk>pnt(new Spk("\t  Make to auto_ptr"));
+        auto_ptr<Spk>pnt2;
+        pnt2=pnt;
+        if(pnt.get()==NULL)
+            cout<<"pnt is empty"<<endl;
+            */
+    return 0;
+}
+
+int RunMyTestFN(int argc, char *argv[])
+{
+    vector<string>Menu;
+    vector<pPF>Command;
+    string strMenuTitle="Please choice a Menu command No to run a command,choice 0 = exit...";
+    Menu.push_back(strMenuTitle);
+    Command.push_back(nullptr);
+    string strMenuName;
+
+    strMenuName="TestSmartPtr unique_ptr ,shared_ptr";
+    Menu.push_back(strMenuName);
+    Command.push_back(TestSmartPtr);
+
+    strMenuName="Test";
+    Menu.push_back(strMenuName);
+    Command.push_back(Test);
+
+    strMenuName="ReferenceTest";
+    Menu.push_back(strMenuName);
+    Command.push_back(ReferenceTest);
+
+    strMenuName="TestGround";
+    Menu.push_back(strMenuName);
+    Command.push_back(&TestGround);
+
+    RunMenuMU(argc, argv,Menu,Command);
+    cout<<__func__<<"#"<<__LINE__<<endl;
+    return 0;
+}
