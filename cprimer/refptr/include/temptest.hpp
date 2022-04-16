@@ -6,113 +6,108 @@
 #include <iostream>
 
 
-template <typename T>
-T* arrayset(T *const ar,const size_t size,const T x)
+template < typename T >
+T * arrayset (T * const ar, const size_t size, const T x)
 {
-    for(size_t i=0; i<size; ++i)
-        ar[i]=x;
+    for (size_t i = 0; i < size; ++i)
+        ar[i] = x;
     return ar;
 }
 
-template <typename T>
-void arrayprintadress(T *ar,size_t size)
+template < typename T > void arrayprintadress (T * ar, size_t size)
 {
-    for(size_t i=0; i<size; ++i)
+    for (size_t i = 0; i < size; ++i)
         {
-            cout<<"ar[i] adress is "<<&ar[i]<<'\t'<<"value is "<<ar[i]<<endl;
-            cout<<"ar+i adress is "<<ar+i<<'\t'<<"value is "<<*(ar+i)<<endl;
+            cout << "ar[i] adress is " << &ar[i] << '\t' << "value is " <<
+                 ar[i] << endl;
+            cout << "ar+i adress is " << ar +
+                 i << '\t' << "value is " << *(ar + i) << endl;
         }
 }
 
-template <typename T>
-void arrayprint(T *ar,size_t size,int lc=10)
+template < typename T > void arrayprint (T * ar, size_t size, int lc = 10)
 {
-    int l=0;
-    if(ar==nullptr)
+    int l = 0;
+
+    if (ar == nullptr)
         return;
-    for(size_t i=0; i<size; ++i)
+    for (size_t i = 0; i < size; ++i)
         {
-            cout<<ar[i]<<'\t';
-            if(++l%lc==0)
-                cout<<endl;
+//        cout << ar[i] << '\t';
+            if (++l % lc == 0)
+                cout << endl;
         }
-    cout<<endl;
+    cout << endl;
 }
 
-template <typename T>
-void *printptr(T *r)
+template < typename T > void *printptr (T * r)
 {
-    cout<<"point adress is "<<r<<" pointer size is "<<sizeof(T*)<<endl;
-    return (void*)r;
+    cout << "point adress is " << r << " pointer size is " << sizeof (T *)
+         << endl;
+    return (void *) r;
 }
 
-template <typename T>
-void *printadress(T &r)
+template < typename T > void *printadress (T & r)
 {
-    cout<<&r<<endl;
-    return (void*)&r;
+    cout << &r << endl;
+    return (void *) &r;
 }
 
-template <typename T>
-T*  safemalloc(size_t memsize, size_t elesize=1)
+template < typename T > T * safemalloc (size_t memsize, size_t elesize = 1)
 {
-    void *p=nullptr;
-    p=malloc(memsize*elesize);
-    if(!p)
-        cout<<"malloc fail..."<<endl;
+    void *p = nullptr;
+
+    p = malloc (memsize * elesize);
+    if (!p)
+        cout << "malloc fail..." << endl;
     else
-        cout<<"in adress: "<<p<<" malloc "<<memsize*elesize<<"  byte memory in "<<__func__<<" T size is "<<sizeof(T)<<endl;
-    return (T*)p;
+        cout << "in adress: " << p << " malloc " << memsize *
+             elesize << "  byte memory in " << __func__ << " T size is " <<
+             sizeof (T) << endl;
+    return (T *) p;
 }
 
-template <typename T>
-T* & safefree(T* &p)
+template < typename T > T * &safefree (T * &p)
 {
-    cout<<"safefree "<<p<<__func__<<endl;
-    if(p)
-        free(p);
-    p=nullptr;
+    cout << "safefree " << p << __func__ << endl;
+    if (p)
+        free (p);
+    p = nullptr;
     return p;
 }
 
-template <typename T>
-bool negate_1(T r)
+template < typename T > bool negate_1 (T r)
 {
-    *r=-*r;
+    *r = -*r;
     return true;
 }
 
-template <typename T>
-bool plus_1(T r)
+template < typename T > bool plus_1 (T r)
 {
     ++*r;
     return true;
 }
 
-template <typename T>
-bool disp(T r)
+template < typename T > bool disp (T r)
 {
-    cout<<*r<<'\t';
+    cout << *r << '\t';
     return true;
 }
 
-template <typename T>
-T foreach(T *b,T *e,bool (*Fun)(T *r))
+template < typename T > T foreach (T * b, T * e, bool (*Fun) (T * r))
     {
-        for(auto i=b; i!=e; ++i)
-            Fun(i);
+        for (auto i = b; i != e; ++i)
+            Fun (i);
         return *b;
     }
 
-template <typename T>
-bool Print(T * r)
+template < typename T > bool Print (T * r)
 {
-    cout<<*r<<t;
+    cout << *r << t;
     return true;
 }
 
-template <typename T>
-bool PrintSingleEle(T& r)
+template < typename T > bool PrintSingleEle (T & r)
 {
     cout << r << t;
     return true;
@@ -120,306 +115,297 @@ bool PrintSingleEle(T& r)
 
 
 
-template <typename T>
-bool PrintEle(const T&r)
+template < typename T > bool PrintEle (const T & r)
 {
-    int il=0;
-    if(r.empty())
+    int il = 0;
+
+    if (r.empty ())
         return false;
-    for(const auto &i:r)
+    for (const auto & i:r)
         {
-            if(++il%10==0)
+            if (++il % 10 == 0)
                 {
-                    PrintSingleEle(i);
-                    cout<<endl;
+                    PrintSingleEle (i);
+                    cout << endl;
                 }
             else
-                PrintSingleEle(i);
+                PrintSingleEle (i);
         }
-    cout<<endl;
+    cout << endl;
     return true;
 }
 
-template <typename T>
-void MakeSingleEleRandom(T&r,const int mod)
+template < typename T >
+void MakeSingleEleRandom (T & r, const int mod)
 {
-    r=rand()%mod;
+    r = rand () % mod;
 }
 
-template <typename T>
-bool MakeEleRandom(T&r,const int mod)
+template < typename T > bool MakeEleRandom (T & r, const int mod)
 {
-    if(r.empty())
-        return false;
-    for(auto &i:r)
-        MakeSingleEleRandom(i,mod);
+    if (r.empty ())return false;
+    for (auto & i:r)
+        MakeSingleEleRandom (i, mod);
     return true;
 }
 
-template <class T>
-int listvector(const vector<T>&r)
+template < class T > int listvector (const vector < T > &r)
 {
-    int il=0;
-    cout<<"vector capacity is "<<r.capacity()<<endl;
-    for(auto i:r)
+    int il = 0;
+    cout << "vector capacity is " << r.capacity () << endl;
+    for (auto i:r)
         {
-            cout<<i;
+            cout << i;
             //            if((ic++%10)==9)
-            if(++il%10==0)
-                cout<<e;
+            if (++il % 10 == 0) cout << e;
             else
-                cout<<"\t";
+                cout << "\t";
         }
-    cout<<endl;
+    cout << endl;
     return 0;
 }
 
-template <class X,class Y>
-class Lion
+template < class X, class Y > class Lion
 {
 public:
     int teeth;
-    string *name;
+    string * name;
     unsigned age;
-    Lion()
+    Lion ()
     {
-        cout<<typeid(*this).name()<<t<<"lion is borning no argument constroator...."<<endl;
-        name=nullptr;
-        age=0;
+        cout << typeid (*this).
+             name () << t << "lion is borning no argument constroator...." <<
+             endl;
+        name = nullptr;
+        age = 0;
     }
-    Lion(X oname,Y oage)
+    Lion (X oname, Y oage)
     {
-        cout<<typeid(*this).name()<<t<<"lion is borning ...."<<endl;
-        name=new string(oname);
-        age=oage;
+        cout << typeid (*this).
+             name () << t << "lion is borning ...." << endl;
+        name = new string (oname);
+        age = oage;
     }
-    Lion(const Lion &r)
+    Lion (const Lion & r)
     {
-        cout<<typeid(*this).name()<<t<<"Lion(const Lion &r)"<<endl;
-        this->teeth=r.teeth;
-        this->age=r.age;
-        name=new string(*r.name);
+        cout << typeid (*this).
+             name () << t << "Lion(const Lion &r)" << endl;
+        this->teeth = r.teeth;
+        this->age = r.age;
+        name = new string (*r.name);
     }
-    Lion &operator=(const Lion &r)
+    Lion & operator= (const Lion & r)
     {
-        cout<<typeid(*this).name()<<t<<"Lion="<<endl;
-        this->teeth=r.teeth;
-        this->age=r.age;
-        star("this->sex=r.sex");
-        this->sex=r.sex;
-        if(name!=nullptr)
+        cout << typeid (*this).name () << t << "Lion=" << endl;
+        this->teeth = r.teeth;
+        this->age = r.age;
+        star ("this->sex=r.sex");
+        this->sex = r.sex;
+        if (name != nullptr)
             delete name;
-        name=new string(*r.name);
+        name = new string (*r.name);
         return *this;
     }
-    ~Lion()
+    ~Lion ()
     {
-        cout<<typeid(*this).name()<<t<<"~lion is vanish...."<<endl;
+        cout << typeid (*this).
+             name () << t << "~lion is vanish...." << endl;
         delete name;
     }
-    void yell()
+    void yell ()
     {
-        cout<<typeid(*this).name()<<t<<"OwOw....."<<endl;
+        cout << typeid (*this).name () << t << "OwOw....." << endl;
     }
-    void yell(const Lion &r)
+    void yell (const Lion & r)
     {
-        cout<<"r sex is  "<<r.sex<<endl;
+        cout << "r sex is  " << r.sex << endl;
     }
 protected:
     int killn;
 private:
     int sex;
 };
+template < class X > X add (X a, X b)
 
-template <class X>
-X add(X a,X b)
 {
-    cout<<"temp x add"<<endl;
+    cout << "temp x add" << endl;
     X c;
-    c=a+b;
+    c = a + b;
     return c;
 }
 
 
-template <typename X,typename T>
-X sub(X a,T b)
+template < typename X, typename T > X sub (X a, T b)
 {
-    cout<<"temp x sub"<<endl;
+    cout << "temp x sub" << endl;
     X c;
-    c=a-(X)b;
+    c = a - (X) b;
     return c;
 }
 
-template <typename T>
-T tadd(T a,T b)
+template < typename T > T tadd (T a, T b)
 {
-    cout<<"temp T tadd"<<endl;
+    cout << "temp T tadd" << endl;
     T c;
-    c=a+b;
+    c = a + b;
     return c;
 }
 
-template <class X>
-class demoArray
+template < class X > class demoArray
 {
 private:
-    X *h_ArrayMem;
-    unsigned int maxsize=1000;
+    X * h_ArrayMem;
+    unsigned int maxsize = 1000;
 protected:
     unsigned int memsize;
     unsigned int currentsize;
-
 public:
-    demoArray():currentsize(0),memsize(10),h_ArrayMem(nullptr)
+    demoArray ():currentsize (0), memsize (10),
+        h_ArrayMem (nullptr)
     {
-        h_ArrayMem=new X[memsize];
-        for(int i=0; i<memsize; ++i)
-            h_ArrayMem[i]=0;
-        cout<<__func__<<endl;
+        h_ArrayMem = new X[memsize];
+        for (int i = 0; i < memsize; ++i)
+            h_ArrayMem[i] = 0;
+        cout << __func__ << endl;
     }
 
-    demoArray(const unsigned int isize)
+    demoArray (const unsigned int isize)
     {
-        if(isize>=maxsize)
-            memsize=maxsize;
+        if (isize >= maxsize) memsize = maxsize;
         else
-            memsize=isize;
-        h_ArrayMem=new X[memsize];
-        for(int i=0; i<memsize; ++i)
-            h_ArrayMem[i]=0;
-        currentsize=0;
-        cout<<__func__<<endl;
+            memsize = isize;
+        h_ArrayMem = new X[memsize];
+        for (int i = 0; i < memsize; ++i)
+            h_ArrayMem[i] = 0;
+        currentsize = 0;
+        cout << __func__ << endl;
     }
 
-    demoArray(const demoArray &r)
+    demoArray (const demoArray & r)
     {
-        h_ArrayMem=new X[r.memsize];
-        for(int i=0; i<r.currentsize; ++i)
-            h_ArrayMem[i]=r.h_ArrayMem[i];
-        cout<<__func__<<endl;
+        h_ArrayMem = new X[r.memsize];
+        for (int i = 0; i < r.currentsize; ++i)
+            h_ArrayMem[i] = r.h_ArrayMem[i];
+        cout << __func__ << endl;
     }
 
-    demoArray& operator=(const demoArray &r)
+    demoArray & operator= (const demoArray & r)
     {
-        if(h_ArrayMem!=nullptr)
-            delete []h_ArrayMem;
-        currentsize=r.currentsize;
-        memsize=r.memsize;
-        maxsize=r.maxsize;
-        h_ArrayMem=new X[memsize];
-        for(int i=0; i<r.currentsize; ++i)
-            h_ArrayMem[i]=r.h_ArrayMem[i];
-        cout<<__func__<<endl;
+        if (h_ArrayMem != nullptr)
+            delete[]h_ArrayMem;
+        currentsize = r.currentsize;
+        memsize = r.memsize;
+        maxsize = r.maxsize;
+        h_ArrayMem = new X[memsize];
+        for (int i = 0; i < r.currentsize; ++i)
+            h_ArrayMem[i] = r.h_ArrayMem[i];
+        cout << __func__ << endl;
         return *this;
     }
 
-    ~demoArray()
+    ~demoArray ()
     {
-        cout<<__func__<<endl;
-        if(h_ArrayMem)
-            delete [] h_ArrayMem;
+        cout << __func__ << endl;
+        if (h_ArrayMem) delete[]h_ArrayMem;
     }
 
-    X& operator=(const X r)
+    X & operator= (const X r)
     {
-        cout<<__func__<<endl;
+        cout << __func__ << endl;
         return r;
     }
 
-    X& operator[](const unsigned int i)const
+    X & operator[](const unsigned int i) const
     {
-        cout<<__func__<<endl;
-        if(i<memsize)
-            return h_ArrayMem[i];
+        cout << __func__ << endl;
+        if (i < memsize) return h_ArrayMem[i];
     }
 
-    bool list(const unsigned int start=0,const unsigned int end=0)
+    bool list (const unsigned int start = 0, const unsigned int end =
+                   0)
     {
-        if(end==0)
+        if (end == 0)
             {
-                for(int i=0; i<memsize; ++i)
+                for (int i = 0; i < memsize; ++i)
                     {
-                        cout<<h_ArrayMem[i]<<" ";
-                        if((i+1)%10==0)
-                            cout<<endl;
+                        cout << h_ArrayMem[i] << " ";
+                        if ((i + 1) % 10 == 0) cout << endl;
                     }
-                cout<<endl;
+                cout << endl;
             }
         return true;
     }
 
-    bool pushback(X iu)
+    bool pushback (X iu)
     {
-        bool isscusses=false;
-        if(currentsize<memsize)
+        bool isscusses = false;
+        if (currentsize < memsize)
             {
-                h_ArrayMem[currentsize]=iu;
+                h_ArrayMem[currentsize] = iu;
                 ++currentsize;
-                isscusses=true;
+                isscusses = true;
             }
         else
             {
-                X *h=h_ArrayMem;
-                if(memsize<=maxsize-10)
+                X * h = h_ArrayMem;
+                if (memsize <= maxsize - 10)
                     {
-                        memsize+=10;
-                        h_ArrayMem=new X[memsize];
-                        for(int i=0; i<currentsize; ++i)
-                            h_ArrayMem[i]=h[i];
-                        h_ArrayMem[currentsize]=iu;
+                        memsize += 10;
+                        h_ArrayMem = new X[memsize];
+                        for (int i = 0; i < currentsize; ++i)
+                            h_ArrayMem[i] = h[i];
+                        h_ArrayMem[currentsize] = iu;
                         ++currentsize;
-                        delete [] h;
-                        isscusses=true;
+                        delete[]h;
+                        isscusses = true;
                     }
             }
         return isscusses;
     }
 
-    bool popback(unsigned int i)
+    bool popback (unsigned int i)
     {
-        bool isscusses=false;
-        if(currentsize==0)
+        bool isscusses = false;
+        if (currentsize == 0)
             {
                 return isscusses;
             }
         else
             {
                 --currentsize;
-                isscusses=true;
+                isscusses = true;
             }
         return isscusses;
     }
-    bool setallrandom()
+    bool setallrandom ()
     {
-        bool isscusses=false;
-        if(memsize!=0)
+        bool isscusses = false;
+        if (memsize != 0)
             {
-                for(int i=0; i<memsize; ++i)
-                    h_ArrayMem[i]=rand()%1000;
-                isscusses=true;
+                for (int i = 0; i < memsize; ++i)
+                    h_ArrayMem[i] = rand () % 1000;
+                isscusses = true;
             }
         return isscusses;
     }
 
-    unsigned int getmaxsize()const
+    unsigned int getmaxsize ()const
     {
         return maxsize;
     }
 
-    unsigned int getmemsize()const
+    unsigned int getmemsize ()const
     {
-        return  memsize;
+        return memsize;
     }
 
-    unsigned int  getcurrentsize()const
+    unsigned int getcurrentsize ()const
     {
-        return   currentsize;
+        return currentsize;
     }
 };
+template < class X > class demo
 
-
-template <class X>
-class demo
 {
 public:
 
@@ -428,5 +414,3 @@ protected:
 private:
 
 };
-
-

@@ -1,2 +1,2 @@
 #!/bin/bash
-vi test.cpp main.cpp mylib.cpp -O
+vi test.cpp include/scrout.hpp -O

@@ -17,6 +17,7 @@
 #include <typeinfo>
 #include <vector>
 #include "mylib.hpp"
+#include "scrout.hpp"
 #include "temptest.hpp"
 #include "arraytest.hpp"
 #include "vectortest.hpp"
@@ -451,6 +452,31 @@ int ReferenceTest(int argc,char * argv[] )
     return 0;
 }
 
+#define ADDMENU(menu,funcname,str)   {\
+        str = #funcname;\
+        menu.push_back (str);\
+        Command.push_back (funcname);\
+        }
+
+int TestDcout(int argc,char * argv[] )
+{
+    ScrOut cout;
+    auto tuplea = tuple<int, float, string, string, string>(10, 10.24, "good", "bad", "normal");
+
+    int length = tuple_size<decltype(tuplea)>::value;
+    cout << std::is_integral<decltype(length)>::value << el;
+    cout << is_empty<tuple<>>::value << el;
+    cout.disptup(tuplea)<<el;
+    cout<<tuplea<<el;
+    cout.type(tuplea);
+    vector<int>veca{3,8,9,6,1,8,9,9,2,7,4,9};
+    cout<<veca<<el;
+    cout<<cut;
+    cout<<&length<<el;
+    cout<<address(length)<<el;
+    return 0;
+}
+
 int RunMyTestFN(int argc, char *argv[])
 {
     vector<string>Menu;
@@ -460,45 +486,18 @@ int RunMyTestFN(int argc, char *argv[])
     Command.push_back(nullptr);
     string strMenuName;
 
-    strMenuName="ReferenceTest";
-    Menu.push_back(strMenuName);
-    Command.push_back(ReferenceTest);
+    ADDMENU(Menu,TestDcout,strMenuName)
+//    ADDMENU(Menu,ReferenceTest,strMenuName)
+//    ADDMENU(Menu,TestGround,DequeTestTwo)
+//    ADDMENU(Menu,TestGround,DequeTest)
+////    ADDMENU(Menu,TestGround,)
+//    ADDMENU(Menu,TestGround,StackTest)
+//    ADDMENU(Menu,TestGround,QueueTest)
+//    ADDMENU(Menu,TestGround,ListTest)
+//    ADDMENU(Menu,TestGround,SetTest)
+//    ADDMENU(Menu,TestGround,StdVectorTest)
+//    ADDMENU(Menu,TestGround,StdArrayTest)
 
-    strMenuName="TestGround";
-    Menu.push_back(strMenuName);
-    Command.push_back(&TestGround);
-
-    strMenuName="StdArrayTest";
-    Menu.push_back(strMenuName);
-    Command.push_back(StdArrayTest);
-
-    strMenuName="StdVectorTest";
-    Menu.push_back(strMenuName);
-    Command.push_back(StdVectorTest);
-
-    strMenuName="SetTest";
-    Menu.push_back(strMenuName);
-    Command.push_back(SetTest);
-
-    strMenuName="ListTest";
-    Menu.push_back(strMenuName);
-    Command.push_back(ListTest);
-
-    strMenuName="QueueTest";
-    Menu.push_back(strMenuName);
-    Command.push_back(QueueTest);
-
-    strMenuName="StackTest";
-    Menu.push_back(strMenuName);
-    Command.push_back(StackTest);
-
-    strMenuName="DequeTestTwo";
-    Menu.push_back(strMenuName);
-    Command.push_back(DequeTestTwo);
-
-    strMenuName="DequeTest";
-    Menu.push_back(strMenuName);
-    Command.push_back(DequeTest);
 
     RunMenuMU(argc, argv,Menu,Command);
     return 0;

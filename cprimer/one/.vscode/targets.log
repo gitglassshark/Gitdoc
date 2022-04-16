@@ -1,0 +1,721 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Mon Apr  4 07:32:37 2022
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+SSH_AGENT_LAUNCHER = gnome-keyring
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e589c4b2-759c-4a85-9a5d-20b924d14ce7.sock
+# makefile (from 'makefile', line 11)
+VPATH = ./src:./include
+# environment
+LC_NAME = zh_CN.UTF-8
+# environment
+LC_NUMERIC = zh_CN.UTF-8
+# environment
+VSCODE_CWD = /home/yan
+# environment
+LC_ADDRESS = zh_CN.UTF-8
+# default
+MAKE_COMMAND := make
+# environment
+QT_ACCESSIBILITY = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+HISCONTROL = erasedups
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/yan/do/cprimer/one
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+PS1 = \u@|\A\w$(__git_ps1 "(%s)")\$
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+OLDPWD = /home/yan
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/yan/.config/Code/CachedData/e18005f0f1b33c29e81d732535d8c0e47cafb0b5
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.6WTTJ1
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/yan/do/cprimer/one
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from 'makefile', line 12)
+SRCS = $(wildcard $(SRCD)/*.cpp $(SRCD)/*.c $(INCD)/*.cpp $(INCD)/*.c)
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# default
+.SHELLFLAGS := -c
+# environment
+WAYLAND_DISPLAY = wayland-0
+# environment
+HISTSIZE = 2500
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST := makefile
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 15718
+# environment
+HISTIGNORE = ls:ll:la:cd:pwd:cat
+# environment
+XDG_SESSION_TYPE = wayland
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+SESSION_MANAGER = local/hulk-lap:@/tmp/.ICE-unix/1461,unix/hulk-lap:/tmp/.ICE-unix/1461
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"bcb43daf7fc7aee39837fa8516ffebcd.zh-cn","_translationsConfigFile":"/home/yan/.config/Code/clp/bcb43daf7fc7aee39837fa8516ffebcd.zh-cn/tcf.json","_cacheRoot":"/home/yan/.config/Code/clp/bcb43daf7fc7aee39837fa8516ffebcd.zh-cn","_resolvedLanguagePackCoreLocation":"/home/yan/.config/Code/clp/bcb43daf7fc7aee39837fa8516ffebcd.zh-cn/e18005f0f1b33c29e81d732535d8c0e47cafb0b5","_corruptedFile":"/home/yan/.config/Code/clp/bcb43daf7fc7aee39837fa8516ffebcd.zh-cn/corrupted.info","_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'makefile', line 15)
+OBJS := ./class.o ./fun.o ./list.o ./main.o ./menu.o ./mylib.o ./readme.o ./sizeof.o ./test.o
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+XMODIFIERS = @im=fcitx
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+SHLVL = 0
+# environment
+MAKELEVEL := 0
+# environment
+IM_CONFIG_CHECK_ENV = 1
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /home/yan/cmake.3.22/bin/:/home/yan/cmake.3.22/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+# makefile (from 'makefile', line 4)
+DEBUGS = -lstdc++ -Wall -g -I$(INCD) -std=c++17
+# default
+MAKEFILES := 
+# environment
+LANGUAGE = zh_CN:en
+# environment
+LC_MONETARY = zh_CN.UTF-8
+# automatic
+^F = $(notdir $^)
+# environment
+LC_TIME = zh_CN.UTF-8
+# environment
+INVOCATION_ID = af3525defa5942518d7e3130308e1d15
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+USERNAME = yan
+# makefile (from 'makefile', line 14)
+FILES = $(HEADS) $(SRCS)
+# environment
+GNOME_SETUP_DISPLAY = :1
+# environment
+LC_TELEPHONE = zh_CN.UTF-8
+# automatic
+?F = $(notdir $?)
+# environment
+GTK_IM_MODULE = fcitx
+# environment
+GIT_PS1_SHOWDIRTYSTATE = 1
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# automatic
++F = $(notdir $+)
+# environment
+DESKTOP_SESSION = ubuntu
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+CLUTTER_IM_MODULE = fcitx
+# environment
+LOGNAME = yan
+# makefile (from 'makefile', line 9)
+SRCD = ./src .
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# makefile
+.DEFAULT_GOAL := all
+# environment
+SYSTEMD_EXEC_PID = 1478
+# environment
+DISPLAY = :0
+# environment
+USER = yan
+# environment
+GTK_MODULES = gail:atk-bridge
+# default
+MAKE_VERSION := 4.3
+# makefile (from 'makefile', line 7)
+TAGET = main
+# environment
+MANAGERPID = 1331
+# environment
+LC_MEASUREMENT = zh_CN.UTF-8
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 15718
+# environment
+_ = /usr/share/code/code
+# environment
+LC_PAPER = zh_CN.UTF-8
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# makefile (from 'makefile', line 8)
+INCD = ./include
+# environment
+JOURNAL_STREAM = 8:46364
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# makefile (from 'makefile', line 13)
+HEADS = $(wildcard *.hpp *.h ./$(INCD)/*.hpp ./$(INCD)/*.h)
+# environment
+HOME = /home/yan
+# environment
+QT_IM_MODULE = fcitx
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-de7daa9c-1.66.0-main.sock
+# environment
+IM_CONFIG_PHASE = 1
+# environment
+PAPERSIZE = a4
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# makefile (from 'makefile', line 5)
+CXXFLAGS = -lstdc++ -w -O0 -DNDEBUG  -I$(INCD) -std=c++17
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from 'makefile', line 1)
+CC = clang
+# makefile (from 'makefile', line 10)
+OUTD = ./out
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+GDMSESSION = ubuntu
+# environment
+LC_IDENTIFICATION = zh_CN.UTF-8
+# variable set hash-table stats:
+# Load=127/1024=12%, Rehash=0, Collisions=12/229=5%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# ./include (device 2051, inode 1453140): 12 files, no impossibilities.
+# ././include (device 2051, inode 1453140): 12 files, no impossibilities.
+# . (device 2051, inode 1453116): 23 files, no impossibilities.
+# ./src: could not be stat'd.
+
+ 
+# 47 files, no impossibilities in 4 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+sizeof.o: sizeof.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'sizeof'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 45):
+	${CC} ${CXXFLAGS} -c $? -o $@
+	
+
+indent: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/menu.hpp include/mylib.hpp include/readme.hpp include/sizeof.hpp include/temptest.hpp include/test.hpp class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 48):
+	indent -bad -bap -bbb -bbo -nbc -bl -bli0 -bls -c33 -cd33 -ncdb -ncdw -nce -cli0 -cp33 -cs -d0 -nbfda -di2 -nfc1 -nfca -hnl -ip5 -l75 -lp -pcs -nprs -npsl -saf -sai -saw -nsc -nsob -nss -i4 -ts4 -ut $? 
+
+# makefile (from 'makefile', line 26)
+g: CC = g++
+g: rebuild
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=1/32=3%, Rehash=0, Collisions=0/2=0%
+#  recipe to execute (from 'makefile', line 28):
+	./main 0 9 6
+
+readme.o: readme.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'readme'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 45):
+	${CC} ${CXXFLAGS} -c $? -o $@
+	
+
+# Not a target:
+mylib.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+google: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/menu.hpp include/mylib.hpp include/readme.hpp include/sizeof.hpp include/temptest.hpp include/test.hpp class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 60):
+	astyle --style=google  $(FILES)
+
+# Not a target:
+list.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# makefile (from 'makefile', line 23)
+gccdebug: CXXFLAGS = $(DEBUGS)
+# makefile (from 'makefile', line 22)
+gccdebug: CC = g++
+gccdebug: rebuild
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=2/32=6%, Rehash=0, Collisions=0/3=0%
+
+# makefile (from 'makefile', line 38)
+debug: CXXFLAGS = $(DEBUGS)
+debug: clean main
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=1/32=3%, Rehash=0, Collisions=0/2=0%
+
+class.o: class.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'class'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := class.o
+# automatic
+# * := class
+# automatic
+# < := class.cpp
+# automatic
+# + := class.cpp
+# automatic
+# % := 
+# automatic
+# ^ := class.cpp
+# automatic
+# ? := class.cpp
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/16=19%
+#  recipe to execute (from 'makefile', line 45):
+	${CC} ${CXXFLAGS} -c $? -o $@
+	
+
+list.o: list.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'list'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 45):
+	${CC} ${CXXFLAGS} -c $? -o $@
+	
+
+# Not a target:
+include/menu.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+include/sizeof.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+gnu: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/menu.hpp include/mylib.hpp include/readme.hpp include/sizeof.hpp include/temptest.hpp include/test.hpp class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 54):
+	astyle --style=gnu $(FILES)
+	
+
+bsd: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/menu.hpp include/mylib.hpp include/readme.hpp include/sizeof.hpp include/temptest.hpp include/test.hpp class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 57):
+	astyle --style=bsd $(FILES)
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 66):
+	#clean: Clean the useless file ......
+	@rm *.s *.o *~  $(TAGET) -f
+	@find . -name *~ -exec rm -f {} \;
+	@find . -name *.o -exec rm -f {} \;
+	@find . -name "*.orig" -exec rm -f {} \;
+	@find . -name *.s -exec rm -f {} \;
+	@find . -name $(TAGET) -exec rm -f {} \;
+
+# Not a target:
+include/fun.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+debugrun: debug
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 34):
+	gdb ./$(TAGET)
+
+# Not a target:
+menu.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+mylib.o: mylib.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'mylib'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 45):
+	${CC} ${CXXFLAGS} -c $? -o $@
+	
+
+# Not a target:
+include/readme.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+asm: class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 63):
+	${CC} ${CXXFLAGS} -S $?
+
+# Not a target:
+readme.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: main
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+
+# Not a target:
+include/mylib.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+sizeof.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+main.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+main: class.o fun.o list.o main.o menu.o mylib.o readme.o sizeof.o test.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  recipe to execute (from 'makefile', line 42):
+	${CC} ${CXXFLAGS} -o $@ $(OBJS) 
+	
+
+test:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 75):
+	make -B -n all
+	make -B -n debug
+	make -B -n indent
+	make -B -n asm
+	make -B -n clean
+
+main.o: main.cpp
+ 
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'main'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 45):
+	${CC} ${CXXFLAGS} -c $? -o $@
+	
+
+# Not a target:
+include/temptest.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+class.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-11 22:41:36.425185735
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+include/list.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+rebuild: clean main
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+test.o: test.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'test'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 45):
+	${CC} ${CXXFLAGS} -c $? -o $@
+	
+
+fun.o: fun.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'fun'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 45):
+	${CC} ${CXXFLAGS} -c $? -o $@
+	
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-11 22:41:36.465188884
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+fun.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+include/test.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+t: main
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 31):
+	./main 0 9 6
+
+testvar: rebuild
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 82):
+	@echo -n  DEBUGS: 
+	@echo   $(DEBUGS)
+	@echo -n  CXXFLAGS: 
+	@echo   $(CXXFLAGS)
+	@echo -n  TAGET: 
+	@echo   $(TAGET)
+	@echo -n  INCD: 
+	@echo   $(INCD)
+	@echo -n  SRCD: 
+	@echo   $(SRCD)
+	@echo -n  OUTD: 
+	@echo   $(OUTD)
+	@echo -n  VPATH: 
+	@echo   $(VPATH)
+	@echo -n  SRCS: 
+	@echo   $(SRCS)
+	@echo -n  HEADS: 
+	@echo   $(HEADS)
+	@echo -n  FILES: 
+	@echo   $(FILES)
+	@echo -n  OBJS: 
+	@echo   $(OBJS)
+
+# Not a target:
+include/h.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: all gccdebug t debugrun rebuild debug indent linux gnu bsd google asm test testvar clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+include/class.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+menu.o: menu.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'menu'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 45):
+	${CC} ${CXXFLAGS} -c $? -o $@
+	
+
+# Not a target:
+test.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+linux: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/menu.hpp include/mylib.hpp include/readme.hpp include/sizeof.hpp include/temptest.hpp include/test.hpp class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 51):
+	astyle --style=linux $(FILES)
+
+# files hash-table stats:
+# Load=49/1024=5%, Rehash=0, Collisions=12/242=5%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# General ('VPATH' variable) search path:
+# ./src:./include
+
+# strcache buffers: 1 (0) / strings = 86 / storage = 751 B / avg = 8 B
+# current buf: size = 8162 B / used = 751 B / count = 86 / avg = 8 B
+
+# strcache performance: lookups = 267 / hit rate = 67%
+# hash-table stats:
+# Load=86/8192=1%, Rehash=0, Collisions=0/267=0%
+# Finished Make data base on Mon Apr  4 07:32:37 2022
+
+ 

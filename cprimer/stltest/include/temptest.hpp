@@ -4,6 +4,10 @@
 #pragma once
 
 #include <typeinfo>
+#include <list>
+#include <deque>
+#include <stack>
+#include <set>
 #include <cstdlib>
 #include "mylib.hpp"
 
