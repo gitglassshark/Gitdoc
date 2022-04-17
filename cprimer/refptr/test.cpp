@@ -652,7 +652,7 @@ int StringTestFN (int argc, char *argv[])
     return 0;
 }
 
-/*template<typename...Args, int N,int SIZE>
+template<typename...Args, int N,int SIZE>
 void disptuple(tuple<Args...> tu)
 {
     if(N<=SIZE)
@@ -660,22 +660,11 @@ void disptuple(tuple<Args...> tu)
     cout<<std::get<N>(tu);
     disptupe<tuple<Args...>,N+1,SIZE>(tu);
 }
-*/
-template<typename...Args>
-void display(tuple<Args...> tu)
-{
-    constexpr size_t length = sizeof...(Args);
-    for(int i=0;i<length;++i)
-        cout<<get(i)(tu);
-}
 
 
 int TestTuple (int argc, char *argv[])
 {
     tuple<int,float,float>tupa{2,4.4,5.6};
-
-    display(tupa);
-
 
 
     return 0;
@@ -685,7 +674,7 @@ struct menuitem{
     size_t id;
     string name;
     pPF *com;
-}
+};
 
 
 

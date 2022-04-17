@@ -458,22 +458,53 @@ int ReferenceTest(int argc,char * argv[] )
         Command.push_back (funcname);\
         }
 
+int TestMacroRun(int argc,char * argv[] )
+{
+    SimulationStdCout;
+    int a=100;
+    float f=100;
+    SHOW(a);
+    cout<<tab;
+    cout<<showv(a)<<el;
+    cout.type(a,f);
+
+    NT(2)
+    {
+        cout<<cut<<"continue......"<<el;
+    }
+
+    return 0;
+}
+
 int TestDcout(int argc,char * argv[] )
 {
     ScrOut cout;
-    auto tuplea = tuple<int, float, string, string, string>(10, 10.24, "good", "bad", "normal");
-
-    int length = tuple_size<decltype(tuplea)>::value;
-    cout << std::is_integral<decltype(length)>::value << el;
-    cout << is_empty<tuple<>>::value << el;
-    cout.disptup(tuplea)<<el;
-    cout<<tuplea<<el;
-    cout.type(tuplea);
-    vector<int>veca{3,8,9,6,1,8,9,9,2,7,4,9};
-    cout<<veca<<el;
+    lscode(
+        auto tuplea = tuple<int, float, string, string, string>(10, 10.24, "good", "bad", "normal");
+        int length = tuple_size<decltype(tuplea)>::value;
+        vector<int>veca{3,8,9,6,1,8,9,9,2,7,4,9};
+        set<int>seta{3,8,9,6,1,8,9,9,2,7,4,9};
+    map<int,string>mapa{{1,"ok"},{2,"bad"},{3,"good"},{4,"soso"}};
+    );
+    lscode(
+        cout << std::is_integral<decltype(length)>::value << el;
+        cout << is_empty<tuple<>>::value << el;
+    );
+    lscode(
+        cout.disptup(tuplea)<<el;
+        cout<<tuplea<<el;
+    );
+    lscode(
+        cout.type(tuplea);
+        cout<<veca<<el;
+    );
     cout<<cut;
-    cout<<&length<<el;
-    cout<<address(length)<<el;
+    lscode(
+        cout<<&length<<el;
+        cout<<address(length)<<el;
+        cout<<seta<<el;
+        cout<<mapa<<el;
+    );
     return 0;
 }
 
@@ -487,16 +518,17 @@ int RunMyTestFN(int argc, char *argv[])
     string strMenuName;
 
     ADDMENU(Menu,TestDcout,strMenuName)
-//    ADDMENU(Menu,ReferenceTest,strMenuName)
-//    ADDMENU(Menu,TestGround,DequeTestTwo)
-//    ADDMENU(Menu,TestGround,DequeTest)
-////    ADDMENU(Menu,TestGround,)
-//    ADDMENU(Menu,TestGround,StackTest)
-//    ADDMENU(Menu,TestGround,QueueTest)
-//    ADDMENU(Menu,TestGround,ListTest)
-//    ADDMENU(Menu,TestGround,SetTest)
-//    ADDMENU(Menu,TestGround,StdVectorTest)
-//    ADDMENU(Menu,TestGround,StdArrayTest)
+    ADDMENU(Menu,TestMacroRun,strMenuName)
+    ADDMENU(Menu,ReferenceTest,strMenuName)
+    ADDMENU(Menu,DequeTestTwo,strMenuName)
+    ADDMENU(Menu,DequeTest,strMenuName)
+    ADDMENU(Menu,TestGround,strMenuName)
+    ADDMENU(Menu,StackTest,strMenuName)
+    ADDMENU(Menu,QueueTest,strMenuName)
+    ADDMENU(Menu,ListTest,strMenuName)
+    ADDMENU(Menu,SetTest,strMenuName)
+    ADDMENU(Menu,StdVectorTest,strMenuName)
+    ADDMENU(Menu,StdArrayTest,strMenuName)
 
 
     RunMenuMU(argc, argv,Menu,Command);
@@ -505,7 +537,10 @@ int RunMyTestFN(int argc, char *argv[])
 
 int TestGround(int argc,char * argv[] )
 {
+    ScrOut cout;
     negate<int>rn;
+    cout<<cut<<el;
+    cout<<tab<<"ok"<<tab<<"let go"<<endl;
     cout<<rn(50)<<endl;
     logical_or<bool>bor;
     logical_and<bool>band;

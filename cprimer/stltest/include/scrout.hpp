@@ -22,9 +22,60 @@ ScrOut& tab(ScrOut& dc);
 ScrOut& cut(ScrOut& dc);
 ScrOut& cl(ScrOut& dc);
 ScrOut& el(ScrOut& dc);
+ScrOut& endl(ScrOut& dc);
+
+//布尔测试宏
+#ifndef isok
+#define isok(a) ((a)==true)
+#endif
+
+#define vec(T) vector<T>
+#define nonull(v) (((v )!=nullptr )&&(&(v )!=nullptr ) )
+#define addmenu(name) addmenuitem(#name,name);
+
+#define gett(name)  decltype(name)
+#define getit(name)  gett(name.begin())
+#define getI(name)  gett(name)::iterator
+#define getCI(name)  gett(name)::const_iterator
+#define ALL(V)  V.begin(),V.end()
+#define NT(N)  for(size_t ix=0;ix<(N);++ix)
+#define FOREVER  for(;;)
+#define FORALL(V,iterator)  for(getCI(V) iterator = V.begin(); iterator != V.end();++iterator)
+#define FORALLW(V,iterator)  for(getCI(V) V##iterator = V.begin(); V##iterator != V.end();++V##iterator)
+#define FORN(N,icountn)  for(size_t icountn=0;icountn<(N);++icountn)
+#define FORV(ielement,V)  for(const auto &ielement:V)
+#define FORW(ielement,V)  for(auto &ielement:V)
+
+#define makedc(cout)  unique_ptr<ScrOut> me_unique_dc=make_unique<ScrOut>(); ScrOut & cout=*me_unique_dc;
+#define makemedc(DC)  unique_ptr<ScrOut> pdc(new ScrOut());ScrOut& DC = *pdc;
+#define SimulationStdCout  auto cout_me_ptr=make_unique<ScrOut>();auto& cout= *cout_me_ptr;
+
+//测试字符串是否为空的宏
+#ifndef isempty
+#define isempty(astr) ((astr) == (""))
+#endif // !empty
+
+#ifndef st
+#define st(...) (#__VA_ARGS__)
+#endif
+#define sst(code,...)  #code##","#__VA_ARGS__
+#define lcode(...)	cout<<"source code is:"<<el<<"{ "#__VA_ARGS__<<" }"<<el<<"run result is: "<<el<<cut;__VA_ARGS__;
+#define lscode(...)  lcode(__VA_ARGS__)
+#define showcode(...)	lcode(__VA_ARGS__)
+#define showcodes(...)	lscode(__VA_ARGS__)
+
+#define SHOW(name) cout<<st(name)<<" is: "<<name<<tab
+#define showv(name) st(name)<<" value is: "<<name<<tab
+#define showtype(...)  cout<<#__VA_ARGS__<<" type:  "<<typeid(##__VA_ARGS__).name()<<"  size:  "<<sizeof(##__VA_ARGS__)<<"  HASH: "<<typeid(##__VA_ARGS__).hash_code()<<el;
+
+#define RUNTEST(message)		/*cout.clearscreen();\
+								cout.titleline(wstring(st(message)));*/
+
+#define TITLE(message)      cout.title(string(st(message)));
 
 
-class ScrOut
+
+class ScrOut:public ostream
 {
 public:
     using iodc=decltype(::cout);
@@ -33,35 +84,74 @@ public:
     dc& me=*this;
     bool ibegin=true;
     size_t  ilinemod=10;
+    unsigned int id=0;
+    static unsigned int dcsum;
+    size_t linelen=80;
+    char linechar='-';
+    string starline;
 
 
 public:
-    ScrOut():cout(::cout) { };
-
+    ScrOut(unsigned int dcid=0):cout(::cout),id(dcid),starline(linelen,linechar)
+    {
+        ++dcsum;
+        *this<<id<<"#" <<"decive is ready .("<<dcsum<<')'<<el<<cut<<el;
+    };
+    ~ScrOut()
+    {
+        --dcsum;
+        *this<<id<<"#" <<"decive is destroy .("<<dcsum<<')'<<el<<cut<<el;
+    };
 
 public:
-    template<typename T> dc& operator <<(T a);
     ScrOut& operator << (ScrOut& (*op) (ScrOut&));
-    template<typename ...T> dc& operator <<(tuple<T...> t);
+
+public:
+
+
+public:
+    ScrOut& cutline(char c='*')
+    {
+        *this << starline;
+        linechar=c;
+        return *this;
+    };
+    void linemod(size_t l,size_t line, ScrOut& (*op)(ScrOut&)=nullptr, char* stail=nullptr);
+    template<typename T> ScrOut& forprintr(const T* b, const T* e);
+    template<typename T> ScrOut& forprintv(const T& v);
+    template<typename T> ScrOut& forprintm(const T& m);
     template<typename T, size_t N = std::tuple_size<T>::value> dc& disptup(T t);
 
 
 public:
-    template<typename T> ScrOut& forprintr(const T* b, const T* e);
-    template<typename T> ScrOut& forprintv(const T& v);
-    template<typename T> ScrOut& forprintm(const T& m);
-    template<typename T > ScrOut& operator ()(initializer_list<T> c);
-    template<typename T > ScrOut& operator<<(initializer_list<T> c);
-    template <typename X> ScrOut& operator <<(const vector<X>& v);
+    template<typename T> dc& operator <<(const T& a)
+    {
+        ::cout<<a;
+        return *this;
+    };
+//    template <typename iossetX>
+//    using iossetX=decltype(boolalpha);
+//    template <typename iossetX>
+//    iodc&  operator <<(const iossetX& a)
+//    {
+//        ::cout<<a;
+//        return ::cout;
+//    };
+    template <typename X> ScrOut& operator <<(const unique_ptr<X>& unptr);
+    template <typename T, size_t len> ScrOut& operator <<(const array<T, len>& a);
+    template <typename T > ScrOut& operator ()(initializer_list<T> c);
+    template <typename T > ScrOut& operator<<(initializer_list<T> c);
     template <typename T> ScrOut& operator <<(const list<T>& l);
-    template <typename T, typename X> ScrOut& operator <<(const multimap<T, X>& m);
+    template <typename X> ScrOut& operator <<(const vector<X>& v);
+    template <typename T> ScrOut& operator <<(const deque<T>& d);
     template <typename T, typename X> ScrOut& operator <<(const map<T, X>& m);
+    template <typename T, typename X> ScrOut& operator <<(const multimap<T, X>& m);
     template <typename T> ScrOut& operator <<(const set<T>& s);
     template <typename T> ScrOut& operator <<(const multiset<T>& s);
-    template <typename T> ScrOut& operator <<(const deque<T>& d);
-    template <typename T, size_t len> ScrOut& operator <<(const array<T, len>& a);
-    template <typename X> ScrOut& operator <<(const unique_ptr<X>& unptr);
-    void linemod(size_t l,size_t line, ScrOut& (*op)(ScrOut&)=nullptr, char* stail=nullptr);
+    template <typename ...T> dc& operator <<(tuple<T...> t);
+
+
+public:
     ScrOut& pl()
     {
         return *this;
@@ -73,27 +163,51 @@ public:
     template <typename T, typename ...X> ScrOut& pc(T a, X...args);
     template <typename X> ScrOut& pb(X a);
     template <typename T, typename ...X> ScrOut& pb(T a, X...args);
-    template <typename X> ScrOut& address(X&& a);
     template <typename X> ScrOut& address(X& a);
+    template <typename X> ScrOut& address(X&& a);
     template <typename T, typename ...X> ScrOut& address(T a, X...args);
     ScrOut& type()
     {
         return *this;
     };
-    template <typename T, typename ...X> ScrOut& type(T&& a, X&&...args);
-    template <typename T, typename ...X> ScrOut& type(T& a, X&...args);
-
+    template <typename T, typename ...X> ScrOut& type(const T& a, const X&...args) ;
+    template <typename T, typename ...X> ScrOut& type(const T&& a, const X&&...args) ;
+    template <typename A, typename B> ScrOut& operator <<(const pair<A, B>& i);
+    ScrOut& setimod(int imod);
+    const char setlinechar(const char& c = '=');
 };
 
+unsigned int ScrOut::dcsum=0;
+
+ScrOut& ScrOut::setimod(int imod)
+{
+    this->ilinemod = imod;
+    return *this;
+}
+
+const char ScrOut::setlinechar(const char& c)
+{
+    char rc = this->linechar;
+    this->linechar = c;
+    return rc;
+}
+
+template <typename A, typename B>
+ScrOut& ScrOut::operator <<(const pair<A, B>& i)
+{
+    *this << "{" << i.first << "," << i.second << "}   ";
+    return *this;
+}
+
 template <typename T, typename ...X>
-ScrOut& ScrOut::type(T& a, X&...args)
+ScrOut& ScrOut::type(const T& a,const  X&...args)
 {
     *this << "type:  " << typeid(a).name() << "  size:  " << sizeof(a) << "  HASH: " << typeid(a).hash_code() << el;
     return type(args...);
 }
 
 template <typename T, typename ...X>
-ScrOut& ScrOut::type(T&& a, X&&...args)
+ScrOut& ScrOut::type(const T&& a,const  X&&...args)
 {
     *this << "TYPE:  " << typeid(a).name() << '\t' << "SIZE:  " << sizeof(a) << '\t' << "HASHCODE: " << typeid(a).hash_code() << el;
     return type(args...);
@@ -181,43 +295,11 @@ void ScrOut::linemod(size_t l,size_t line, ScrOut& (*op)(ScrOut&), char* stail)
         }
 }
 
-ScrOut& tab(ScrOut& dc)
-{
-    dc << '\t';
-    return dc;
-}
-
-ScrOut& cut(ScrOut& dc)
-{
-    string starline(80,'-');
-    dc << starline<<el;
-    return dc;
-}
-
-ScrOut& cl(ScrOut& dc)
-{
-    system("clear");
-    return dc;
-}
-
-ScrOut& el(ScrOut& dc)
-{
-    dc <<'\n';
-    return dc;
-}
-
-
 ScrOut& ScrOut::operator << (ScrOut& (*op) (ScrOut&))
 {
     return (*op) (*this);
 }
 
-template<typename T>
-ScrOut& ScrOut::operator <<(T a)
-{
-    ::cout<<a;
-    return *this;
-}
 
 template<typename ...T>
 ScrOut& ScrOut::operator <<(tuple<T...> t)
@@ -246,7 +328,6 @@ ScrOut& ScrOut::disptup(T t)
         }
     return me;
 };
-
 
 template<typename T>
 ScrOut& ScrOut::forprintr(const T* b, const T* e)
@@ -378,6 +459,37 @@ ScrOut& ScrOut::operator <<(const unique_ptr<X>& unptr)
 {
     *this<<(void*) unptr.get();
     return *this;
+}
+
+ScrOut& tab(ScrOut& dc)
+{
+    dc << '\t';
+    return dc;
+}
+
+ScrOut& cut(ScrOut& dc)
+{
+    dc.cutline();
+    return dc<<'\n';
+
+}
+
+ScrOut& cl(ScrOut& dc)
+{
+    system("clear");
+    return dc;
+}
+
+ScrOut& endl(ScrOut& dc)
+{
+    dc <<'\n';
+    return dc;
+}
+
+ScrOut& el(ScrOut& dc)
+{
+    dc <<'\n';
+    return dc;
 }
 
 
