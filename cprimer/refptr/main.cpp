@@ -67,5 +67,5 @@ int main (int argc, char *argv[])
     srand (time (NULL));
     RunMyTestFN (argc, argv);
 
-    return 0;
+    return 8;
 }

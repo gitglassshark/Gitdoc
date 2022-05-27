@@ -468,11 +468,6 @@ int TestMacroRun(int argc,char * argv[] )
     cout<<showv(a)<<el;
     cout.type(a,f);
 
-    NT(2)
-    {
-        cout<<cut<<"continue......"<<el;
-    }
-
     return 0;
 }
 
@@ -505,6 +500,9 @@ int TestDcout(int argc,char * argv[] )
         cout<<seta<<el;
         cout<<mapa<<el;
     );
+    lscode(
+        cout<<address(cout.me)<<tab<<&cout<<tab<<&::cout<<tab<<address(cout.cout)<<el;
+    );
     return 0;
 }
 
@@ -534,25 +532,48 @@ int RunMyTestFN(int argc, char *argv[])
     RunMenuMU(argc, argv,Menu,Command);
     return 0;
 }
+class test
+{
+public:
+    test()
+    {
+        cout<<"be create"<<endl;
+    }
+    ~test()
+    {
+        cout<<"be de create"<<endl;
+    }
+};
 
 int TestGround(int argc,char * argv[] )
 {
     ScrOut cout;
-    negate<int>rn;
-    cout<<cut<<el;
-    cout<<tab<<"ok"<<tab<<"let go"<<endl;
-    cout<<rn(50)<<endl;
-    logical_or<bool>bor;
-    logical_and<bool>band;
-    logical_not<bool>bnot;
-    cout<<boolalpha<<bor(true,false)<<endl;
-    cout<<boolalpha<<bor(false,false)<<endl;
-    cout<<boolalpha<<bor(true,true)<<endl;
-    cout<<boolalpha<<band(true,false)<<endl;
-    cout<<boolalpha<<band(false,false)<<endl;
-    cout<<boolalpha<<band(true,true)<<endl;
-    cout<<boolalpha<<bnot(true)<<endl;
-    cout<<boolalpha<<bnot(false)<<endl;
+    /* negate<int>rn;
+     cout<<cut<<el;
+     cout<<tab<<"ok"<<tab<<"let go"<<endl;
+     cout<<rn(50)<<endl;
+     logical_or<bool>bor;
+     logical_and<bool>band;
+     logical_not<bool>bnot;
+     cout<<boolalpha<<bor(true,false)<<endl;
+     cout<<boolalpha<<bor(false,false)<<endl;
+     cout<<boolalpha<<bor(true,true)<<endl;
+     cout<<boolalpha<<band(true,false)<<endl;
+     cout<<boolalpha<<band(false,false)<<endl;
+     cout<<boolalpha<<band(true,true)<<endl;
+     cout<<boolalpha<<bnot(true)<<endl;
+     cout<<boolalpha<<bnot(false)<<endl;
+     unique_ptr<test[]>ptest=make_unique<test[]>(5);
+     unique_ptr<int[]>pint=make_unique<int[]>(5);*/
+    vector<int>va { 2,3,4,5,6,7,9,0,8,1 };
+    int i=1;
+    string cs( "#1234567890abcdefghijklmnopqrstuvwxyz`-=~!@#$%^&*()_+[]\{}|;':,./<>?1234567890#" );
+    BEGINTEST( 6000 )
+    {
+        cout << cs ;
+    }
+    ENDTEST
+
     return 0;
 }
 

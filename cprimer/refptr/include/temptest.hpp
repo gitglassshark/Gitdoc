@@ -5,6 +5,80 @@
 #include "mylib.hpp"
 #include <iostream>
 
+#define bigtosmall true
+#define smalltobig false
+#define UP true
+#define UPPER true
+#define LOWER false
+#define LOW false
+#define DOWN false
+#define RESET -1
+#define REVERSE -2
+#define KEEPSTATUS -3
+#define NOT !
+#define nonull(v) (( (v )!=nullptr  )&&((&v)!=nullptr ) )
+
+#define NTIME(N)  for(size_t ix=0;ix<(N);++ix)
+#define STEP(I,STEP,N)  for(size_t (ix)=I;(ix)<(N);ix+=(STEP))
+#define STEPTO(I,STEP,N)  for(size_t (ix)=I;(ix)<=(N);ix+=(STEP))
+#define UNTIL(N) for(size_t ix=0;ix++<(N);)
+#define FORTO(I,N) for(size_t ix=(I);ix<=(N);++ix)
+#define FORDOWNTO(N,I) for(size_t ix=(N);ix>=(I);--ix)
+#define pointer *
+#define NOTHING
+#define EMPTY(...)
+#define ref &
+
+#define gett(name)  decltype(name)
+#define getI(name)  gett(name.begin())
+#define getCI(name)  gett(name)::const_iterator
+#define ALL(V)  V.begin(),V.end()
+#define FORALL(V,iterator)  for(getCI(V) iterator = V.begin(); iterator != V.end();++iterator)
+#define FORALLW(V,iterator)  for(getCI(V) V##iterator = V.begin(); V##iterator != V.end();++V##iterator)
+#define FORN(N,icountn)  for(size_t icountn=0;icountn<(N);++icountn)
+#define FORV(ielement,V)  for(const auto &ielement:V)
+#define FORW(ielement,V)  for(auto &ielement:V)
+
+#define sst(code,...)  #code##","#__VA_ARGS__;
+
+#define code(...)   cout<<"{ "#__VA_ARGS__<<L"  }"<<el;\
+                    __VA_ARGS__;
+
+#define lcode(...)  cout<<"{ "#__VA_ARGS__<<L"  }"<<el;\
+                    __VA_ARGS__;
+
+#define showcode(...)   lcode(__VA_ARGS__)
+#define showcodes(...)  lcode(__VA_ARGS__)
+#define lscode(...)  lcode(__VA_ARGS__)
+
+#define SHOW(name) cout<<st(name)<<_T("  is: ")<<name<<tab
+#define showv(vname) cout<<st(vname)<<_T(" value: ")<<vname<<sp<<_T(" type: ")<<(typeid(vname).name())<<sp
+#define showtype(...)  cout<<#__VA_ARGS__<<":  type: ";\
+                            cout<< typeid( ##__VA_ARGS__  ).name( );\
+                        cout<<"  size: ";\
+                        cout<<sizeof(##__VA_ARGS__);\
+                        cout<<"  HASH :"<<typeid(##__VA_ARGS__).hash_code()<<el
+
+
+#define Mptr(va,tp) unique_ptr<tp>va=make_unique<tp>();
+#define Msptr(va,tp) shared_ptr<tp>va=make_shared<tp>();
+#define Mptrs(va,tp,n) unique_ptr<tp[]>va=make_unique<tp[]>(n);
+#define Msptrs(va,tp,n) shared_ptr<tp[]>va=make_shared<tp[]>(n);
+
+
+#define abstype(a)      {std::string sc = "";\
+                        if ( std::is_const<decltype( a  )>::value  )\
+                        sc = "const ";\
+                        sc += typeid( a  ).name( );\
+                        if ( std::is_reference<decltype( a  )>::value  )\
+                        sc += "&";\
+                        if ( std::is_rvalue_reference<decltype( a  )>::value  )\
+                        sc += "&";\
+                        cout << "type:  " << sc << "  size:  ";\
+                        cout<< sizeof( a  );\
+                        cout<<"  HASH: " << typeid( a  ).hash_code( ) << el;}
+
+
 
 template < typename T >
 T * arrayset (T * const ar, const size_t size, const T x)

@@ -38,7 +38,7 @@ ScrOut& endl(ScrOut& dc);
 #define getI(name)  gett(name)::iterator
 #define getCI(name)  gett(name)::const_iterator
 #define ALL(V)  V.begin(),V.end()
-#define NT(N)  for(size_t ix=0;ix<(N);++ix)
+#define NTIME(N)  for(size_t ix=0;ix<(N);++ix)
 #define FOREVER  for(;;)
 #define FORALL(V,iterator)  for(getCI(V) iterator = V.begin(); iterator != V.end();++iterator)
 #define FORALLW(V,iterator)  for(getCI(V) V##iterator = V.begin(); V##iterator != V.end();++V##iterator)
@@ -72,10 +72,22 @@ ScrOut& endl(ScrOut& dc);
 								cout.titleline(wstring(st(message)));*/
 
 #define TITLE(message)      cout.title(string(st(message)));
+#define BEGINTEST(times)  {size_t itimes=times;\
+					auto start = clock( );\
+					NTIME( itimes){
+
+#define ENDTEST 	};auto end = clock( );\
+					cout << cut;\
+					cout <<itimes<<"-times run Totaltimes: ";\
+					cout<<(long double)( ( (long double)end - (long double)start ) * 1000 / CLOCKS_PER_SEC ) << "\'ms";\
+					cout<<"  One time: ";\
+					cout<<(long double)( ( (long double)end - (long double)start ) * 1000*1000) / (CLOCKS_PER_SEC *itimes);\
+					cout<<"\'us  Total clock is: "<<end-start<<"  ";\
+					cout<<st(CLOCKS_PER_SEC :)<<CLOCKS_PER_SEC<<'.'<<endl;}
 
 
-
-class ScrOut:public ostream
+////
+class ScrOut:public std::ostream
 {
 public:
     using iodc=decltype(::cout);

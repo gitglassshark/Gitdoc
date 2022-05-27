@@ -1,4 +1,4 @@
-#include <algorithm>
+//#include <algorithm>
 #include <deque>
 #include <list>
 #include <set>
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <typeinfo>
 #include <tuple>
+#include <pthread.h>
 
 #include <iostream>
 #include <fstream>
@@ -670,13 +671,35 @@ int TestTuple (int argc, char *argv[])
     return 0;
 }
 
-struct menuitem{
+struct menuitem
+{
     size_t id;
     string name;
     pPF *com;
 };
 
-
+int Test2 (int argc, char *argv[])
+{
+    auto start = clock( );
+    vector<int>va { 2,3,4,5,6,7,9,0,8,1 };
+    NTIME( 10 )
+    {
+        NTIME( 200 )
+        {
+//			cout << va;
+            for ( auto &i:va )
+                {
+                    cout << i << '\t';
+                }
+            cout<<endl;
+        }
+    }
+    auto end = clock( );
+    cout << float( ( (float)end - (float)start ) * 1000 / CLOCKS_PER_SEC ) << "ms" << endl;
+    start = clock( );
+    cout<<"id:"<<pthread_self()<<endl;
+    return 0;
+}
 
 int RunMyTestFN (int argc, char *argv[])
 {
@@ -688,6 +711,7 @@ int RunMyTestFN (int argc, char *argv[])
     Command.push_back (nullptr);
     string strMenuName;
 
+    ADDMENU(Menu,Test2,strMenuName)
     ADDMENU(Menu,TestTuple,strMenuName)
     ADDMENU(Menu,StringTestFN,strMenuName)
     ADDMENU(Menu,TestPthread,strMenuName)
