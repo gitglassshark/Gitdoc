@@ -1,0 +1,2 @@
+mov ds,ax
+ret

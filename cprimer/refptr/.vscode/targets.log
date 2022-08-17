@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat May 28 16:46:29 2022
+# Make data base, printed on Sat May 28 17:13:33 2022
 
 # Variables
 
@@ -19,9 +19,7 @@ GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
-GJS_DEBUG_OUTPUT = stderr
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-1abcca2f-fbce-4aae-abfb-0e07a1529ab5.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f2bdb468-de15-4814-91f8-a9c8eb1ff0c3.sock
 # makefile (from 'makefile', line 11)
 VPATH = ./src:./include
 # environment
@@ -29,7 +27,7 @@ LC_NAME = zh_CN.UTF-8
 # environment
 LC_NUMERIC = zh_CN.UTF-8
 # environment
-VSCODE_CWD = /home/yan
+VSCODE_CWD = /home/yan/do/cprimer/refptr
 # environment
 LC_ADDRESS = zh_CN.UTF-8
 # default
@@ -45,7 +43,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/yan/do/cprimer/one
+PWD = /home/yan/do/cprimer/refptr
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -63,15 +61,17 @@ VSCODE_CODE_CACHE_PATH = /home/yan/.config/Code/CachedData/dfd34e8260c270da74b5c
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.EBLAN1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.QKR5M1
 # default
 .LOADED := 
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# environment
+GNOME_TERMINAL_SERVICE = :1.118
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/yan/do/cprimer/one
+CURDIR := /home/yan/do/cprimer/refptr
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -89,7 +89,7 @@ SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
 WAYLAND_DISPLAY = wayland-0
 # environment
-HISTSIZE = 2500
+HISTSIZE = 100000
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # automatic
@@ -103,15 +103,15 @@ MAKEFILE_LIST := makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 8139
+VSCODE_PID = 2839
 # environment
-HISTIGNORE = ls:ll:la:cd:pwd:cat
+HISTIGNORE = pwd:ls:ls -ltr:cd:ll:la
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/hulk-lap:@/tmp/.ICE-unix/1411,unix/hulk-lap:/tmp/.ICE-unix/1411
+SESSION_MANAGER = local/hulk-lap:@/tmp/.ICE-unix/1397,unix/hulk-lap:/tmp/.ICE-unix/1397
 # automatic
 *F = $(notdir $*)
 # environment
@@ -125,7 +125,7 @@ VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_langu
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # makefile (from 'makefile', line 15)
-OBJS := ./class.o ./fun.o ./list.o ./main.o ./menu.o ./mylib.o ./readme.o ./sizeof.o ./test.o
+OBJS := ./main.o ./menu.o ./mylib.o ./test.o
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # makefile
@@ -135,19 +135,17 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=fcitx
 # environment
-GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+SHLVL = 1
 # environment
-SHLVL = 0
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/f7cb486c_c8ec_4dd0_b55b_a2b379d62660
 # environment
 MAKELEVEL := 0
-# environment
-IM_CONFIG_CHECK_ENV = 1
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
 PATH = /home/yan/cmake.3.22/bin/:/home/yan/cmake.3.22/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
 # makefile (from 'makefile', line 4)
-DEBUGS = -lstdc++ -Wall -g -I$(INCD) -std=c++17
+DEBUGS = -lstdc++ -Wall -g -I$(INCD) -std=c++20
 # default
 MAKEFILES := 
 # environment
@@ -158,8 +156,6 @@ LC_MONETARY = zh_CN.UTF-8
 ^F = $(notdir $^)
 # environment
 LC_TIME = zh_CN.UTF-8
-# environment
-INVOCATION_ID = f2d6d5502d884f5287ce4c9fc7e706f3
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -192,12 +188,10 @@ CLUTTER_IM_MODULE = fcitx
 LOGNAME = yan
 # makefile (from 'makefile', line 9)
 SRCD = ./src .
-# environment
-GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 1438
+SYSTEMD_EXEC_PID = 1420
 # environment
 DISPLAY = :0
 # environment
@@ -209,21 +203,17 @@ MAKE_VERSION := 4.3
 # makefile (from 'makefile', line 7)
 TAGET = main
 # environment
-MANAGERPID = 1229
-# environment
 LC_MEASUREMENT = zh_CN.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 8139
-# environment
-_ = /usr/share/code/code
+_ = /usr/bin/code
 # environment
 LC_PAPER = zh_CN.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
+# environment
+COLORTERM = truecolor
 # makefile (from 'makefile', line 8)
 INCD = ./include
-# environment
-JOURNAL_STREAM = 8:42944
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -239,6 +229,8 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-de7daa9c-1.66.2-main.sock
 # environment
+TERM = xterm-256color
+# environment
 IM_CONFIG_PHASE = 1
 # environment
 PAPERSIZE = a4
@@ -248,8 +240,14 @@ PAPERSIZE = a4
 <F = $(notdir $<)
 # default
 SUFFIXES := 
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VTE_VERSION = 6800
 # makefile (from 'makefile', line 5)
-CXXFLAGS = -lstdc++ -w -O0 -DNDEBUG  -I$(INCD) -std=c++17
+CXXFLAGS = -lstdc++ -w -O0 -DNDEBUG  -I$(INCD) -std=c++20
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # makefile (from 'makefile', line 1)
@@ -263,7 +261,7 @@ GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = zh_CN.UTF-8
 # variable set hash-table stats:
-# Load=126/1024=12%, Rehash=0, Collisions=12/228=5%
+# Load=125/1024=12%, Rehash=0, Collisions=19/227=8%
 
 # Pattern-specific Variable Values
 
@@ -271,30 +269,21 @@ LC_IDENTIFICATION = zh_CN.UTF-8
 
 # Directories
 
-# ./include (device 2051, inode 1453140): 12 files, no impossibilities.
-# ././include (device 2051, inode 1453140): 12 files, no impossibilities.
-# . (device 2051, inode 1453116): 23 files, no impossibilities.
+# ./include (device 2051, inode 135401): 7 files, no impossibilities.
+# ././include (device 2051, inode 135401): 7 files, no impossibilities.
+# . (device 2051, inode 134124): 19 files, no impossibilities.
 # ./src: could not be stat'd.
 
-# 47 files, no impossibilities in 4 directories.
+# 33 files, no impossibilities in 4 directories.
 
- 
 # Implicit Rules
 
+ 
 # No implicit rules.
 
 # Files
 
-sizeof.o: sizeof.cpp
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: 'sizeof'
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 45):
-	${CC} ${CXXFLAGS} -c $? -o $@
-	
-
-indent: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/menu.hpp include/mylib.hpp include/readme.hpp include/sizeof.hpp include/temptest.hpp include/test.hpp class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+indent: include/h.hpp include/menu.hpp include/mylib.hpp include/temptest.hpp include/test.hpp main.cpp menu.cpp mylib.cpp test.cpp
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -313,34 +302,20 @@ g: rebuild
 #  recipe to execute (from 'makefile', line 28):
 	./main 0 9 6
 
-readme.o: readme.cpp
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: 'readme'
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 45):
-	${CC} ${CXXFLAGS} -c $? -o $@
-	
-
 # Not a target:
 mylib.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-04-13 15:38:45.103682182
+#  File has been updated.
+#  Successfully updated.
 
-google: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/menu.hpp include/mylib.hpp include/readme.hpp include/sizeof.hpp include/temptest.hpp include/test.hpp class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+google: include/h.hpp include/menu.hpp include/mylib.hpp include/temptest.hpp include/test.hpp main.cpp menu.cpp mylib.cpp test.cpp
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 60):
 	astyle --style=google  $(FILES)
-
-# Not a target:
-list.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # makefile (from 'makefile', line 23)
 gccdebug: CXXFLAGS = $(DEBUGS)
@@ -364,56 +339,13 @@ debug: clean main
 # variable set hash-table stats:
 # Load=1/32=3%, Rehash=0, Collisions=0/2=0%
 
-class.o: class.cpp
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: 'class'
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := class.o
-# automatic
-# * := class
-# automatic
-# < := class.cpp
-# automatic
-# + := class.cpp
-# automatic
-# % := 
-# automatic
-# ^ := class.cpp
-# automatic
-# ? := class.cpp
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=3/16=19%
-#  recipe to execute (from 'makefile', line 45):
-	${CC} ${CXXFLAGS} -c $? -o $@
-	
-
-list.o: list.cpp
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: 'list'
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 45):
-	${CC} ${CXXFLAGS} -c $? -o $@
-	
-
 # Not a target:
 include/menu.hpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-include/sizeof.hpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-gnu: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/menu.hpp include/mylib.hpp include/readme.hpp include/sizeof.hpp include/temptest.hpp include/test.hpp class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+gnu: include/h.hpp include/menu.hpp include/mylib.hpp include/temptest.hpp include/test.hpp main.cpp menu.cpp mylib.cpp test.cpp
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -422,7 +354,7 @@ gnu: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/me
 	astyle --style=gnu $(FILES)
 	
 
-bsd: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/menu.hpp include/mylib.hpp include/readme.hpp include/sizeof.hpp include/temptest.hpp include/test.hpp class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+bsd: include/h.hpp include/menu.hpp include/mylib.hpp include/temptest.hpp include/test.hpp main.cpp menu.cpp mylib.cpp test.cpp
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -444,12 +376,6 @@ clean:
 	@find . -name *.s -exec rm -f {} \;
 	@find . -name $(TAGET) -exec rm -f {} \;
 
-# Not a target:
-include/fun.hpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 debugrun: debug
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -460,24 +386,20 @@ debugrun: debug
 
 # Not a target:
 menu.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-04-13 15:38:45.103682182
+#  File has been updated.
+#  Successfully updated.
 
 mylib.o: mylib.cpp
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: 'mylib'
-#  Modification time never checked.
-#  File has not been updated.
+#  Last modified 2022-05-28 16:50:51.051905001
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'makefile', line 45):
 	${CC} ${CXXFLAGS} -c $? -o $@
 	
-
-# Not a target:
-include/readme.hpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -485,19 +407,13 @@ include/readme.hpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-asm: class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+asm: main.cpp menu.cpp mylib.cpp test.cpp
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 63):
 	${CC} ${CXXFLAGS} -S $?
-
-# Not a target:
-readme.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 all: main
 #  Phony target (prerequisite of .PHONY).
@@ -516,20 +432,15 @@ include/mylib.hpp:
 #  File has not been updated.
 
 # Not a target:
-sizeof.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 main.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 10:53:14.132402009
+#  File has been updated.
+#  Successfully updated.
 
-main: class.o fun.o list.o main.o menu.o mylib.o readme.o sizeof.o test.o
+main: main.o menu.o mylib.o test.o
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Last modified 2022-05-28 16:59:19.241334134
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -553,28 +464,15 @@ test:
 main.o: main.cpp
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: 'main'
- 
-#  Modification time never checked.
-#  File has not been updated.
+#  Last modified 2022-05-28 16:50:50.235897317
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'makefile', line 45):
 	${CC} ${CXXFLAGS} -c $? -o $@
 	
 
 # Not a target:
 include/temptest.hpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-class.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-03-11 22:41:36.425185735
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-include/list.hpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -588,17 +486,27 @@ rebuild: clean main
 test.o: test.cpp
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: 'test'
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 45):
-	${CC} ${CXXFLAGS} -c $? -o $@
-	
-
-fun.o: fun.cpp
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: 'fun'
-#  Modification time never checked.
-#  File has not been updated.
+#  Last modified 2022-05-28 16:59:19.149333068
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := test.o
+# automatic
+# * := test
+# automatic
+# < := test.cpp
+# automatic
+# + := test.cpp
+# automatic
+# % := 
+# automatic
+# ^ := test.cpp
+# automatic
+# ? := test.cpp
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/16=19%
 #  recipe to execute (from 'makefile', line 45):
 	${CC} ${CXXFLAGS} -c $? -o $@
 	
@@ -606,15 +514,9 @@ fun.o: fun.cpp
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-11 22:41:36.465188884
+#  Last modified 2022-03-21 15:47:10.746316254
 #  File has been updated.
 #  Successfully updated.
-
-# Not a target:
-fun.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # Not a target:
 include/test.hpp:
@@ -654,6 +556,7 @@ testvar: rebuild
 	@echo   $(SRCS)
 	@echo -n  HEADS: 
 	@echo   $(HEADS)
+ 
 	@echo -n  FILES: 
 	@echo   $(FILES)
 	@echo -n  OBJS: 
@@ -670,28 +573,24 @@ include/h.hpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-include/class.hpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 menu.o: menu.cpp
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: 'menu'
-#  Modification time never checked.
-#  File has not been updated.
+#  Last modified 2022-05-28 16:50:50.695901648
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'makefile', line 45):
 	${CC} ${CXXFLAGS} -c $? -o $@
 	
 
 # Not a target:
 test.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-05-28 17:01:38.546971212
+#  File has been updated.
+#  Successfully updated.
 
-linux: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/menu.hpp include/mylib.hpp include/readme.hpp include/sizeof.hpp include/temptest.hpp include/test.hpp class.cpp fun.cpp list.cpp main.cpp menu.cpp mylib.cpp readme.cpp sizeof.cpp test.cpp
+linux: include/h.hpp include/menu.hpp include/mylib.hpp include/temptest.hpp include/test.hpp main.cpp menu.cpp mylib.cpp test.cpp
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -700,7 +599,7 @@ linux: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/
 	astyle --style=linux $(FILES)
 
 # files hash-table stats:
-# Load=49/1024=5%, Rehash=0, Collisions=12/242=5%
+# Load=34/1024=3%, Rehash=0, Collisions=11/151=7%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -708,12 +607,12 @@ linux: include/class.hpp include/fun.hpp include/h.hpp include/list.hpp include/
 # General ('VPATH' variable) search path:
 # ./src:./include
 
-# strcache buffers: 1 (0) / strings = 86 / storage = 751 B / avg = 8 B
-# current buf: size = 8162 B / used = 751 B / count = 86 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 58 / storage = 466 B / avg = 8 B
+# current buf: size = 8162 B / used = 466 B / count = 58 / avg = 8 B
 
-# strcache performance: lookups = 267 / hit rate = 67%
+# strcache performance: lookups = 178 / hit rate = 67%
 # hash-table stats:
-# Load=86/8192=1%, Rehash=0, Collisions=0/267=0%
-# Finished Make data base on Sat May 28 16:46:29 2022
+# Load=58/8192=1%, Rehash=0, Collisions=0/178=0%
+# Finished Make data base on Sat May 28 17:13:33 2022
 
  

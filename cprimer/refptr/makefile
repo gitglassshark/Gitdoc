@@ -13,6 +13,7 @@ SRCS = $(wildcard $(SRCD)/*.cpp $(SRCD)/*.c $(INCD)/*.cpp $(INCD)/*.c)
 HEADS = $(wildcard *.hpp *.h ./$(INCD)/*.hpp ./$(INCD)/*.h)
 FILES = $(HEADS) $(SRCS)
 OBJS  := $(patsubst %.cpp,%.o,$(SRCS))
+S  := $(patsubst %.cpp,%.s,$(SRCS))
 
 
 all: $(TAGET)
@@ -38,8 +39,11 @@ rebuild:clean $(TAGET)
 debug: CXXFLAGS = $(DEBUGS)
 debug: clean $(TAGET) 
 
-$(TAGET):$(OBJS) 
+$(TAGET):$(OBJS) $(S)
 	${CC} ${CXXFLAGS} -o $@ $(OBJS) 
+	
+$(S): %.s:%.cpp 
+	${CC} ${CXXFLAGS} -S $? -o $@
 	
 $(OBJS): %.o:%.cpp 
 	${CC} ${CXXFLAGS} -c $? -o $@

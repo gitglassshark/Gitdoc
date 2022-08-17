@@ -194,11 +194,10 @@ void arraydynm (int size = 10)
     size = 10;
     int arr[10];
 
-    for (int i = 0; i < size; ++i)
-        {
-            arr[i] = i;
-            cout << arr[i] << '\t';
-        }
+    for (int i = 0; i < size; ++i) {
+        arr[i] = i;
+        cout << arr[i] << '\t';
+    }
     cout << endl;
 }
 
@@ -231,26 +230,23 @@ int TestPrintAdd (int argc, char *argv[])
     arrayprint (ar, size);
 
     int A[10] = { 7 };
-    for (int i = 0; i < 10; ++i)
-        {
-            *(A + i) = i;
-            cout << i << '\t' << (A + i) << '\t' << *(A + i) << endl;
-        }
+    for (int i = 0; i < 10; ++i) {
+        *(A + i) = i;
+        cout << i << '\t' << (A + i) << '\t' << *(A + i) << endl;
+    }
     star ();
     int *pmark = safemalloc < int >(10, sizeof (int));
     int *p = pmark;
 
-    for (int i = 0; i < 10; ++i)
-        {
-            *(p + i) = i;
-            cout << i << '\t' << p + i << '\t' << *(p + i) << endl;
-        }
+    for (int i = 0; i < 10; ++i) {
+        *(p + i) = i;
+        cout << i << '\t' << p + i << '\t' << *(p + i) << endl;
+    }
     star ();
-    for (int i = 0; i < 10; ++i)
-        {
-            cout << i << '\t' << p << '\t' << *p << endl;
-            *p++;
-        }
+    for (int i = 0; i < 10; ++i) {
+        cout << i << '\t' << p << '\t' << *p << endl;
+        *p++;
+    }
     p = nullptr;
     safefree (pmark);
     int *pa3[3];
@@ -610,7 +606,6 @@ int TestPthread(int argc, char *argv[])
     pthread_create(&ptd_2,nullptr,printselfint,nullptr);
     pthread_join(ptd_1,nullptr);
     pthread_join(ptd_2,nullptr);
-
     return 0;
 }
 template<typename T>
@@ -666,13 +661,12 @@ void disptuple(tuple<Args...> tu)
 int TestTuple (int argc, char *argv[])
 {
     tuple<int,float,float>tupa{2,4.4,5.6};
-
+//    disptuple(tupa);
 
     return 0;
 }
 
-struct menuitem
-{
+struct menuitem {
     size_t id;
     string name;
     pPF *com;
@@ -682,22 +676,30 @@ int Test2 (int argc, char *argv[])
 {
     auto start = clock( );
     vector<int>va { 2,3,4,5,6,7,9,0,8,1 };
-    NTIME( 10 )
-    {
-        NTIME( 200 )
-        {
+    NTIME( 10 ) {
+        NTIME( 200 ) {
 //			cout << va;
-            for ( auto &i:va )
-                {
-                    cout << i << '\t';
-                }
+            for ( auto &i:va ) {
+                cout << i << '\t';
+            }
             cout<<endl;
         }
     }
     auto end = clock( );
-    cout << float( ( (float)end - (float)start ) * 1000 / CLOCKS_PER_SEC ) << "ms" << endl;
     start = clock( );
+    cout << float( ( (float)end - (float)start ) * 1000 / CLOCKS_PER_SEC ) << "ms" << endl;
     cout<<"id:"<<pthread_self()<<endl;
+    return 0;}
+
+int Test3 (int argc, char *argv[])
+{
+    cout<<"please input number of number: "<<endl;
+    int nnumber[3];
+    cin>>nnumber[0];
+    cin>>nnumber[1];
+    cin>>nnumber[2];
+    if(nnumber[0]==nnumber[1]&&nnumber[1]==nnumber[2])
+        cout<<"three is equal"<<endl;
     return 0;
 }
 
@@ -711,8 +713,8 @@ int RunMyTestFN (int argc, char *argv[])
     Command.push_back (nullptr);
     string strMenuName;
 
+    ADDMENU(Menu,Test3,strMenuName)
     ADDMENU(Menu,Test2,strMenuName)
-    ADDMENU(Menu,TestTuple,strMenuName)
     ADDMENU(Menu,StringTestFN,strMenuName)
     ADDMENU(Menu,TestPthread,strMenuName)
     ADDMENU(Menu,TestBitSet,strMenuName)

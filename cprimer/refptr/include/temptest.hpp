@@ -11,7 +11,7 @@
 #define UPPER true
 #define LOWER false
 #define LOW false
-#define DOWN false
+//#define DOWN false
 #define RESET -1
 #define REVERSE -2
 #define KEEPSTATUS -3
@@ -90,13 +90,12 @@ T * arrayset (T * const ar, const size_t size, const T x)
 
 template < typename T > void arrayprintadress (T * ar, size_t size)
 {
-    for (size_t i = 0; i < size; ++i)
-        {
-            cout << "ar[i] adress is " << &ar[i] << '\t' << "value is " <<
-                 ar[i] << endl;
-            cout << "ar+i adress is " << ar +
-                 i << '\t' << "value is " << *(ar + i) << endl;
-        }
+    for (size_t i = 0; i < size; ++i) {
+        cout << "ar[i] adress is " << &ar[i] << '\t' << "value is " <<
+             ar[i] << endl;
+        cout << "ar+i adress is " << ar +
+             i << '\t' << "value is " << *(ar + i) << endl;
+    }
 }
 
 template < typename T > void arrayprint (T * ar, size_t size, int lc = 10)
@@ -105,12 +104,11 @@ template < typename T > void arrayprint (T * ar, size_t size, int lc = 10)
 
     if (ar == nullptr)
         return;
-    for (size_t i = 0; i < size; ++i)
-        {
+    for (size_t i = 0; i < size; ++i) {
 //        cout << ar[i] << '\t';
-            if (++l % lc == 0)
-                cout << endl;
-        }
+        if (++l % lc == 0)
+            cout << endl;
+    }
     cout << endl;
 }
 
@@ -169,11 +167,11 @@ template < typename T > bool disp (T r)
 }
 
 template < typename T > T foreach (T * b, T * e, bool (*Fun) (T * r))
-    {
-        for (auto i = b; i != e; ++i)
-            Fun (i);
-        return *b;
-    }
+{
+    for (auto i = b; i != e; ++i)
+        Fun (i);
+    return *b;
+}
 
 template < typename T > bool Print (T * r)
 {
@@ -195,16 +193,13 @@ template < typename T > bool PrintEle (const T & r)
 
     if (r.empty ())
         return false;
-    for (const auto & i:r)
-        {
-            if (++il % 10 == 0)
-                {
-                    PrintSingleEle (i);
-                    cout << endl;
-                }
-            else
-                PrintSingleEle (i);
-        }
+    for (const auto & i:r) {
+        if (++il % 10 == 0) {
+            PrintSingleEle (i);
+            cout << endl;
+        } else
+            PrintSingleEle (i);
+    }
     cout << endl;
     return true;
 }
@@ -227,14 +222,13 @@ template < class T > int listvector (const vector < T > &r)
 {
     int il = 0;
     cout << "vector capacity is " << r.capacity () << endl;
-    for (auto i:r)
-        {
-            cout << i;
-            //            if((ic++%10)==9)
-            if (++il % 10 == 0) cout << e;
-            else
-                cout << "\t";
-        }
+    for (auto i:r) {
+        cout << i;
+        //            if((ic++%10)==9)
+        if (++il % 10 == 0) cout << e;
+        else
+            cout << "\t";
+    }
     cout << endl;
     return 0;
 }
@@ -398,68 +392,58 @@ public:
     bool list (const unsigned int start = 0, const unsigned int end =
                    0)
     {
-        if (end == 0)
-            {
-                for (int i = 0; i < memsize; ++i)
-                    {
-                        cout << h_ArrayMem[i] << " ";
-                        if ((i + 1) % 10 == 0) cout << endl;
-                    }
-                cout << endl;
+        if (end == 0) {
+            for (int i = 0; i < memsize; ++i) {
+                cout << h_ArrayMem[i] << " ";
+                if ((i + 1) % 10 == 0) cout << endl;
             }
+            cout << endl;
+        }
         return true;
     }
 
     bool pushback (X iu)
     {
         bool isscusses = false;
-        if (currentsize < memsize)
-            {
+        if (currentsize < memsize) {
+            h_ArrayMem[currentsize] = iu;
+            ++currentsize;
+            isscusses = true;
+        } else {
+            X * h = h_ArrayMem;
+            if (memsize <= maxsize - 10) {
+                memsize += 10;
+                h_ArrayMem = new X[memsize];
+                for (int i = 0; i < currentsize; ++i)
+                    h_ArrayMem[i] = h[i];
                 h_ArrayMem[currentsize] = iu;
                 ++currentsize;
+                delete[]h;
                 isscusses = true;
             }
-        else
-            {
-                X * h = h_ArrayMem;
-                if (memsize <= maxsize - 10)
-                    {
-                        memsize += 10;
-                        h_ArrayMem = new X[memsize];
-                        for (int i = 0; i < currentsize; ++i)
-                            h_ArrayMem[i] = h[i];
-                        h_ArrayMem[currentsize] = iu;
-                        ++currentsize;
-                        delete[]h;
-                        isscusses = true;
-                    }
-            }
+        }
         return isscusses;
     }
 
     bool popback (unsigned int i)
     {
         bool isscusses = false;
-        if (currentsize == 0)
-            {
-                return isscusses;
-            }
-        else
-            {
-                --currentsize;
-                isscusses = true;
-            }
+        if (currentsize == 0) {
+            return isscusses;
+        } else {
+            --currentsize;
+            isscusses = true;
+        }
         return isscusses;
     }
     bool setallrandom ()
     {
         bool isscusses = false;
-        if (memsize != 0)
-            {
-                for (int i = 0; i < memsize; ++i)
-                    h_ArrayMem[i] = rand () % 1000;
-                isscusses = true;
-            }
+        if (memsize != 0) {
+            for (int i = 0; i < memsize; ++i)
+                h_ArrayMem[i] = rand () % 1000;
+            isscusses = true;
+        }
         return isscusses;
     }
 
