@@ -1,8 +1,8 @@
 CC= clang
 #CC= g++
 
-DEBUGS   = -lstdc++ -Wall -g -I$(INCD) -std=c++20
-CXXFLAGS = -lstdc++ -w -O0 -DNDEBUG  -I$(INCD) -std=c++20
+DEBUGS   = -lstdc++ -Wall -g -I$(INCD) -std=c++2a
+CXXFLAGS = -lstdc++ -w -O0 -DNDEBUG  -I$(INCD) -std=c++2a
 
 TAGET = main
 INCD = ./include

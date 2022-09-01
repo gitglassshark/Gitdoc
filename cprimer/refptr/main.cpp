@@ -19,24 +19,30 @@ public:
     runmain (int i = 0)
     {
         atexit (::end);
-        if (i == 100) {
-            cout << "m_main run main stat......" << endl;
-            m_main =::main;
-            main (0);
-            cout << " m_main run mian is end" << endl;
-        } else {
-            exit (0);
-        }
+        if (i == 100)
+            {
+                cout << "m_main run main stat......" << endl;
+                m_main =::main;
+                main (0);
+                cout << " m_main run mian is end" << endl;
+            }
+        else
+            {
+                exit (0);
+            }
     }
     int main (int a = 0)
     {
-        if (a == 0) {
-            (*m_main) (100, nullptr);
-            return -1;
-        } else {
-            cout << " m_main run mAin is OK" << endl;
-            return 0;
-        }
+        if (a == 0)
+            {
+                (*m_main) (100, nullptr);
+                return -1;
+            }
+        else
+            {
+                cout << " m_main run mAin is OK" << endl;
+                return 0;
+            }
     }
     int end ()
     {

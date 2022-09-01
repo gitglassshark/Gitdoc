@@ -82,13 +82,16 @@ int star (const int &n = 0)
 {
     string strStarLine;
 
-    if (n == 0) {
-        strStarLine = string (linelen, '*');
-        cout << strStarLine << endl;
-    } else {
-        strStarLine = string (linelen - 2, '*');
-        cout << n << ':' << strStarLine << endl;
-    }
+    if (n == 0)
+        {
+            strStarLine = string (linelen, '*');
+            cout << strStarLine << endl;
+        }
+    else
+        {
+            strStarLine = string (linelen - 2, '*');
+            cout << n << ':' << strStarLine << endl;
+        }
     return 0;
 }
 
@@ -98,12 +101,15 @@ int starline (int nStartLen = 60)
 
     strStarLine = "****************************"
                   "**************************\n";
-    if (nStartLen == 60) {
-        cout << strStarLine;
-    } else {
-        string strStarn (nStartLen, '*');
+    if (nStartLen == 60)
+        {
+            cout << strStarLine;
+        }
+    else
+        {
+            string strStarn (nStartLen, '*');
 
-        cout << strStarn << endl;
-    }
+            cout << strStarn << endl;
+        }
     return 0;
 }

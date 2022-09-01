@@ -194,10 +194,11 @@ void arraydynm (int size = 10)
     size = 10;
     int arr[10];
 
-    for (int i = 0; i < size; ++i) {
-        arr[i] = i;
-        cout << arr[i] << '\t';
-    }
+    for (int i = 0; i < size; ++i)
+        {
+            arr[i] = i;
+            cout << arr[i] << '\t';
+        }
     cout << endl;
 }
 
@@ -230,23 +231,26 @@ int TestPrintAdd (int argc, char *argv[])
     arrayprint (ar, size);
 
     int A[10] = { 7 };
-    for (int i = 0; i < 10; ++i) {
-        *(A + i) = i;
-        cout << i << '\t' << (A + i) << '\t' << *(A + i) << endl;
-    }
+    for (int i = 0; i < 10; ++i)
+        {
+            *(A + i) = i;
+            cout << i << '\t' << (A + i) << '\t' << *(A + i) << endl;
+        }
     star ();
     int *pmark = safemalloc < int >(10, sizeof (int));
     int *p = pmark;
 
-    for (int i = 0; i < 10; ++i) {
-        *(p + i) = i;
-        cout << i << '\t' << p + i << '\t' << *(p + i) << endl;
-    }
+    for (int i = 0; i < 10; ++i)
+        {
+            *(p + i) = i;
+            cout << i << '\t' << p + i << '\t' << *(p + i) << endl;
+        }
     star ();
-    for (int i = 0; i < 10; ++i) {
-        cout << i << '\t' << p << '\t' << *p << endl;
-        *p++;
-    }
+    for (int i = 0; i < 10; ++i)
+        {
+            cout << i << '\t' << p << '\t' << *p << endl;
+            *p++;
+        }
     p = nullptr;
     safefree (pmark);
     int *pa3[3];
@@ -666,7 +670,8 @@ int TestTuple (int argc, char *argv[])
     return 0;
 }
 
-struct menuitem {
+struct menuitem
+{
     size_t id;
     string name;
     pPF *com;
@@ -676,12 +681,15 @@ int Test2 (int argc, char *argv[])
 {
     auto start = clock( );
     vector<int>va { 2,3,4,5,6,7,9,0,8,1 };
-    NTIME( 10 ) {
-        NTIME( 200 ) {
+    NTIME( 10 )
+    {
+        NTIME( 200 )
+        {
 //			cout << va;
-            for ( auto &i:va ) {
-                cout << i << '\t';
-            }
+            for ( auto &i:va )
+                {
+                    cout << i << '\t';
+                }
             cout<<endl;
         }
     }
@@ -689,7 +697,8 @@ int Test2 (int argc, char *argv[])
     start = clock( );
     cout << float( ( (float)end - (float)start ) * 1000 / CLOCKS_PER_SEC ) << "ms" << endl;
     cout<<"id:"<<pthread_self()<<endl;
-    return 0;}
+    return 0;
+}
 
 int Test3 (int argc, char *argv[])
 {
