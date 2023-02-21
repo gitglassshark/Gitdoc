@@ -174,7 +174,7 @@ public:
 void tranarray (int ar[])
 {
     cout << " in " << __func__ << '\t' << ar << " size of is ar " <<
-         sizeof (ar) << endl;
+         sizeof (*ar) << endl;
 }
 
 void arrayaddone (int *ar, size_t size)
@@ -538,9 +538,9 @@ int Test (int argc, char *argv[])
 
 int TestBitSet (int argc, char *argv[])
 {
-    unsigned int a = 256 * 256 * 256 * 256 - 1;
+    unsigned long int a = (long long)256 * 256 * 256 * 256 - 1;
     int c = a;
-    unsigned int b = 256 * 256 * 256 * 256 - 1;
+    unsigned long int b = (long long)256 * 256 * 256 * 256 - 1;
 
     cout << bitset < 32 > (a) << '\t' << a << '\t' << sizeof (int) << endl;
     cout << bitset < 32 > (c) << '\t' << c << endl;
@@ -566,7 +566,7 @@ int TestBitSet (int argc, char *argv[])
     cout << bitset < 32 > (c) << '\t' << c << '\t' << sizeof (int) << endl;
     c <<= 2;
     cout << bitset < 32 > (c) << '\t' << c << '\t' << sizeof (int) << endl;
-    star ('+c');
+    star ('c');
 
     c = 8;
     star ("c+>>");
@@ -635,7 +635,7 @@ int StringTestFN (int argc, char *argv[])
     cout<<str6.length()<<endl;
     string str7="123456";
     cout<<str7.length()<<endl;
-    char *str8="123456";
+    const char *str8="123456";
     cout<<strlen(str8)<<endl;
     cout<<str7.data()<<endl;
     cout<<str7.c_str()<<endl;

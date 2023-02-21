@@ -1,0 +1,3 @@
+/home/yan/do/cprimer/refptr/build/CMakeFiles/exp.dir
+/home/yan/do/cprimer/refptr/build/CMakeFiles/edit_cache.dir
+/home/yan/do/cprimer/refptr/build/CMakeFiles/rebuild_cache.dir
